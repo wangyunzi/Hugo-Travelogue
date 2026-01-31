@@ -5,6 +5,5 @@ _site
 vendor
 
 bower_components/
-resources/
 .hugo_build.lock
 .DS_Store
