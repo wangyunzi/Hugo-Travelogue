@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>问题 on 长街短梦</title>
+    <link>http://localhost:1314/tags/%E9%97%AE%E9%A2%98/</link>
+    <description>Recent content in 问题 on 长街短梦</description>
+    <generator>Hugo 0.125.1</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Sat, 04 May 2024 17:15:00 +0800</lastBuildDate>
+    <atom:link href="http://localhost:1314/tags/%E9%97%AE%E9%A2%98/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>hugo的rss问题</title>
+      <link>http://localhost:1314/posts/122/</link>
+      <pubDate>Sat, 04 May 2024 17:15:00 +0800</pubDate>
+      <guid>http://localhost:1314/posts/122/</guid>
+      <description>由于自己换成hugo博客之后对于rss这个问题似乎没什么在意，但是因为使用的主题是很早以前的，所以最开始rss提示以下错误，但是似乎还是能用，询问chagpt后解决这一问题。&#xA;WARN deprecated: .Site.RSSLink was deprecated in Hugo v0.114.0 and will be removed in a future release. Use the Output Format&amp;#39;s Permalink method instead, e.g. .OutputFormats.Get &amp;#34;RSS&amp;#34;.Permalink AI回答：&#xA;看起来你在Hugo中遇到了一个弃用警告。这条消息表明，自Hugo v0.114.0版本以来，你正在使用的**.Site.RSSLink**功能已被弃用，并且可能会在将来的版本中被移除。&#xA;为了解决这个警告并使你的代码具有未来的兼容性，你应该更新你的代码，使用推荐的方法，这涉及到使用输出格式的 Permalink 方法。以下是建议的方法：&#xA;不再使用**.Site.RSSLink**，而是通过访问名为“RSS”的输出格式的 Permalink 方法来获取RSS链接。你可以使用以下代码实现这一点：&#xA;.Site.OutputFormats.Get(&amp;#34;RSS&amp;#34;).Permalink 将你模板或配置文件中的所有**.Site.RSSLink**替换为上述代码片段。&#xA;这样的调整确保你的代码与Hugo的将来版本保持兼容。&#xA;但是继续报错：&#xA;ERROR Rebuild failed: process: &amp;#34;/Users/yy/Library/CloudStorage/OneDrive-个人/blog/themes/zozo/layouts/partials/header.html:18:1&amp;#34;: parse failed unexpected &amp;#34;(&amp;#34; in operand 在你提供的模板文件中，问题出现在使用了.Site.OutputFormats.Get(&amp;quot;RSS&amp;quot;).Permalink这一行，它包含了双引号嵌套在双引号内的情况，这会导致 Go 模板引擎无法正确解析。为了解决这个问题，你可以通过将内部的双引号改为单引号，或者使用反引号将整个表达式包裹起来，以避免嵌套引号的问题。&#xA;以下是两种可能的解决方法：&#xA;使用单引号替换内部的双引号： &amp;lt;a href=&amp;#34;{{ .Site.OutputFormats.Get(&amp;#39;RSS&amp;#39;).Permalink }}&amp;#34; type=&amp;#34;application/rss+xml&amp;#34; title=&amp;#34;rss&amp;#34; target=&amp;#34;_blank&amp;#34;&amp;gt;&amp;lt;i class=&amp;#34;ri-rss-fill&amp;#34;&amp;gt;&amp;lt;/i&amp;gt;&amp;lt;/a&amp;gt; 使用反引号包裹整个表达式： &amp;lt;a href=&amp;#34;{{`{{ .Site.OutputFormats.Get(&amp;#34;RSS&amp;#34;).Permalink }}`}}&amp;#34; type=&amp;#34;application/rss+xml&amp;#34; title=&amp;#34;rss&amp;#34; target=&amp;#34;_blank&amp;#34;&amp;gt;&amp;lt;i class=&amp;#34;ri-rss-fill&amp;#34;&amp;gt;&amp;lt;/i&amp;gt;&amp;lt;/a&amp;gt; 无论选择哪种方法，都会确保在 Go 模板中正确地处理这个表达式，避免了嵌套引号引起的问题。</description>
+    </item>
+    <item>
+      <title>面试难题</title>
+      <link>http://localhost:1314/posts/101/</link>
+      <pubDate>Mon, 18 Mar 2024 21:56:00 +0800</pubDate>
+      <guid>http://localhost:1314/posts/101/</guid>
+      <description>面试的时候遇到一个问题我确实不知道，想留下疑惑请各位博友出谋划策。&#xA;公司召开股东大会，董事长在念公司重要数据的时候出现了错误，而这个数据又是特别重要的，你作为证券事务专员应该怎么做？</description>
+    </item>
+  </channel>
+</rss>

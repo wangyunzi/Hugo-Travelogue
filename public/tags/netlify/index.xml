@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Netlify on 长街短梦</title>
+    <link>http://localhost:1314/tags/netlify/</link>
+    <description>Recent content in Netlify on 长街短梦</description>
+    <generator>Hugo 0.125.1</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Sat, 10 Aug 2024 13:35:41 +0800</lastBuildDate>
+    <atom:link href="http://localhost:1314/tags/netlify/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Netlif构建差点超额</title>
+      <link>http://localhost:1314/posts/135/</link>
+      <pubDate>Sat, 10 Aug 2024 13:35:41 +0800</pubDate>
+      <guid>http://localhost:1314/posts/135/</guid>
+      <description>如图所示，收到Netlify团队的消息，由于本月构建太多导致的差点超额事件，可能是我这个月因为测验博客发布了太多次数导致的，有没有小伙伴遇到这样的情况，实际会不会超额啊？</description>
+    </item>
+  </channel>
+</rss>

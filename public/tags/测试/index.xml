@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>测试 on 长街短梦</title>
+    <link>http://localhost:1314/tags/%E6%B5%8B%E8%AF%95/</link>
+    <description>Recent content in 测试 on 长街短梦</description>
+    <generator>Hugo 0.125.1</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Sun, 29 Dec 2024 08:26:23 +0800</lastBuildDate>
+    <atom:link href="http://localhost:1314/tags/%E6%B5%8B%E8%AF%95/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>认证follow订阅源</title>
+      <link>http://localhost:1314/posts/151/</link>
+      <pubDate>Sun, 29 Dec 2024 08:26:23 +0800</pubDate>
+      <guid>http://localhost:1314/posts/151/</guid>
+      <description>Your Note Content This message is used to verify that this feed (feedId:66484151562544128) belongs to me (userId:68190129199815680). Join me in enjoying the next generation information browser https://follow.is.</description>
+    </item>
+  </channel>
+</rss>

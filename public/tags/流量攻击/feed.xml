@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>流量攻击 on 长街短梦</title>
+    <link>http://localhost:1314/tags/%E6%B5%81%E9%87%8F%E6%94%BB%E5%87%BB/</link>
+    <description>Recent content in 流量攻击 on 长街短梦</description>
+    <generator>Hugo 0.125.1</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Sun, 07 Jul 2024 10:34:00 +0800</lastBuildDate>
+    <atom:link href="http://localhost:1314/tags/%E6%B5%81%E9%87%8F%E6%94%BB%E5%87%BB/feed.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>流量攻击</title>
+      <link>http://localhost:1314/posts/129/</link>
+      <pubDate>Sun, 07 Jul 2024 10:34:00 +0800</pubDate>
+      <guid>http://localhost:1314/posts/129/</guid>
+      <description>前天收到欠费提醒的时候还是蛮震惊的，毕竟我在欠费的前一天就充钱，我一般充钱费用足够使用一个月，但是突然开始欠费，意识到自己应该被攻击刷流量了，幸好自己都是充多少用多少模式，欠费有预警，所以把欠费弥补上然后再充一点就够了。结果，昨天晚上又欠费了，可恶啊，到底是谁在攻击我的小破站啊，今天打开七牛云的工单询问之后发现CDN的问题，查询了大量访问的三个ip地址都是显示来自中国联通山西太原市市东湖区，有三个ip地址都是属于同一地点，另外两个ip地址访问量不是很大来自北京市。</description>
+    </item>
+  </channel>
+</rss>

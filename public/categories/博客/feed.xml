@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>博客 on 长街短梦</title>
+    <link>http://localhost:1314/categories/%E5%8D%9A%E5%AE%A2/</link>
+    <description>Recent content in 博客 on 长街短梦</description>
+    <generator>Hugo 0.125.1</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Sun, 09 Nov 2025 03:44:50 +0800</lastBuildDate>
+    <atom:link href="http://localhost:1314/categories/%E5%8D%9A%E5%AE%A2/feed.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>渐觉社会包容度走低</title>
+      <link>http://localhost:1314/posts/160/</link>
+      <pubDate>Sun, 09 Nov 2025 03:44:50 +0800</pubDate>
+      <guid>http://localhost:1314/posts/160/</guid>
+      <description>日子不咸不淡地进行着。&#xA;可能生活就是这样吧——当你觉得平淡时，总会隐隐期待一些事情发生；而当麻烦接踵而至时，又会祈祷生活能再平静一些。&#xA;地铁里的小剧场 那天像往常一样，我卡着点赶地铁上班。&#xA;车厢里安静又压抑，两位老人推着婴儿车挤进来，试图穿过人群。突然，一声怒吼划破空气——“你压到我脚了！”&#xA;老人也不示弱：“我都提醒好几次了，你还不让！”&#xA;于是车厢瞬间炸开。&#xA;本以为这只是一次普通的口角，没想到旁边一位男士也加入了战场，指责老人“压脚不懂道歉”。三人吵得不可开交，东北口音此起彼伏，气氛一度剑拔弩张。&#xA;我本能地往旁边挪了挪，生怕他们动起手来。&#xA;整件事其实微不足道。那辆婴儿车只是擦到年轻人脚尖，几乎没什么痛感。可这点小摩擦，却被放大成了一场“正义之争”。更奇怪的是，争到后面竟有人喊出一句：“上海人就了不起啊！”——但听口音，他们都不是上海人。那一刻，我甚至笑出声，替“无辜的上海人”感到莫名。&#xA;我发现，年轻人的反击语气充满了“互联网味”：&#xA;讽刺老年人“抢地铁”、指责他们“倚老卖老”、甚至把地域偏见也掺进来。&#xA;仿佛他们不是在面对眼前的两位老人，而是在对整个网络上积攒的怨气宣泄。&#xA;那种戾气让我有点不舒服。&#xA;网络上的情绪，已经悄悄渗透进了现实生活。人们不再只是就事论事，而是带着立场、情绪、标签去看待每一个人。&#xA;考场外的突发事件 在周六的。&#xA;一位戴着墨镜、身材高大的男士，在安检时突然抢过扫描仪，对着自己脖子质问：“可以这样安检吗？！”&#xA;他的声音让全场瞬间安静下来。安检的小姐姐被吓得脸色通红，连声解释并道歉。但男子仍不依不饶，要求“复演”并“当众给个说法”。管理人员赶来后，他依旧情绪激动，非要把安检员带去办公室。&#xA;场面令人不安。那一刻，我只记得自己心跳加快，甚至害怕他会动手。&#xA;整个过程毫无必要——没有真正的伤害，却被放大成一场“受害者的控诉”。&#xA;容忍度的流失 自从社会经济下行的声音越来越多，人与人之间的容忍度也似乎在一点点消失。&#xA;以前的小摩擦，现在可能就是一场冲突。&#xA;以前一句道歉能解决的事，如今可能变成一场“立场对立”的辩论。&#xA;我们都在变得敏感、易燃。&#xA;可能是生活的压力，也可能是长期被网络上的戾气喂大的反应模式。&#xA;但无论如何，这种愤怒最终只会回到我们自己身上。&#xA;一个社会的成熟，不在于大家都能讲多少“道理”，&#xA;而在于——我们是否还能允许不同年龄、不同性格、不同背景的人，平和地存在。&#xA;小孩子可以偶尔吵闹，老人可以坐地铁出行，年轻人可以有情绪，但不该让情绪凌驾于理性之上。&#xA;群居社会，本就应该有各种不同的声音。&#xA;真正的包容，是允许每个人以自己的方式生活，而不是迫使他们符合某一种标准。&#xA;愿一切 Peace &amp;amp; Love.</description>
+    </item>
+    <item>
+      <title>认证follow订阅源</title>
+      <link>http://localhost:1314/posts/151/</link>
+      <pubDate>Sun, 29 Dec 2024 08:26:23 +0800</pubDate>
+      <guid>http://localhost:1314/posts/151/</guid>
+      <description>Your Note Content This message is used to verify that this feed (feedId:66484151562544128) belongs to me (userId:68190129199815680). Join me in enjoying the next generation information browser https://follow.is.</description>
+    </item>
+    <item>
+      <title>docker代理问题</title>
+      <link>http://localhost:1314/posts/147/</link>
+      <pubDate>Wed, 25 Sep 2024 13:24:47 +0800</pubDate>
+      <guid>http://localhost:1314/posts/147/</guid>
+      <description>最近自己的docker总是抽风出现各种各样的问题，因为事情过于忙碌来不及处理，一些安装的项目秉持能用则用的心态便拖到如今。昨天升级自己的docker项目出现镜像错误问题，自己的镜像都是到处去网上找的，刚开始能用就没换掉，在google了一堆解决方法之后均无果，于是虚心请教杜老师，杜老师很爽快的给出了他的一篇教程，其实我看过这篇教程，但是因为自己下意识的觉得代理这一块对于我比较陌生，所以就没在意，今天按照教程做了之后立马成功，实在感谢杜老师。因为自己在操作的过程中还是有些微不同，所以还是选择复盘一下，这样也才能加深自己的印象，真正选择实操可以选择去看杜老师的这篇借助 CF 解决 Docker 镜像拉取问题。&#xA;bug再现 &amp;emsp;&amp;emsp;首先需要自己注册一个域名，其实我最开始拥有好几个域名，但是自己管理问题导致只剩下一个重要域名，注册新域名的时候竟然发现自己`wangyunzi.xyz`域名处于待售状态，说实话我都不知道这个域名是在哪一个平台上购买的了，我只记得好久没用了，应该没什么大问题，这次为了谨慎起见也是为了方便管理和续费，选择统一在阿里云上注册一个域名，希望大家都能统一注册管理自己的域名吧。 将域名的DNS改成cloudfare，因为我的主域名也是在cloudfare，这样比较方便管理。点击进入新注册的域名，接着点击左侧的workers路由，继续点击管理workers，最后创建。 创建后修改名称之后直接点击部署，之后复制需要的代码进去覆盖掉，然后记得修改第三行的域名成为自己最开始注册的域名。&#xA;let hub_host = &amp;#39;registry-1.docker.io&amp;#39; const auth_url = &amp;#39;https://auth.docker.io&amp;#39; let workers_url = &amp;#39;https://docker.birdteam.net&amp;#39; let UA = [&amp;#39;netcraft&amp;#39;]; function routeByHosts(host) { const routes = { &amp;#34;quay&amp;#34;: &amp;#34;quay.io&amp;#34;, &amp;#34;gcr&amp;#34;: &amp;#34;gcr.io&amp;#34;, &amp;#34;k8s-gcr&amp;#34;: &amp;#34;k8s.gcr.io&amp;#34;, &amp;#34;k8s&amp;#34;: &amp;#34;registry.k8s.io&amp;#34;, &amp;#34;ghcr&amp;#34;: &amp;#34;ghcr.io&amp;#34;, &amp;#34;cloudsmith&amp;#34;: &amp;#34;docker.cloudsmith.io&amp;#34;, &amp;#34;test&amp;#34;: &amp;#34;registry-1.docker.io&amp;#34;, }; if (host in routes) return [ routes[host], false ]; else return [ hub_host, true ]; } const PREFLIGHT_INIT = { headers: new Headers({ &amp;#39;access-control-allow-origin&amp;#39;: &amp;#39;*&amp;#39;, &amp;#39;access-control-allow-methods&amp;#39;: &amp;#39;GET,POST,PUT,PATCH,TRACE,DELETE,HEAD,OPTIONS&amp;#39;, &amp;#39;access-control-max-age&amp;#39;: &amp;#39;1728000&amp;#39;, }), } function makeRes(body, status = 200, headers = {}) { headers[&amp;#39;access-control-allow-origin&amp;#39;] = &amp;#39;*&amp;#39; return new Response(body, { status, headers }) } function newUrl(urlStr) { try { return new URL(urlStr) } catch (err) { return null } } function isUUID(uuid) { const uuidRegex = /^[0-9a-f]{8}-[0-9a-f]{4}-[4][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i; return uuidRegex.</description>
+    </item>
+    <item>
+      <title>twikoo部署vercel收不到邮件通知</title>
+      <link>http://localhost:1314/posts/137/</link>
+      <pubDate>Sun, 11 Aug 2024 09:27:02 +0800</pubDate>
+      <guid>http://localhost:1314/posts/137/</guid>
+      <description>前几天就一直在选择合适的评论系统，换来换去最终归于twikoo，本来以前自己成功部署过twikoo但是因为手贱删除部署信息了，所以重新设置一遍，结果最后无论怎么样设置邮件通知功能都是只能收到测试成功的邮件，收不到其他邮件通知，甚是苦恼，想着换一个，但是又陷入纠结中。&#xA;最后都已经删除了twikoo的相关文件了，上网搜索了之后发现了一个最佳答案怀着激动的心有重新设置一遍，终于成功，感谢这位大佬发布的解惑。&#xA;解决方法：进入 Settings - Deployment Protection，设置 Vercel Authentication 为 Disabled，并 Save。&#xA;相关链接：&#xA;vercel部署twikoo后评论收不到通知邮件问题解决方法 配置完成，测试邮件收发正常，但是正常评论的时候即发不出去也收不到提醒 #625 System Environment Variables Overview ps：这个twikoo是不是有点网络问题，我最开始链接家里的移动WiFi登录不上，而且导入的评论什么的也没有了，换成自己手机热点一下就可以了，真真是怪哉！最终发现，额，如果是美国ip可能就连接不上而且看不到评论。</description>
+    </item>
+    <item>
+      <title>Netlif构建差点超额</title>
+      <link>http://localhost:1314/posts/135/</link>
+      <pubDate>Sat, 10 Aug 2024 13:35:41 +0800</pubDate>
+      <guid>http://localhost:1314/posts/135/</guid>
+      <description>如图所示，收到Netlify团队的消息，由于本月构建太多导致的差点超额事件，可能是我这个月因为测验博客发布了太多次数导致的，有没有小伙伴遇到这样的情况，实际会不会超额啊？</description>
+    </item>
+    <item>
+      <title>obsidian&amp;jekyll进阶(2)</title>
+      <link>http://localhost:1314/posts/134/</link>
+      <pubDate>Sat, 10 Aug 2024 05:42:40 +0800</pubDate>
+      <guid>http://localhost:1314/posts/134/</guid>
+      <description>鉴于一篇只写了电脑端的如何新建文章发布博客，在移动端同样测试之后出现一点问题，于是小小修改一下代码，我的脚本文件夹myob/assets/new_blog.js：&#xA;module.exports = async (params) =&amp;gt; { const { app, quickAddApi } = params; // 设置你的 Obsidian 文件夹路径 const obsidianFolder = &amp;#39;日记本/posts&amp;#39;; // 替换为实际路径 // 输出调试信息 console.log(&amp;#39;Obsidian folder path:&amp;#39;, obsidianFolder); let mdFiles; try { mdFiles = await app.vault.adapter.list(obsidianFolder); console.log(&amp;#39;Files in folder:&amp;#39;, mdFiles.files); } catch (error) { console.error(&amp;#39;Error reading directory:&amp;#39;, error); new Notice(&amp;#39;Failed to read Obsidian folder. Please check the folder path.&amp;#39;); return; } const markdownFiles = mdFiles.files.filter(file =&amp;gt; file.endsWith(&amp;#39;.md&amp;#39;)); // 初始化最大 slug let maxSlug = 0; // 正则表达式匹配 slug const slugPattern = /slug:\s*&amp;#34;(\d+)&amp;#34;/; // 遍历文件以找到最大 slug for (const file of markdownFiles) { const content = await app.</description>
+    </item>
+    <item>
+      <title>obsidian&amp;jekyll进阶(1)</title>
+      <link>http://localhost:1314/posts/133/</link>
+      <pubDate>Fri, 09 Aug 2024 11:29:07 +0800</pubDate>
+      <guid>http://localhost:1314/posts/133/</guid>
+      <description>在上一篇自动化利用obsidian写jekyll博客之后，日常写博客又会出现一个问题，就是左侧文件列表栏的文件太多，每次都需要特意打开posts文件夹然后滑到最下面新建一个博客文章，虽然有了Templater插件，但是这个插件有点过于死板了，于是想到了QuickAdd插件，通过运行一个JavaScript脚本新建文章并且自动填充好yaml，包括date、slug以及title等日常必须，如果slug还是需要自己填写的话就未必有点得不偿失了，有可能自己半个月不写博客导致忘记上一篇slug数据，因此每次都要自己重新点开上一篇的数据信息查看，脚本最好能后遍历自己的所有文章slug然后选取最大的数字最后只需要在新建文章＋1即可。&#xA;具体操作：需要安装obsidian-quickadd插件，添加宏步骤中的脚本动作即可。脚本信息如下：&#xA;module.exports = async (params) =&amp;gt; { const { app, quickAddApi } = params; const path = require(&amp;#39;path&amp;#39;); // 设置你的 Obsidian 文件夹路径 const obsidianFolder = &amp;#39;日记本/posts&amp;#39;; // 替换为实际路径 // 输出调试信息 console.log(&amp;#39;Obsidian folder path:&amp;#39;, obsidianFolder); let mdFiles; try { mdFiles = await app.vault.adapter.list(obsidianFolder); console.log(&amp;#39;Files in folder:&amp;#39;, mdFiles.files); } catch (error) { console.error(&amp;#39;Error reading directory:&amp;#39;, error); new Notice(&amp;#39;Failed to read Obsidian folder. Please check the folder path.&amp;#39;); return; } const markdownFiles = mdFiles.</description>
+    </item>
+    <item>
+      <title>Obsidian笔记同步到jekyll博客</title>
+      <link>http://localhost:1314/posts/132/</link>
+      <pubDate>Thu, 08 Aug 2024 08:18:00 +0800</pubDate>
+      <guid>http://localhost:1314/posts/132/</guid>
+      <description>本来这篇文章应该在昨天就写好，但是鉴于自己流程写的有点乱加上最后非要请AI 帮我折腾一下就导致出现问题了，然后自己重新慢慢开始部署一番，终于才算把流程弄好。&#xA;前提条件 GitHub 账户：你需要一个 GitHub 账户，并拥有两个仓库：一个用于 Obsidian 笔记（wangyunzi/myob），一个用于博客（wangyunzi/wangyunzi.github.io）。 GitHub Personal Access Token (PAT)：你需要生成三个具有 repo 和 workflow 权限的 PAT，复制到备忘录中以备后用。 GitHub Actions：你需要在两个仓库中设置 GitHub Actions 工作流。 在博客仓库中设置 GitHub Actions 进入你的博客仓库（wangyunzi/wangyunzi.github.io）。 创建一个新的文件夹 .github/workflows。 在该文件夹中创建一个名为 Sync_Obsidian.yml 的文件，内容如下： name: Sync_Obsidian on: workflow_dispatch: inputs: ref: description: &amp;#39;Branch to deploy&amp;#39; required: true default: &amp;#39;master&amp;#39; jobs: sync: runs-on: ubuntu-latest steps: - name: Checkout Obsidian repository uses: actions/checkout@v3 with: repository: wangyunzi/myob path: myob token: ${{ secrets.OBSIDIAN_REPO_TOKEN }} - name: Checkout blog repository uses: actions/checkout@v3 with: repository: wangyunzi/wangyunzi.</description>
+    </item>
+    <item>
+      <title>使用GitHub Actions将Obsidian笔记同步到jekyll博客</title>
+      <link>http://localhost:1314/posts/131/</link>
+      <pubDate>Wed, 07 Aug 2024 20:00:00 +0800</pubDate>
+      <guid>http://localhost:1314/posts/131/</guid>
+      <description>介绍 在本教程中，我们将介绍如何使用 GitHub Actions 自动将 Obsidian 笔记同步到 GitHub 上的博客仓库中的特定文件夹。我们将使用 rsync 工具来同步文件，并利用 GitHub Actions 进行自动化处理。&#xA;前提条件 GitHub 账户：你需要一个 GitHub 账户，并拥有两个仓库：一个用于 Obsidian 笔记（wangyunzi/myob），一个用于博客（wangyunzi/wangyunzi.github.io）。 GitHub Personal Access Token (PAT)：你需要生成一个具有 repo 和 workflow 权限的 PAT。 GitHub Actions：你需要在两个仓库中设置 GitHub Actions 工作流。 步骤 （1）生成 Personal Access Token (PAT) 登录到 GitHub，进入 Settings。 选择 Developer settings &amp;gt; Personal access tokens。 点击 Generate new token。 输入名称，勾选 repo 和 workflow 权限。 生成 token 并复制备用。 （2）在博客仓库中设置 GitHub Actions 进入你的博客仓库（wangyunzi/wangyunzi.github.io）。 创建一个新的文件夹 .github/workflows。 在该文件夹中创建一个名为 Sync_Obsidian.</description>
+    </item>
+    <item>
+      <title>流量攻击</title>
+      <link>http://localhost:1314/posts/129/</link>
+      <pubDate>Sun, 07 Jul 2024 10:34:00 +0800</pubDate>
+      <guid>http://localhost:1314/posts/129/</guid>
+      <description>前天收到欠费提醒的时候还是蛮震惊的，毕竟我在欠费的前一天就充钱，我一般充钱费用足够使用一个月，但是突然开始欠费，意识到自己应该被攻击刷流量了，幸好自己都是充多少用多少模式，欠费有预警，所以把欠费弥补上然后再充一点就够了。结果，昨天晚上又欠费了，可恶啊，到底是谁在攻击我的小破站啊，今天打开七牛云的工单询问之后发现CDN的问题，查询了大量访问的三个ip地址都是显示来自中国联通山西太原市市东湖区，有三个ip地址都是属于同一地点，另外两个ip地址访问量不是很大来自北京市。</description>
+    </item>
+    <item>
+      <title>Netlify部署hugo博客失败怎么办？</title>
+      <link>http://localhost:1314/posts/125/</link>
+      <pubDate>Fri, 07 Jun 2024 23:34:00 +0800</pubDate>
+      <guid>http://localhost:1314/posts/125/</guid>
+      <description>起初是因为自己修改页面的时候发现GitHub+Netlify部署的时候出现一个部署成功一个失败，道理来讲一个博客每次修改应该只需要部署一次，但是不知道为什么netlify部署了两次，且名称都显示不一样，错误如下图所示：&#xA;经过查询得知应该是根目录的netlify.toml文件出现问题，于是询问AI后得知这个错误表明在构建过程中无法找到指定的基本目录（base directory）/opt/build/repo/blog ，于是修改方案如下，将原来的netlify.toml代码：&#xA;[build] publish = &amp;#34;public&amp;#34; command = &amp;#34;hugo --gc --minify&amp;#34; 修改成下面：&#xA;[build] base = &amp;#34;&amp;#34; publish = &amp;#34;public&amp;#34; command = &amp;#34;hugo --gc --minify&amp;#34; 最后显示部署成功。</description>
+    </item>
+    <item>
+      <title>hugo的rss问题</title>
+      <link>http://localhost:1314/posts/122/</link>
+      <pubDate>Sat, 04 May 2024 17:15:00 +0800</pubDate>
+      <guid>http://localhost:1314/posts/122/</guid>
+      <description>由于自己换成hugo博客之后对于rss这个问题似乎没什么在意，但是因为使用的主题是很早以前的，所以最开始rss提示以下错误，但是似乎还是能用，询问chagpt后解决这一问题。&#xA;WARN deprecated: .Site.RSSLink was deprecated in Hugo v0.114.0 and will be removed in a future release. Use the Output Format&amp;#39;s Permalink method instead, e.g. .OutputFormats.Get &amp;#34;RSS&amp;#34;.Permalink AI回答：&#xA;看起来你在Hugo中遇到了一个弃用警告。这条消息表明，自Hugo v0.114.0版本以来，你正在使用的**.Site.RSSLink**功能已被弃用，并且可能会在将来的版本中被移除。&#xA;为了解决这个警告并使你的代码具有未来的兼容性，你应该更新你的代码，使用推荐的方法，这涉及到使用输出格式的 Permalink 方法。以下是建议的方法：&#xA;不再使用**.Site.RSSLink**，而是通过访问名为“RSS”的输出格式的 Permalink 方法来获取RSS链接。你可以使用以下代码实现这一点：&#xA;.Site.OutputFormats.Get(&amp;#34;RSS&amp;#34;).Permalink 将你模板或配置文件中的所有**.Site.RSSLink**替换为上述代码片段。&#xA;这样的调整确保你的代码与Hugo的将来版本保持兼容。&#xA;但是继续报错：&#xA;ERROR Rebuild failed: process: &amp;#34;/Users/yy/Library/CloudStorage/OneDrive-个人/blog/themes/zozo/layouts/partials/header.html:18:1&amp;#34;: parse failed unexpected &amp;#34;(&amp;#34; in operand 在你提供的模板文件中，问题出现在使用了.Site.OutputFormats.Get(&amp;quot;RSS&amp;quot;).Permalink这一行，它包含了双引号嵌套在双引号内的情况，这会导致 Go 模板引擎无法正确解析。为了解决这个问题，你可以通过将内部的双引号改为单引号，或者使用反引号将整个表达式包裹起来，以避免嵌套引号的问题。&#xA;以下是两种可能的解决方法：&#xA;使用单引号替换内部的双引号： &amp;lt;a href=&amp;#34;{{ .Site.OutputFormats.Get(&amp;#39;RSS&amp;#39;).Permalink }}&amp;#34; type=&amp;#34;application/rss+xml&amp;#34; title=&amp;#34;rss&amp;#34; target=&amp;#34;_blank&amp;#34;&amp;gt;&amp;lt;i class=&amp;#34;ri-rss-fill&amp;#34;&amp;gt;&amp;lt;/i&amp;gt;&amp;lt;/a&amp;gt; 使用反引号包裹整个表达式： &amp;lt;a href=&amp;#34;{{`{{ .Site.OutputFormats.Get(&amp;#34;RSS&amp;#34;).Permalink }}`}}&amp;#34; type=&amp;#34;application/rss+xml&amp;#34; title=&amp;#34;rss&amp;#34; target=&amp;#34;_blank&amp;#34;&amp;gt;&amp;lt;i class=&amp;#34;ri-rss-fill&amp;#34;&amp;gt;&amp;lt;/i&amp;gt;&amp;lt;/a&amp;gt; 无论选择哪种方法，都会确保在 Go 模板中正确地处理这个表达式，避免了嵌套引号引起的问题。</description>
+    </item>
+    <item>
+      <title>git日常错误</title>
+      <link>http://localhost:1314/posts/120/</link>
+      <pubDate>Sat, 27 Apr 2024 22:46:00 +0800</pubDate>
+      <guid>http://localhost:1314/posts/120/</guid>
+      <description>看这个情况上网搜了一下应该是代理问题，Google了一下有几个解决方案。&#xA;我的解决方案是删掉关于代理的代码：&#xA;终端输入~/.ssh/config 打开代理代码页面，我的是这样的： 注释掉下面的代码。&#xA;⚠️ 由于只删掉最下面的代码还是显示错误，于是我删掉该文件左右代码，最后结果显示正常。&#xA;参考文章 https://github.com/fncheng/Error/issues/1&#xA;https://www.maple13.cn/posts/74a670b7/&#xA;https://www.v2ex.com/t/290545#reply17&#xA;https://blog.csdn.net/weixin_43561029/article/details/121258685</description>
+    </item>
+    <item>
+      <title>docker项目记录</title>
+      <link>http://localhost:1314/posts/113/</link>
+      <pubDate>Mon, 15 Apr 2024 16:10:00 +0800</pubDate>
+      <guid>http://localhost:1314/posts/113/</guid>
+      <description>2024/4/17 问题再现 执行sudo docker compose up -d命令的时候出现这个报错：&#xA;WARN[0000] /www/wwwroot/memos.wangyunzi.com/docker-compose.yml: `version` is obsolete 这个是说版本过期，因为最新版本的docker不支持版本这种（其实我也是因为一个报错才知道的，所以compose里面的代码第一样关于version可以注释掉的，等我找到这个GitHub网页在说）。&#xA;2024/4/16 因为昨天关闭防火墙忘记重新打开了，所以今天的好多个docker安装项目都出现问题，评论通知收不到，freshrss导入不了文档，询问杜老师才知道“Docker是需要防火墙转发数据的”，所以记录一下自己的一个小失误。&#xA;2024/4/15 最近因为买了服务器之后比较兴奋，把几个自己没有尝试的过的项目都安装了一遍，包括Alist、FreshRSS、Artalk、等，因为前面都是随意安装，比如docker一键安装之类的，所以导致文件夹部分比较混乱，加上自己不熟悉docker所以出现了很多bugs，比如因为没有提前关闭镜像导致升级新docker之后镜像一直删不掉，还有就是莫名奇妙删掉了好几个文档，统一docker安装方式，采用docker-compose方式，方便整理。因为这些项目都需要设置反代理，所以首先新建网站xxx.wangyunzi.com，这时候就会有一个网站目录，接下来所有的操作都会在这个网站目录下进行。&#xA;docker升级步骤 直接参考这篇文章，更新docker到最新版本，前面随便找了一篇教程安装docker就开始乱弄，教程如下&#xA;老的教程 直接脚本安装，安装命令如下：&#xA;curl -fsSL https://get.docker.com | bash -s docker --mirror Aliyun 新教程 较旧的 Docker 版本称为 docker 或 docker-engine 。如果已安装这些程序，请卸载它们以及相关的依赖项。 sudo yum remove docker \ docker-client \ docker-client-latest \ docker-common \ docker-latest \ docker-latest-logrotate \ docker-logrotate \ docker-engine 按照这个教程吧：菜鸟教程 ##检查docker版本 docker version #安装一些必要的系统工具 yum -y install yum-utils device-mapper-persistent-data lvm2 #添加软件源信息 yum-config-manager --add-repo http://mirrors.</description>
+    </item>
+    <item>
+      <title>近期博客</title>
+      <link>http://localhost:1314/posts/93/</link>
+      <pubDate>Mon, 22 Jan 2024 14:18:00 +0800</pubDate>
+      <guid>http://localhost:1314/posts/93/</guid>
+      <description> 其实我还是蛮专一的，小时候喜欢洋娃娃换装，长大喜欢给博客换主题。&#xA;最近有小伙伴发现我这两天主题一直在变化，几秒钟估计就变了，额，无关其他，其实我就是闲的慌，不想开始写论文。我最近换过的几个主题都很好看，所以分享给小伙伴！&#xA;Gplus Typecho 仿 G+ 轻博客主题 主题介绍：https://lms.pub/theme/typecho-theme-gplus.html 主题预览：(我上一个主题） 主题下载：https://github.com/happyet/Gplus Aspire 图文博客模板 主题介绍：https://typechx.com/themes/aspire.html 主题预览： http://aspire.aspirethemes.com/ 主题下载：https://typechx.com/themes/aspire.html Typecho JiangHu 主题 主题介绍：https://www.typecho.wiki/typecho-theme-jianghu.html 主题预览：https://o.ocox.cc/ 主题下载：https://github.com/qian52493/JiangHu MeaWord 一款体现文字美感的极简主题 主题介绍：https://www.bawge.com/archives/63.html 主题预览：https://www.bawge.com/ 主题下载：https://github.com/Meayair/Typecho-Theme-MeaWord lifeList 人生清单主题 主题介绍：https://typecho.work/archives/lifelist.html 主题预览：无 主题下载：https://github.com/XingHehy/lifeList Nabo-theme-typecho 主题介绍：https://nabo.krait.cn/docs/#/course-nabo-theme 主题预览：https://twitter.krait.cn 主题下载：https://github.com/krahy/Nabo-theme-typecho Story-for-Typecho 主题介绍：https://github.com/txperl/Story-for-Typecho 主题预览：https://yumoe.com/ 主题下载：https://github.com/txperl/Story-for-Typecho Moricolor 主题介绍：https://github.com/txperl/Moricolor-for-Typecho 主题预览：https://null.yumoe.com/2-0/ 主题下载：https://github.com/txperl/Moricolor-for-Typecho Word主题 主题介绍：https://xwsir.cn/4031.html 主题预览：https://xwsir.cn/ 主题下载：https://github.com/dinphy/Word 几个typecho主题站 https://typechx.com/ https://typecho.work/ https://www.boke8.net/category/typecho/tetheme/ https://www.typecho.wiki/ </description>
+    </item>
+    <item>
+      <title>这是一个bug</title>
+      <link>http://localhost:1314/posts/81/</link>
+      <pubDate>Mon, 10 Jul 2023 00:04:00 +0800</pubDate>
+      <guid>http://localhost:1314/posts/81/</guid>
+      <description>因为迁移主题的问题，有好多小伙伴反映我使用两个主题，其实我也很茫然不知道怎么回事，很多小伙伴访问首页直接跳转至原先一个主题的首页，甚至前几天我还收到了前面一个主题的文章留言。 首先我很肯定我没有给博客套上CDN，我只给文章使用的的图片设置了CDN，所以不是缓存的问题； 其次，我发现在chrome浏览器中这个问题有甚严重，电脑端访问刚开始出现这个问题我删除所有的浏览记录就解决了，但是在移动端的chrome浏览器无论删除多少遍浏览记录都还是存在这个问题，索性我今天把chrome卸载了又安装一遍，再次打开问题果然好了。 所以最后在我前面一个主题文章留言的小伙伴说声抱歉，我不会回复你们是因为前面一个主题我已经不再使用，如果你能看到这篇文章，希望你能尝试删除本博客的浏览记录或者换成无痕浏览模式试试，或者就是最好不要用chrome浏览器，尝试其他浏览器。如果都没法访问最新博客样式，我只能说声抱歉。&#xA;相逢即是缘分，如果我们不能遇见，可能上天自有安排。</description>
+    </item>
+    <item>
+      <title>Hexo和Notion的神级联动</title>
+      <link>http://localhost:1314/posts/64/</link>
+      <pubDate>Mon, 17 Apr 2023 14:01:00 +0800</pubDate>
+      <guid>http://localhost:1314/posts/64/</guid>
+      <description>完成目标 notion 文章转化为 markdown 格式 在 notion 上写博客 发布 notion 文章到 hexo 项目起源 初代：项目由@Mo Huishou 最初创建使用，但只支持阿里云图床，且不支持文章修改。 目前：由@Doradx 大佬改造后支持多种图床，且支持文章修改 项目教程 Notion-Hexo 联动发布博客 - 自动化部署方案 使用 Notion Database 管理静态博客文章 我的个人流程 上面的教程已经够完整了，但是我喜欢自己写一写自己在这个过程中自己操作上的失误，可以选择性浏览。&#xA;打开下面链接创建一个 notion 机器人，获取Secrets。 机器人链接&#xA;复制模板Untitled 。 授权数据库，打开复制过的模板，点击右上角三个点，点击下面的添加 connection，加上刚刚的机器人。 在博客仓库 settings/secrets/actions中添加环境变量，分别是NOTION_DATABASE_ID, NOTION_TOKEN和 PICBED_CONFIG。下面是大佬的原文： 在博客中目录.github/workflows 新建deploy.yml和notion_sync.yml 这两个我的代码如下： name: Automatic deployment on: push: branches: master paths: - &amp;#34;source/**&amp;#34; - &amp;#34;**.yml&amp;#34; workflow_dispatch: workflow_call: env: GIT_USER: wangyunzi GIT_EMAIL: xueq695@gmail.com jobs: build: name: Ubuntu and node ${{ matrix.</description>
+    </item>
+    <item>
+      <title>五分钟拥有一个在线博客</title>
+      <link>http://localhost:1314/posts/61/</link>
+      <pubDate>Wed, 12 Apr 2023 13:53:00 +0800</pubDate>
+      <guid>http://localhost:1314/posts/61/</guid>
+      <description>写作。拥有。赚取。 xLog 是面向所有人的最棒 链上 开源 博客社区。&#xA;话说很早就有看到我的推圈有大佬在推荐这个项目了，但是刚开始一看到区块链这个东西就感觉是陌生的领域，并且登录什么的都是需要拥有钱包账户，就打了退堂鼓，今天兴致来了之后尝试用邮件注册登录也成功了，体验感真的不错，还听说在开发移动端，也算是一个蛮具有开发前途的领域。支持自定义页面、自定义css以及更多，值得一试。&#xA;我的地址：https://xlog.wangyunzi.com</description>
+    </item>
+    <item>
+      <title>PC使用obsidian发布博客</title>
+      <link>http://localhost:1314/posts/59/</link>
+      <pubDate>Tue, 11 Apr 2023 11:45:00 +0800</pubDate>
+      <guid>http://localhost:1314/posts/59/</guid>
+      <description>这是一篇obsidian发布的博客，会不会与qexo发布博客冲突呢？让我测试一下。 测试了一下，总之在obsidian上写博客之前必须pull一下，要不然会冲突，所以到底应不应该选择这两个作为移动端和电脑端写博客呢？&#xA;Qexo虽然支持其他图床，但就是不支持七牛云图床，真是让我小小的遗憾了一下，只不过在PC端我最终还是觉得obsidian的编辑体验感好极了。至于移动端就用Qexo来发布博客，只不过图床我需要用到手机上的第三方图片上传工具支持，前不久买了一个图床上传软件小白图床和Inbox软件，可以在Inbox记录下一些碎片然后复制一下再在Qexo网页端发布，Inbox最大的好处就是支持图片直接上传到图床，这对我来说便捷了不少。&#xA;Inbox（随时记录）——Qexo网页端发布——Binggo！！！&#xA;虽然上面的流程可以彻底支持我在移动端随时发布hexo博客的需求，但是流程稍微麻烦了一点，希望以后可以更便捷的工具吧。</description>
+    </item>
+    <item>
+      <title>用Qexo写博客</title>
+      <link>http://localhost:1314/posts/58/</link>
+      <pubDate>Tue, 11 Apr 2023 11:40:00 +0800</pubDate>
+      <guid>http://localhost:1314/posts/58/</guid>
+      <description>这是一篇用qexo发布的文章。 正在测试中。 测试完毕。 Qexo官方文档：https://www.oplog.cn/qexo/ 最让我震惊的是还支持hugo框架博客，真的是一个大惊喜，只不过我现在不用hugo博客了😭😭。 部署教程已经很详细了按照教程一步步做就可以了。 但是！！！！我还是要谴责一下我这个粗心的人，要不就是吧变量设置错了要不就是漏掉了一个小步骤，导致部署过程频频出现问题，我真的吐血。但这次还好，自己也找到问题所在了。出现下面错误的最大问题就是我不知道怎么弄的总是将按步骤设置允许所有 IP 地址的连接这一个步骤设置成添加了自己的ip地址，真的是受罪了。&#xA;最后在初始化设置的过程中又出现了这样的问题：&#xA;但没关系，我强制上传了github代码了。🤣😒&#xA;最后大功告成啦，页面真的蛮好看的。💕👍</description>
+    </item>
+    <item>
+      <title>用AI为自己的博客取一个名称</title>
+      <link>http://localhost:1314/posts/56/</link>
+      <pubDate>Mon, 10 Apr 2023 20:37:00 +0800</pubDate>
+      <guid>http://localhost:1314/posts/56/</guid>
+      <description>前言 因为这段时间博客其实小小变动了一些，突然就想起来自己的博客名称和头像都不是自己原创的，当时做博客也是一个偶然的机会，什么都是网上找的，现在想起来既然是属于自己的一片天地，还是尽量全部用自己的东西最好，虽然这个博客不是作为营利性质的存在，但是难保不会出现什么问题。遂还是在网上买了一个定制的头像，但需要两三天之后才能做好。 《长街短梦》是现任中国作家协会主席铁凝所著散文集，主要内容包括：风筝仙女、山不在高、长街短梦、空中朋友四卷。记得还是初中的时候在图书馆看到的这本书，其中里面最广为流传的一句“假若人生犹如一条长街，我就不愿意错过这街上每一处细小的风景。假若人生不过是长街上的一个短梦，我也愿意把这短梦做得生意盎然。”一直作为我的座右铭多年，我想，我可能是个假的文艺青年，偶尔附庸风雅、自怜自爱，却拿不出属于自创的作品，每每想起就是愧疚难当。 至此，想给博客换个名称，或许因为心中无墨的缘故，久久没有思绪迸发出来，或许这是一个需要时间打磨的活，须得细细雕琢打磨，想起AI，或许能够我一些灵感，但是给出的答案又让我哭笑不得，但总之是一份较不错的答案。&#xA;古风文雅的名称 风雅阁 瑾瑜轩 清音轩 韵苑斋 离亭客栈 琴瑟书斋 雅言斋 梦幻阁 醉香楼 晴川阁 有特别内涵、意义的名称 心随博客：表达了“随心所欲”的意思，同时也强调了博客中展现的是作者内心的真实想法和感受。 缘起博客：寓意一切缘起于心，博客中的每篇文章都是由内心的情感所驱动而产生的。 飘逸博客：有自由、轻松、不拘束的意思，表达了作者在博客中想要自由发挥、自由创作的愿望。 心灵驿站：表达了博客是作者内心的驿站，可以随时停靠、留下自己的痕迹和思考。 茗心斋：茗指茶，心指内心，寓意是在这个博客里，作者会分享自己的一些内心感悟，就像品茶一样细细品味。 随意盏：寓意是在博客里，作者可以尽情地发挥自己的创造力和想象力，随意书写自己的故事。 心蝶阁：寓意是在博客里，作者会用自己的文字抒发内心的感受和情感，让读者在阅读中像蝴蝶一样飞舞。 潇洒博客：潇洒寓意着自由自在，博客中的每篇文章都是作者用自己的方式自由地表达内心感受的产物。 灵动居：表达了博客中每篇文章都充满了生命力和灵气，可以给读者带来不一样的感受和启发。 随心乐：寓意是在博客中，作者可以尽情地表达自己的喜怒哀乐，让读者在阅读中感受到作者的情感共鸣和生活态度。 古文名称 琴棋书画楼：寓意是博客是一个文化庇护所，作者可以在这里尽情书写琴棋书画之美，让读者领略到文化的精髓。 洛阳纸贵：表达了作者渴望成为文坛上的佼佼者的愿望，同时也寓意着博客中的每篇文章都会被珍视，成为人们口耳相传的经典之作。 言行一贯斋：寓意是博客中的每篇文章都是作者的真实想法和生活态度，表达了作者追求真诚和一贯的品性之心。 游山玩水阁：寓意是在博客中，作者可以像游山玩水一样自由自在地表达自己的想法和情感，尽情享受写作带来的乐趣。 墨香书屋：墨香寓意着文化的博大精深，表达了作者在博客中要展现自己的文化素养和书写功夫，让读者在阅读中感受到文化的魅力。 意气风发阁：意气风发寓意着作者充满了青春活力和创作激情，表达了作者在博客中要充分发挥自己的创造力和想象力，写出充满活力的文章。 淡泊明志堂：表达了作者淡泊名利的人生态度和坚定的追求，让读者在阅读中感受到淡泊名利的真谛和坚守信念的力量。 挥墨斋：挥墨寓意着自由发挥和尽情书写，表达了作者在博客中要展现自己的创作才华和写作技巧，让读者在阅读中感受到文字的魅力。 草木知音斋：草木知音寓意着作者对自然万物的热爱和感悟，表达了作者要在博客中传达自己对自然的独特理解和感受。 天涯海角阁：寓意是博客是一个可以让作者自由遨游于天涯海角的场所，展现自己的才华和情感，让读者在阅读中感受到自由和远方的魅力。 借用《诗经》 桃之夭夭，灼灼其华：寓意是博客中的每篇文章都如桃花般娇艳动人，让读者心花怒放，陶醉其中。 虽有荣华，亦复何益：表达了作者淡泊名利的人生态度和追求，让读者在阅读中感受到淡泊名利的真谛和坚守信念的力量。 此时无声胜有声：寓意是博客中的文字比声音更能打动人心，作者可以通过自己的笔触传达自己的情感和思想。 虽千万人吾往矣：表达了作者勇往直前、追求梦想的决心和勇气，让读者在阅读中感受到坚定的信念和追求卓越的精神。 燕于飞之矫矫兮，善夫思之，昭昭其仪：表达了作者追求卓越、不断进取的精神和态度，让读者在阅读中感受到积极向上的力量和无限的潜能。 其乐融融，其歌嘤嘤：寓意是博客中的每篇文章都充满欢乐和温馨，作者可以用自己的笔触带给读者欢乐和快乐。 虽小道必有可观者焉：表达了作者的审美观和生活态度，让读者在阅读中感受到生活中的点滴美好和细节之处。 天生我材必有用：寓意是每个人都有自己独特的才华和天赋，作者要在博客中发挥自己的才华和潜能，让读者在阅读中感受到作者的独特魅力和才华横溢。 知我者谓我心忧，不知我者谓我何求：表达了作者独特的思想和情感世界，让读者在阅读中感受到作者深刻的内心世界和精神追求。 昔我往矣，杨柳依依：寓意是博客中的每篇文章都是作者过往经历和感悟的记录，让读者在阅读中感受到时间的流转和生命的 </description>
+    </item>
+    <item>
+      <title>hexo博客安装PWA</title>
+      <link>http://localhost:1314/posts/54/</link>
+      <pubDate>Thu, 06 Apr 2023 20:15:00 +0800</pubDate>
+      <guid>http://localhost:1314/posts/54/</guid>
+      <description>随着移动设备的普及，越来越多的人开始使用移动设备浏览网页。为了提高用户的体验，许多网站都已经实现了PWA（渐进式Web应用程序）功能。&#xA;安装hexo-pwa插件 在Hexo博客中，我们可以使用hexo-pwa插件来实现PWA功能。首先，我们需要在命令行中输入以下命令进行安装：&#xA;npm install hexo-pwa --save 注意：这一步我的博客安装之后会报错，所以我最后卸载的，但是很多教程都有些到这一步。&#xA;安装hexo-service-worker插件 在终端输入下面代码：&#xA;npm install hexo-service-worker --save 配置manifest.json文件 PWA功能的核心是manifest.json文件。这个文件包含了应用程序的名称、图标、主题颜色等信息，浏览器可以根据这些信息来显示应用程序的图标，以及为其创建应用快捷方式。&#xA;在这个文件中，我们需要指定应用程序的各种信息 我们可以在Hexo博客的根目录中创建一个新的文件夹source/，并在其中创建一个名为manifest.json的文件。 同样可以直接通过工具生成，推荐该网站：Need help building your headless eCommerce storefront?。 下面是一个示例（我的示例）：&#xA;{ &amp;#34;theme_color&amp;#34;: &amp;#34;#f69435&amp;#34;, &amp;#34;background_color&amp;#34;: &amp;#34;#f69435&amp;#34;, &amp;#34;display&amp;#34;: &amp;#34;fullscreen&amp;#34;, &amp;#34;scope&amp;#34;: &amp;#34;/&amp;#34;, &amp;#34;start_url&amp;#34;: &amp;#34;/&amp;#34;, &amp;#34;name&amp;#34;: &amp;#34;\u957f\u8857\u77ed\u68a6&amp;#34;, &amp;#34;short_name&amp;#34;: &amp;#34;\u957f\u8857\u77ed\u68a6&amp;#34;, &amp;#34;description&amp;#34;: &amp;#34;\u6b64\u8def\u5c71\u9ad8\u8def\u8fdc\uff0c\u6211\u53ea\u5269\u53e3\u888b\u73ab\u7470\u4e00\u7bc7&amp;#34;, &amp;#34;icons&amp;#34;: [ { &amp;#34;src&amp;#34;: &amp;#34;/img/icon-192x192.png&amp;#34;, &amp;#34;sizes&amp;#34;: &amp;#34;192x192&amp;#34;, &amp;#34;type&amp;#34;: &amp;#34;image/png&amp;#34; }, { &amp;#34;src&amp;#34;: &amp;#34;/img/icon-256x256.png&amp;#34;, &amp;#34;sizes&amp;#34;: &amp;#34;256x256&amp;#34;, &amp;#34;type&amp;#34;: &amp;#34;image/png&amp;#34; }, { &amp;#34;src&amp;#34;: &amp;#34;/img/icon-384x384.png&amp;#34;, &amp;#34;sizes&amp;#34;: &amp;#34;384x384&amp;#34;, &amp;#34;type&amp;#34;: &amp;#34;image/png&amp;#34; }, { &amp;#34;src&amp;#34;: &amp;#34;/img/icon-512x512.</description>
+    </item>
+    <item>
+      <title>新主题</title>
+      <link>http://localhost:1314/posts/47/</link>
+      <pubDate>Sun, 19 Mar 2023 18:04:00 +0800</pubDate>
+      <guid>http://localhost:1314/posts/47/</guid>
+      <description>我又又又又又换主题啦，这个主题是西瓜撞地球这位仁兄推荐的，当时第一眼就喜欢上了，但是这个主题年久失修，作者最后一次提交依然停留在四年前，当时对于hexo主题的结构又不太熟悉，还不知道怎么改动，中途还小小的换过一次，但是其他方面不满意就放弃了，前几天忙的团团转，这几天想休息就想着把这个博客主题研究研究，于是终于还是有点眉目，从周二开始琢磨，到这个周末，刚好一个周的时间，上网搜了很多的教程，终于进入到尾声，其实昨天晚上我还在想，要不就算了，但是还不甘心，毕竟花费了这几天的时间，搞得我生活作息都不规律了。我也不知道为什么一眼就看中了这个主题，直到前几天有个朋友留言说“这个主题看起来很文艺”，我才恍然明白，原来我一直都是钟爱这类偏文艺风的风格。但是不知道这个主题还能坚持多久，想当初信誓旦旦的说自己再也不换主题，现在感觉还是把话说太满，现在只能祈祷与下一个怦然心动的主题相遇的时间晚一点，但这种可能性比较大，大部分的hexo博客主题和hugo博客主题我几乎都浏览完毕了，就遇见这几款中意的。&#xA;这个主题的改造相较还是比较简单的，我发现我写到一半的文章又开始去改动博客设置了，过程中遇到的很多问题我都不会，比如移动端适配，到现在我也不知道我的朋友圈页面怎么适配移动端，等到我哪天灵魂开窍了再说，以及我几天一直在找文章想弄明白GitHub action是怎么回事，发现看懂了，但是自己写一个代码还是不会，所以还是“借鉴”了其他人的代码，弄明白GitHub action的最终目的是想和obsidian连动起来，但是最终还是有一些缺陷，比如为什么obsidian每次使用obsidian-git插件上传改动到仓库的时候都会显示No changes to push，也就是我的改动上传不了GitHub，但是从新关闭再打开仓库上传一次就成功了，如此循环往复，难道这就是我追求的丝滑写博客流程，绝对不是，但我还没找到问题在哪，所以想借用另外一个obsidian插件shell command，大概初步设想是利用shell command运行.\hexo.sh，实现一键上传博客，再为shell command设置一个快捷键，这样在obsidian写好文章，然后点击快捷键的就可以了,可惜的是我还没实现，很好，到这篇博客写完也没弄好。&#xA;根据上面，目前剩下的问题有：&#xA;朋友圈移动端适配 友链页面朋友圈适配 hexo+obsidian+GitHub写作工作流程 obsidian-git插件偶尔会失效 meta栏的爱心点击数据和热度显示已经失效不知道怎么回事。 后续，发现一个问题，hexo-deployer-heroku这个插件好像最近有点问题，导致我使用obsidian git出现问题，当我删掉根目录下.deploy_git这个文件后，obsidian-git就恢复了正常，于是我决定卸载这个插件，我估计前几次我执行GitHub action失败也有这个插件的问题。一个小问题就是我在obsidian里面改动一个小标点的时候它竟然提交不上去，气死我了。以及显示这Aborting commit due to empty commit message是啥意思啊,真的状况百出。&#xA;更新 2023年03月20 1:18 meta栏爱心和热度显示不正确的原因找到：原来是必须使用国内版的leancloud才可以，并且必须是备案的。&#xA;更新 2023年03月20日 11点 朋友圈移动端适配解决。&#xA;更新 2023年03月20日 12:39 友链页面朋友圈适配解决&#xA;更新 2023年03月22日 13:45 安装两个hexo博客速度优化的插件：&#xA;1.安装资源压缩插件 npm install hexo-neat --save 在博客目录文件_config添加如下代码：&#xA;# hexo-neat 压缩 neat_enable: true # 压缩html neat_html: enable: true exclude: # 压缩css neat_css: enable: true exclude: - &amp;#39;**/*.min.css&amp;#39; # 压缩js neat_js: enable: true mangle: true output: compress: exclude: - &amp;#39;**/*.</description>
+    </item>
+    <item>
+      <title>常用命令合集</title>
+      <link>http://localhost:1314/posts/commands/</link>
+      <pubDate>Sun, 13 Nov 2022 11:30:00 +0800</pubDate>
+      <guid>http://localhost:1314/posts/commands/</guid>
+      <description>mangodb的twikoo评论数据上传和下载 下载数据命令&#xA;mongoexport --uri mongodb+srv://xxx:xxx@cluster0.z5rsya3.mongodb.net/ --collection comment --type json --out twikoo-comments.json 上传数据命令&#xA;mongoimport --uri mongodb+srv://xxx:xxx@cluster0.z5rsya3.mongodb.net/test --collection comment --type json --file twikoo-comments.json --mode upsert 说明：&#xA;第一个xxx：数据名称&#xA;第二个xxx：密码&#xA;test是指mangodb数据库的名称&#xA;git命令 写文章常用git&#xA;git add . git commit -m &amp;#34;first commit&amp;#34; git branch -M master git push -u origin master </description>
+    </item>
+    <item>
+      <title>折腾博客的尾声</title>
+      <link>http://localhost:1314/posts/10/</link>
+      <pubDate>Mon, 22 Aug 2022 17:43:00 +0800</pubDate>
+      <guid>http://localhost:1314/posts/10/</guid>
+      <description>这几天十分纠结要不要买一个服务器给我的域名备案，但是自己并没有使用服务器的需求，其次是一个 服务器的价格真的贵的离谱，而且在阿里云购买服务器甚至需要购买三个月以上的。我起初认为像我这样的小博客，没有几个人浏览的网站，像备案这种复杂繁琐正规的流程就应该免除去，但是近来发现“没有备案的域名真的就是寸步难行”。想要给自己的网站加上CDN提速，但是域名没有备案；想使用国内版的leancloud，域名还是没有备案。今天去认真了解各个出售服务器的商家平台，发现大多都不适合我，欸，都有着繁琐的流程和要求，看的我脑袋疼。&#xA;关于这个博客搭建逐渐接近尾声，当然其中还有几个功能我还没设置完全，比如说相册页面，始终在网上没有找到我想要的教程，或是找到了按照教程操作没有成功，至于博客其他的到现在为止都很满意。这几天算是是而非，没有认真的寻找其他的教程，但是还是想吐槽一下hugo的教程实在是太少了，相较于hexo博客，使用hugo博客人屈指可数，只不过我感到十分庆幸的是在这条跌跌撞撞的道路上遇到了很多大佬，正是他们无私的帮助才让我的博客搭建完美落幕。</description>
+    </item>
+    <item>
+      <title>我的博客搭建历程——hugo</title>
+      <link>http://localhost:1314/posts/6/</link>
+      <pubDate>Sat, 28 May 2022 15:44:00 +0800</pubDate>
+      <guid>http://localhost:1314/posts/6/</guid>
+      <description>继hexo搭建博客之后，完成hugo搭建博客就相对简单多了，因为hugo博客的搭建环境和hexo博客搭建环境是一样的，而且两个博客的部署都是一样的只需要记住一些简单常用的命令即可。&#xA;如果非要我选择一个博客来当自己的主站使用的话，我应该会选hugo博客，但是对于我来说，hugo博客的致命打击就是主题好看的太少了，吸引我的是他的速度，我前面搭建的hugo博客速度真的是非常快，hexo博客也有他的缺点，比如我这个博客最大的缺点就是css和图片渲染太慢了，打开我的博客第一眼看到的就是我的白板，极其影响浏览博客的观感，而且一些icon有时候也会比较慢，我刚开始时以为是我用阿里云图床慢的原因，后来发现其实这就是hexo博客的缺点。&#xA;话不多说了，直接上步骤吧！&#xA;安装CHOCOLATEY 其实我也不知道这是什么东西，可以去官网浏览了解，我当时是稀里糊涂的安装的，因为后面安装hugo需要，官网上写了两种安装方式，我不知到这两种有啥区别，我选择简单的一种，打开终端输入&#xA;（ Install with cmd.exe）：&#xA;@&amp;#34;%SystemRoot%\System32\WindowsPowerShell\v1.0\powershell.exe&amp;#34; -NoProfile -InputFormat None -ExecutionPolicy Bypass -Command &amp;#34;[System.Net.ServicePointManager]::SecurityProtocol = 3072; iex ((New-Object System.Net.WebClient).DownloadString(&amp;#39;https://community.chocolatey.org/install.ps1&amp;#39;))&amp;#34; &amp;amp;&amp;amp; SET &amp;#34;PATH=%PATH%;%ALLUSERSPROFILE%\chocolatey\bin&amp;#34; 安装hugo 还是老规矩，自己去官网浏览，这里我们选择用到前面的**Chocolatey (Windows)**安装，这里也可以用两种方式安装，分别是：&#xA;choco install hugo -confirm and&#xA;choco install hugo-extended -confirm 这里博主强烈建议安装第二种方案，因为刚开始我比较随意选择安装了第一种，后面开始上传博客的时候就出现问题了，就会出现你缺少hugo-ectended，没错，就是第二种，后来我安装第二种之后才解决连这个问题。&#xA;安装之后建议检查一下版本，看看安装成功没，输入代码：&#xA;hugo version 就会出现下面：&#xA;这里注意和hexo检查版本的代码不一样。&#xA;建立博客 为博客创建本地项目：&#xA;hugo new site blog-name 进入博客：&#xA;cd blog-name 生成静态文件public&#xA;hugo 更换主题 由于前面我说过hexo主题我很难找到自己喜欢的，但是我认为有几个主题不错，分别是：&#xA;ghcard Ice-Hazymoon/hugo-theme-luna ghcard reuixiy/hugo-theme-meme 自己选择喜欢的去更换即可。&#xA;发布文章 新建文章&#xA;hugo new post/我的第一篇文章.md 本地预览&#xA;hugo sever -D 文章根目录下生成静态文章：</description>
+    </item>
+    <item>
+      <title>hexo博客错误锦集</title>
+      <link>http://localhost:1314/posts/5/</link>
+      <pubDate>Sat, 28 May 2022 11:49:00 +0800</pubDate>
+      <guid>http://localhost:1314/posts/5/</guid>
+      <description>最近刚把博客搭建成功，自己松了一口气，准备美美的为自己博客送上几篇文章欣赏一番，却不料后面的情况又层出不穷，真就是“一波未平，一波又起”，但咱也算是见过大场面的人了，所以冷静了一下，上网迅速一搜，事情差不多就美满解决了。&#xA;就像小时候做数学题一样，这些错误经历过了，不懂得记录下来，其实也算是白白经历了一遭倒不如不去经历这一遭。所以为了弥补本人“鱼的记忆”的缺陷，我决定慢慢将这些问题收集起来，并附上我当时成功的解决经验，这只能算作我自己的解决经验，并不能作为一个普遍经验使用，毕竟人类的真理是通过广大人民群众的共同的经历总结出来的，所以我一个也不能算做正确的、唯一的做法。&#xA;github仓库 当我推送到了github上之后，好家伙，给了我这一个警告，于是连忙使用“搜索大法”，最后的解决的方案是：&#xA;1.首先将本地博客的文件里面删除package-lock.json这个文件夹；&#xA;2.然后打开.gitignore将package-lock.json输入进去：&#xA;最后正常将本地博客push到github仓库，就会发现仓库里面没有了package-lock.json 最后把你删除的package-lock.json文件再还原回来就行了，以后正常推送都没问题了。 推送时出现问题 依旧是git出现问题，这个我上网搜了一下原因，但是我也看不懂，有兴趣可以去知乎上看一下这个回答,但是对于我的解决时终端输入这个代码git config --global core.autocrlf false ，这是廖雪峰老师的解决方案哦&#xA;发布时出现问题 不知道什么原因我用git add .. 推送就会出现这个问题，但是用git add . 就不会出现这个问题，刚开始的解决方案是输入代码 git master 还能有用，但是现在还是直接用git add . 推送&#xA;发布时出现问题 由于自己没有截图意识所以导致问题没有图片，但是是我一次推送的时候显示ssh_exchange_identification: Connection closed by remote host，刚开始上网搜了很多都说是ssh的问题，就是什么公钥、私钥的问题 ，但是我还是没找到具体的解决方案，终于在知乎上看到另一个解决方案:&#xA;我是直接使用第一种解决方法就可以了，因为我时刻都开着代理的，只需要关闭代理就好了</description>
+    </item>
+    <item>
+      <title>我的博客搭建历程——hexo</title>
+      <link>http://localhost:1314/posts/4/</link>
+      <pubDate>Fri, 27 May 2022 15:36:00 +0800</pubDate>
+      <guid>http://localhost:1314/posts/4/</guid>
+      <description>hexo搭建博客学习经过只是作为自己的经验总结，并不作为教程使用，主要是将博客搭建在github上。里面包含自己搭建博客的一些踩的坑，虽然不是很全面，但是可以大概了解。&#xA;前言 如果大家想要了解hexo，可以去hexo官方文档看一下,这里主要以纯教程为主。以下的博客搭建主要是在windows下进行，搭建需要NodeJS和git，强烈推荐在CSDN上搜索就会有一大堆详细的教程，前期还需要准备一个github账号，但是对于第一次安装git需要仔细一点，最好找一个全面的教程一步步跟着做，这些我没有写的但是提到的步骤我都会列在我的文末参考资料。&#xA;实践操作 Github账号 创建一个GitHub账号，新建一个仓库，仓库名字一定要写成name.github.io这样的形式，name可以随便改，选择选择public，然后创建仓库。&#xA;安装hexo 1.打开电脑终端输入以下代码：&#xA;npm install -g hexo-cli 2.查看hexo版本：&#xA;hexo -v 3.此时创建一个博客，我的博客是安装在D:\Blog下面的，你们也可以选择自己喜欢的目录下进行（myblog博客名称，可以更改）&#xA;hexo init myblog 4.进入博客&#xA;cd myblog 5.安装npm&#xA;npm install 6.生成静态文件&#xA;hexo g 7.本地测试&#xA;hexo s 此时一个简单的博客就完成了。&#xA;安装主题 hexo博客官网有很多主题，也可以在github上直接搜索hexo主题 ，可以选择一个你最喜欢，我用的是volantis主题。以下步骤在D:\Blog\myblog下进行&#xA;1.依然是终端打开博客，将主题下载下来&#xA;git clone https://github.com/xaoxuu/hexo-theme-volantis themes/Volantis 2.安装依赖包&#xA;npm i -S hexo-generator-search hexo-generator-feed hexo-renderer-less hexo-autoprefixer hexo-generator-json-content hexo-recommended-posts 3.打开博客目录（D:\Blog\myblog）下的配置文件_config.yml,然后找到如下代码：&#xA;## Themes: https://hexo.io/themes/ theme: landscape 将landscape改为volantis。&#xA;4.接下来就是艰难的主题修改了，用的啥主题就是看主题文档，看着给的提示修改。&#xA;部署到Github 1.打开上个步骤目录下的配置文件_config.yml，然后找到如下代码修改：&#xA;deploy: type: git repo: git@github.com:wangyunzi/wangyunzi.github.io.git（仓库地址，如下图） branch: master（分支） 2.安装插件：&#xA;npm install hexo-deployer-git --save 3.</description>
+    </item>
+    <item>
+      <title>我的博客搭建历程</title>
+      <link>http://localhost:1314/posts/3/</link>
+      <pubDate>Fri, 27 May 2022 14:00:00 +0800</pubDate>
+      <guid>http://localhost:1314/posts/3/</guid>
+      <description>在此之前的几个月，我还是一个对博客搭建一窍不通的小白，已经忘记具体是什么时候开始一步步学会把博客搭建成功的。&#xA;最开始的初心其实很简单，只是想要一个可以供自己随心所欲写作或是属于自己的小空间，于是不断地上网搜索，终于一篇“教小白搭建属于自己的博客”的文章标题映入眼帘，欣然打开文章，然后毫不犹豫的跟着教程一步步的进行，但是结果可想而知，错误、失误以及根本不懂什么意思成为了我搭建博客的绊脚石，不断会有各种错误出现，即使拥有强大的谷歌搜索浏览器的我也束手无策，因为不知从何下手，整个人就是一种深有、懵懂状态，也不知道什么什么神秘的力量驱使我，我好像一定要学会这个教程，直到现在我也觉得很幸运。接下来的步骤其实就是一通乱搜，就像一个初生牛犊到处乱撞，即使已经很久没有熬夜的我竟也开始为了完成这个开始熬夜。&#xA;后来的故事我觉得是一段很奇妙的经历，在网上向陌生人寻求帮助，为此还看到了很多大佬漂亮、实用的博客，正是因为看到了他们的博客，我更加坚定了自己需要搭建自己的博客信念。作为一个几乎很少上网冲浪的00后，却在这段经历中遇到了很多好朋友，即使是面对陌生人的我，即使我向他们询问的问题多么简单，也有很多的大佬依旧耐心帮助我。你向一个陌生人发送了一封邮件，然后邮件的另一方回复你回答你的疑惑，这是一种奇妙的感觉。&#xA;毫无疑问的说，我喜欢上了这种不断创造的过程，即使遇到很多未知的错误。这是一种探索的历程，心中没有太多的杂质，只想要完成一个目标，然后将自己沉浸其中，这样的快乐对于我来讲妙不可言。&#xA;“真实的、永恒的、最高级的快乐，只能从三样东西中取得，就是工作，自我控制，和爱。”&#xA;人总要有一些兴趣爱好才能让自己的生活不再枯燥，但是我已经枯燥很久，我对于外面的世界似乎少了一份好奇心，这样的状态就像一滩死水，激荡不起一丝涟漪，搭建博客刚好让我沉浸在另外一个世界，让我开始有了一些期待和渴望，学习的过程可以抛弃一些原本生活的沉闷，同样也可以结识许多有趣的人，何尝不是生活的另外一种尝试。</description>
+    </item>
+  </channel>
+</rss>

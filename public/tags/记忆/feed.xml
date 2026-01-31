@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>记忆 on 长街短梦</title>
+    <link>http://localhost:1314/tags/%E8%AE%B0%E5%BF%86/</link>
+    <description>Recent content in 记忆 on 长街短梦</description>
+    <generator>Hugo 0.125.1</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Mon, 20 Feb 2023 22:49:00 +0800</lastBuildDate>
+    <atom:link href="http://localhost:1314/tags/%E8%AE%B0%E5%BF%86/feed.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>记忆七宗罪</title>
+      <link>http://localhost:1314/posts/40/</link>
+      <pubDate>Mon, 20 Feb 2023 22:49:00 +0800</pubDate>
+      <guid>http://localhost:1314/posts/40/</guid>
+      <description>记忆七罪（The seven sins of memory)&#xA;记忆七罪分为：健忘、失神、空白、错认、暗示、偏颇及纠缠&#xA;健忘(Transience)：随着时间而记忆褪色或消失。&#xA;失神(Absent-mindedness)：心不在焉，忘东忘西。&#xA;空白(Blocking)：怎样想都想不出来但事后又突然间想回来。&#xA;错认(Misattribution)：张冠李戴，误把幻想当作事实。&#xA;暗示(Suggestibility)：受到外界的误导而扭曲记忆。&#xA;偏颇(Bias)：根据目前的认知或训练，而改变对过去的记忆。&#xA;纠缠(Persistence)：一直无法释怀的恼人回忆。</description>
+    </item>
+  </channel>
+</rss>

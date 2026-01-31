@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Docker on 长街短梦</title>
+    <link>http://localhost:1314/tags/docker/</link>
+    <description>Recent content in Docker on 长街短梦</description>
+    <generator>Hugo 0.125.1</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Wed, 25 Sep 2024 13:24:47 +0800</lastBuildDate>
+    <atom:link href="http://localhost:1314/tags/docker/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>docker代理问题</title>
+      <link>http://localhost:1314/posts/147/</link>
+      <pubDate>Wed, 25 Sep 2024 13:24:47 +0800</pubDate>
+      <guid>http://localhost:1314/posts/147/</guid>
+      <description>最近自己的docker总是抽风出现各种各样的问题，因为事情过于忙碌来不及处理，一些安装的项目秉持能用则用的心态便拖到如今。昨天升级自己的docker项目出现镜像错误问题，自己的镜像都是到处去网上找的，刚开始能用就没换掉，在google了一堆解决方法之后均无果，于是虚心请教杜老师，杜老师很爽快的给出了他的一篇教程，其实我看过这篇教程，但是因为自己下意识的觉得代理这一块对于我比较陌生，所以就没在意，今天按照教程做了之后立马成功，实在感谢杜老师。因为自己在操作的过程中还是有些微不同，所以还是选择复盘一下，这样也才能加深自己的印象，真正选择实操可以选择去看杜老师的这篇借助 CF 解决 Docker 镜像拉取问题。&#xA;bug再现 &amp;emsp;&amp;emsp;首先需要自己注册一个域名，其实我最开始拥有好几个域名，但是自己管理问题导致只剩下一个重要域名，注册新域名的时候竟然发现自己`wangyunzi.xyz`域名处于待售状态，说实话我都不知道这个域名是在哪一个平台上购买的了，我只记得好久没用了，应该没什么大问题，这次为了谨慎起见也是为了方便管理和续费，选择统一在阿里云上注册一个域名，希望大家都能统一注册管理自己的域名吧。 将域名的DNS改成cloudfare，因为我的主域名也是在cloudfare，这样比较方便管理。点击进入新注册的域名，接着点击左侧的workers路由，继续点击管理workers，最后创建。 创建后修改名称之后直接点击部署，之后复制需要的代码进去覆盖掉，然后记得修改第三行的域名成为自己最开始注册的域名。&#xA;let hub_host = &amp;#39;registry-1.docker.io&amp;#39; const auth_url = &amp;#39;https://auth.docker.io&amp;#39; let workers_url = &amp;#39;https://docker.birdteam.net&amp;#39; let UA = [&amp;#39;netcraft&amp;#39;]; function routeByHosts(host) { const routes = { &amp;#34;quay&amp;#34;: &amp;#34;quay.io&amp;#34;, &amp;#34;gcr&amp;#34;: &amp;#34;gcr.io&amp;#34;, &amp;#34;k8s-gcr&amp;#34;: &amp;#34;k8s.gcr.io&amp;#34;, &amp;#34;k8s&amp;#34;: &amp;#34;registry.k8s.io&amp;#34;, &amp;#34;ghcr&amp;#34;: &amp;#34;ghcr.io&amp;#34;, &amp;#34;cloudsmith&amp;#34;: &amp;#34;docker.cloudsmith.io&amp;#34;, &amp;#34;test&amp;#34;: &amp;#34;registry-1.docker.io&amp;#34;, }; if (host in routes) return [ routes[host], false ]; else return [ hub_host, true ]; } const PREFLIGHT_INIT = { headers: new Headers({ &amp;#39;access-control-allow-origin&amp;#39;: &amp;#39;*&amp;#39;, &amp;#39;access-control-allow-methods&amp;#39;: &amp;#39;GET,POST,PUT,PATCH,TRACE,DELETE,HEAD,OPTIONS&amp;#39;, &amp;#39;access-control-max-age&amp;#39;: &amp;#39;1728000&amp;#39;, }), } function makeRes(body, status = 200, headers = {}) { headers[&amp;#39;access-control-allow-origin&amp;#39;] = &amp;#39;*&amp;#39; return new Response(body, { status, headers }) } function newUrl(urlStr) { try { return new URL(urlStr) } catch (err) { return null } } function isUUID(uuid) { const uuidRegex = /^[0-9a-f]{8}-[0-9a-f]{4}-[4][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i; return uuidRegex.</description>
+    </item>
+    <item>
+      <title>docker项目记录</title>
+      <link>http://localhost:1314/posts/113/</link>
+      <pubDate>Mon, 15 Apr 2024 16:10:00 +0800</pubDate>
+      <guid>http://localhost:1314/posts/113/</guid>
+      <description>2024/4/17 问题再现 执行sudo docker compose up -d命令的时候出现这个报错：&#xA;WARN[0000] /www/wwwroot/memos.wangyunzi.com/docker-compose.yml: `version` is obsolete 这个是说版本过期，因为最新版本的docker不支持版本这种（其实我也是因为一个报错才知道的，所以compose里面的代码第一样关于version可以注释掉的，等我找到这个GitHub网页在说）。&#xA;2024/4/16 因为昨天关闭防火墙忘记重新打开了，所以今天的好多个docker安装项目都出现问题，评论通知收不到，freshrss导入不了文档，询问杜老师才知道“Docker是需要防火墙转发数据的”，所以记录一下自己的一个小失误。&#xA;2024/4/15 最近因为买了服务器之后比较兴奋，把几个自己没有尝试的过的项目都安装了一遍，包括Alist、FreshRSS、Artalk、等，因为前面都是随意安装，比如docker一键安装之类的，所以导致文件夹部分比较混乱，加上自己不熟悉docker所以出现了很多bugs，比如因为没有提前关闭镜像导致升级新docker之后镜像一直删不掉，还有就是莫名奇妙删掉了好几个文档，统一docker安装方式，采用docker-compose方式，方便整理。因为这些项目都需要设置反代理，所以首先新建网站xxx.wangyunzi.com，这时候就会有一个网站目录，接下来所有的操作都会在这个网站目录下进行。&#xA;docker升级步骤 直接参考这篇文章，更新docker到最新版本，前面随便找了一篇教程安装docker就开始乱弄，教程如下&#xA;老的教程 直接脚本安装，安装命令如下：&#xA;curl -fsSL https://get.docker.com | bash -s docker --mirror Aliyun 新教程 较旧的 Docker 版本称为 docker 或 docker-engine 。如果已安装这些程序，请卸载它们以及相关的依赖项。 sudo yum remove docker \ docker-client \ docker-client-latest \ docker-common \ docker-latest \ docker-latest-logrotate \ docker-logrotate \ docker-engine 按照这个教程吧：菜鸟教程 ##检查docker版本 docker version #安装一些必要的系统工具 yum -y install yum-utils device-mapper-persistent-data lvm2 #添加软件源信息 yum-config-manager --add-repo http://mirrors.</description>
+    </item>
+  </channel>
+</rss>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Notion on 长街短梦</title>
+    <link>http://localhost:1314/tags/notion/</link>
+    <description>Recent content in Notion on 长街短梦</description>
+    <generator>Hugo 0.125.1</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Mon, 17 Apr 2023 14:01:00 +0800</lastBuildDate>
+    <atom:link href="http://localhost:1314/tags/notion/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Hexo和Notion的神级联动</title>
+      <link>http://localhost:1314/posts/64/</link>
+      <pubDate>Mon, 17 Apr 2023 14:01:00 +0800</pubDate>
+      <guid>http://localhost:1314/posts/64/</guid>
+      <description>完成目标 notion 文章转化为 markdown 格式 在 notion 上写博客 发布 notion 文章到 hexo 项目起源 初代：项目由@Mo Huishou 最初创建使用，但只支持阿里云图床，且不支持文章修改。 目前：由@Doradx 大佬改造后支持多种图床，且支持文章修改 项目教程 Notion-Hexo 联动发布博客 - 自动化部署方案 使用 Notion Database 管理静态博客文章 我的个人流程 上面的教程已经够完整了，但是我喜欢自己写一写自己在这个过程中自己操作上的失误，可以选择性浏览。&#xA;打开下面链接创建一个 notion 机器人，获取Secrets。 机器人链接&#xA;复制模板Untitled 。 授权数据库，打开复制过的模板，点击右上角三个点，点击下面的添加 connection，加上刚刚的机器人。 在博客仓库 settings/secrets/actions中添加环境变量，分别是NOTION_DATABASE_ID, NOTION_TOKEN和 PICBED_CONFIG。下面是大佬的原文： 在博客中目录.github/workflows 新建deploy.yml和notion_sync.yml 这两个我的代码如下： name: Automatic deployment on: push: branches: master paths: - &amp;#34;source/**&amp;#34; - &amp;#34;**.yml&amp;#34; workflow_dispatch: workflow_call: env: GIT_USER: wangyunzi GIT_EMAIL: xueq695@gmail.com jobs: build: name: Ubuntu and node ${{ matrix.</description>
+    </item>
+    <item>
+      <title>Notion搭建个人主页</title>
+      <link>http://localhost:1314/posts/62/</link>
+      <pubDate>Sun, 16 Apr 2023 11:01:00 +0800</pubDate>
+      <guid>http://localhost:1314/posts/62/</guid>
+      <description>在当今数字化的时代，个人主页成为了展示个人品牌、展示个人技能和个人能力的一个非常好的方式。但是，为了搭建一个完整的个人主页，需要具备很多的技能，例如前端开发、设计和服务器管理等等。如果你想要搭建一个个人主页，但又不想花费太多时间和金钱，那么Notion可能就是你需要的工具。近年来，有不少人通过notion直接搭建个人博客，让notion功能发挥到极致。比如NotionNext、notionic、awesome-nextjs-notion-blog、nextjs-notion-starter-kit等优秀开源notion项目，这些都能将notion变成个人博客。 Notion是一款强大的笔记应用，如果想直接分享个人网页的一般步骤如下：&#xA;创建一个新页面 首先，在Notion中创建一个新页面。你可以选择使用Notion提供的模板或者从头开始创建。如果你选择使用模板，Notion提供了许多不同类型的模板，例如简历模板、作品集模板、个人主页模板等等。选择一个合适的模板可以大大缩短你的搭建时间。如果你选择从头开始创建，可以按照自己的需求设计页面的布局。 设计页面布局 接下来，你需要设计页面的布局。Notion提供了许多不同的块类型，包括文本块、图片块、视频块、嵌入式块等等。你可以通过拖拽这些块来组合出你想要的页面布局。你还可以使用Notion提供的样式工具来调整页面的颜色和字体等等。如果你具备设计能力，可以使用Notion来设计出一个非常独特的个人主页。 发布页面 当你完成了页面的设计之后，你可以点击页面右上角的“发布”按钮来发布你的个人主页。Notion会为你生成一个唯一的URL，你可以将它分享给别人来访问你的个人主页。但是我们会发现 通过最后一个步骤分享URL是一串很长的链接，不容易记住，这样自己的个人主页就不容也被人轻易找到。解决这一问题有很多方案，有很多notion网站可以直接帮你解决这一问题，但大多数都是需要交钱才能自定义notion分享的链接，下面我介绍一种方案通过cloudfare来自定义notion分享链接。&#xA;准备一个域名 域名的购买自行选择。&#xA;注册/登录Cloudfare 注册/登录Cloudfare。 将上面购买的域名解析到cloudfare。 上面主页找到Workers； 然后创建一个服务。名字自定义，比如我创建的服务notionworkers； 创建成功后点击快速编辑。 点击打开该网站：https://fruitionsite.com/； 找到开始的Step 2，输入自己的域名和notion分享链接； 删掉cloudfare里面的代码将上面复制的代码粘贴上去，保存并发布； 在浏览器输入你的域名就可以看到你的notion主页了🙌🌞，我的主页地址：https://index.wangyunzi.com </description>
+    </item>
+    <item>
+      <title>浅浅尝试一下Notion Ai</title>
+      <link>http://localhost:1314/posts/41/</link>
+      <pubDate>Fri, 24 Feb 2023 12:13:00 +0800</pubDate>
+      <guid>http://localhost:1314/posts/41/</guid>
+      <description>什么是Notion AI Notion AI是一款人工智能工具，可以自动识别文本中的关键字并根据关键字自动生成相关的标签，自动识别文本中的日期和时间并在日历中自动创建相应的事件，自动分类文档并将其分配到正确的文件夹中。这款工具可以大大提高工作效率和生活质量。&#xA;Notion AI还有许多其他的功能，例如可以自动识别表格中的数据并生成图表，可以自动翻译文本，可以自动分析文本情感并生成情感分析报告等等。总之，Notion AI可以为我们的工作和生活带来很多便利。&#xA;不过，同时也要注意到Notion AI的局限性。它的语言处理能力还有待提高，有时候会出现识别错误的情况。此外，学习过程需要一些时间，需要用户花费一些时间来训练它。最后，Notion AI并不免费，需要付费才能使用更多的功能和服务。&#xA;综上所述，Notion AI是一款非常有用的工具，可以提高我们的工作效率和生活质量，但是也需要注意它的局限性。如果你想提高自己的工作效率，不妨试试Notion AI。&#xA;Notion AI使用体验 最近，我使用了Notion AI来协助我的工作，以下是我的使用体验：&#xA;首先，Notion AI可以自动识别文本中的关键字，并根据关键字自动生成相关的标签。这使得我可以更快速地组织我的文档并且更容易地找到它们。&#xA;其次，Notion AI可以自动识别文本中的日期和时间，并在我的日历中自动创建相应的事件。这让我不必手动输入每个事件，从而节省了时间和精力。&#xA;最后，Notion AI可以自动分类我的文档并将它们分配到正确的文件夹中。这让我的工作流程更加高效和整洁。&#xA;总体来说，使用Notion AI让我更轻松地管理我的工作和日常生活。我强烈推荐这款工具给那些想要提高效率的人们。&#xA;然而，尽管Notion AI非常智能，但是它也有一些缺点。&#xA;首先，它的语言处理能力还有待提高。有时候Notion AI并不能正确识别我的意图，导致生成的标签或事件不正确。&#xA;其次，Notion AI的学习过程需要一些时间。在开始使用时，我需要花费一些时间来训练它，帮助它更好地理解我的用词和文档结构。&#xA;最后，Notion AI并不免费。尽管它提供了免费的试用期，但是如果你想享受更多的功能和服务，你需要付费。&#xA;综上所述，Notion AI是一款非常有用的工具，它可以大大提高我的工作效率和生活质量。虽然它有一些缺点，但是我相信随着技术的不断进步，Notion AI的表现会越来越出色。&#xA;你认为Notion AI会替代人类吗？ 不，我不认为Notion AI会完全替代人类。尽管它可以大大提高我们的工作效率和生活质量，但是它仍然有一些局限性。例如，它的语言处理能力还有待提高，有时候会出现错误的情况。此外，它也不能完全取代人类的创造力和判断力。尽管如此，Notion AI仍然是一款非常有用的工具，可以帮助我们更好地管理我们的工作和日常生活。&#xA;另外，Notion AI的作用范围也是有限的。它更适合处理重复性高、标准化的任务，例如文档归档、日程安排等等。对于那些需要更高层次的思考和决策的工作，仍然需要人类的参与和决策。&#xA;总而言之，Notion AI是一款非常有用的工具，它可以帮助我们更好地管理我们的工作和日常生活，但是它并不能完全取代人类。我们应该把它视为一种辅助工具，而不是替代人类的工具。&#xA;你认为Notion AI和Chat Gpt谁更好？ Notion AI和Chat Gpt是两款不同的工具，难以直接比较哪一个更好。Notion AI主要是一款办公自动化工具，可以提高工作效率和生活质量。它可以自动识别文本中的关键字并根据关键字自动生成相关的标签，识别日期和时间并在日历中自动创建相应的事件，自动分类文档并将其分配到正确的文件夹中。它还可以自动识别表格中的数据并生成图表，自动翻译文本，自动分析文本情感并生成情感分析报告等等。总之，Notion AI可以为我们的工作和生活带来很多便利。&#xA;Chat Gpt则是一款自然语言处理工具，可以进行对话式问答、文本生成、文本摘要等多种任务。它可以模拟人类对话，自动回答用户的问题，生成自然流畅的文本和摘要。它在自然语言处理领域有着非常广泛的应用，例如智能客服、智能问答、自动文摘等等。&#xA;因此，Notion AI和Chat Gpt是两款不同的工具，各自有着不同的应用场景和优势。在使用时应根据具体的需求来选择合适的工具。&#xA;如果你需要一款办公自动化工具来提高工作效率和生活质量，那么Notion AI是一个非常不错的选择。它可以自动化处理一些重复性高、标准化的任务，例如文档归档、日程安排等等。这些任务虽然看似简单，但是如果数量庞大，手动处理起来也是非常费时费力的。使用Notion AI可以让你更加专注于高效率的工作，而不必担心这些琐碎的任务。&#xA;如果你需要一款自然语言处理工具来进行对话式问答、文本生成、文本摘要等任务，那么Chat Gpt是一个很好的选择。它的对话式问答功能可以让你快速回答用户的问题，减少人工客服的压力。它的文本生成和摘要功能可以让你快速生成自然流畅的文本和摘要，节省写作的时间和精力。&#xA;总之，Notion AI和Chat Gpt都是非常有用的工具，各自有着不同的应用场景和优势。在选择使用哪一款工具时，需要根据具体的需求来进行选择。如果你需要办公自动化工具，那么Notion AI是一个不错的选择；如果你需要自然语言处理工具，那么Chat Gpt是一个不错的选择。&#xA;除了Notion AI和Chat Gpt之外，还有许多其他的人工智能工具可以帮助我们提高工作效率和生活质量。例如，OCR技术可以将纸质文档转换为可编辑的电子文档，大大提高了文档处理的效率。语音识别技术可以将语音转换为文字，方便我们记录会议内容、讲座内容等等。智能推荐算法可以根据我们的兴趣和偏好推荐相关的内容，帮助我们更快地获取需要的信息。</description>
+    </item>
+  </channel>
+</rss>

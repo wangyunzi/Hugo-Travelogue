@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Jekyll on 长街短梦</title>
+    <link>http://localhost:1314/tags/jekyll/</link>
+    <description>Recent content in Jekyll on 长街短梦</description>
+    <generator>Hugo 0.125.1</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Sat, 10 Aug 2024 05:42:40 +0800</lastBuildDate>
+    <atom:link href="http://localhost:1314/tags/jekyll/feed.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>obsidian&amp;jekyll进阶(2)</title>
+      <link>http://localhost:1314/posts/134/</link>
+      <pubDate>Sat, 10 Aug 2024 05:42:40 +0800</pubDate>
+      <guid>http://localhost:1314/posts/134/</guid>
+      <description>鉴于一篇只写了电脑端的如何新建文章发布博客，在移动端同样测试之后出现一点问题，于是小小修改一下代码，我的脚本文件夹myob/assets/new_blog.js：&#xA;module.exports = async (params) =&amp;gt; { const { app, quickAddApi } = params; // 设置你的 Obsidian 文件夹路径 const obsidianFolder = &amp;#39;日记本/posts&amp;#39;; // 替换为实际路径 // 输出调试信息 console.log(&amp;#39;Obsidian folder path:&amp;#39;, obsidianFolder); let mdFiles; try { mdFiles = await app.vault.adapter.list(obsidianFolder); console.log(&amp;#39;Files in folder:&amp;#39;, mdFiles.files); } catch (error) { console.error(&amp;#39;Error reading directory:&amp;#39;, error); new Notice(&amp;#39;Failed to read Obsidian folder. Please check the folder path.&amp;#39;); return; } const markdownFiles = mdFiles.files.filter(file =&amp;gt; file.endsWith(&amp;#39;.md&amp;#39;)); // 初始化最大 slug let maxSlug = 0; // 正则表达式匹配 slug const slugPattern = /slug:\s*&amp;#34;(\d+)&amp;#34;/; // 遍历文件以找到最大 slug for (const file of markdownFiles) { const content = await app.</description>
+    </item>
+    <item>
+      <title>obsidian&amp;jekyll进阶(1)</title>
+      <link>http://localhost:1314/posts/133/</link>
+      <pubDate>Fri, 09 Aug 2024 11:29:07 +0800</pubDate>
+      <guid>http://localhost:1314/posts/133/</guid>
+      <description>在上一篇自动化利用obsidian写jekyll博客之后，日常写博客又会出现一个问题，就是左侧文件列表栏的文件太多，每次都需要特意打开posts文件夹然后滑到最下面新建一个博客文章，虽然有了Templater插件，但是这个插件有点过于死板了，于是想到了QuickAdd插件，通过运行一个JavaScript脚本新建文章并且自动填充好yaml，包括date、slug以及title等日常必须，如果slug还是需要自己填写的话就未必有点得不偿失了，有可能自己半个月不写博客导致忘记上一篇slug数据，因此每次都要自己重新点开上一篇的数据信息查看，脚本最好能后遍历自己的所有文章slug然后选取最大的数字最后只需要在新建文章＋1即可。&#xA;具体操作：需要安装obsidian-quickadd插件，添加宏步骤中的脚本动作即可。脚本信息如下：&#xA;module.exports = async (params) =&amp;gt; { const { app, quickAddApi } = params; const path = require(&amp;#39;path&amp;#39;); // 设置你的 Obsidian 文件夹路径 const obsidianFolder = &amp;#39;日记本/posts&amp;#39;; // 替换为实际路径 // 输出调试信息 console.log(&amp;#39;Obsidian folder path:&amp;#39;, obsidianFolder); let mdFiles; try { mdFiles = await app.vault.adapter.list(obsidianFolder); console.log(&amp;#39;Files in folder:&amp;#39;, mdFiles.files); } catch (error) { console.error(&amp;#39;Error reading directory:&amp;#39;, error); new Notice(&amp;#39;Failed to read Obsidian folder. Please check the folder path.&amp;#39;); return; } const markdownFiles = mdFiles.</description>
+    </item>
+    <item>
+      <title>Obsidian笔记同步到jekyll博客</title>
+      <link>http://localhost:1314/posts/132/</link>
+      <pubDate>Thu, 08 Aug 2024 08:18:00 +0800</pubDate>
+      <guid>http://localhost:1314/posts/132/</guid>
+      <description>本来这篇文章应该在昨天就写好，但是鉴于自己流程写的有点乱加上最后非要请AI 帮我折腾一下就导致出现问题了，然后自己重新慢慢开始部署一番，终于才算把流程弄好。&#xA;前提条件 GitHub 账户：你需要一个 GitHub 账户，并拥有两个仓库：一个用于 Obsidian 笔记（wangyunzi/myob），一个用于博客（wangyunzi/wangyunzi.github.io）。 GitHub Personal Access Token (PAT)：你需要生成三个具有 repo 和 workflow 权限的 PAT，复制到备忘录中以备后用。 GitHub Actions：你需要在两个仓库中设置 GitHub Actions 工作流。 在博客仓库中设置 GitHub Actions 进入你的博客仓库（wangyunzi/wangyunzi.github.io）。 创建一个新的文件夹 .github/workflows。 在该文件夹中创建一个名为 Sync_Obsidian.yml 的文件，内容如下： name: Sync_Obsidian on: workflow_dispatch: inputs: ref: description: &amp;#39;Branch to deploy&amp;#39; required: true default: &amp;#39;master&amp;#39; jobs: sync: runs-on: ubuntu-latest steps: - name: Checkout Obsidian repository uses: actions/checkout@v3 with: repository: wangyunzi/myob path: myob token: ${{ secrets.OBSIDIAN_REPO_TOKEN }} - name: Checkout blog repository uses: actions/checkout@v3 with: repository: wangyunzi/wangyunzi.</description>
+    </item>
+    <item>
+      <title>使用GitHub Actions将Obsidian笔记同步到jekyll博客</title>
+      <link>http://localhost:1314/posts/131/</link>
+      <pubDate>Wed, 07 Aug 2024 20:00:00 +0800</pubDate>
+      <guid>http://localhost:1314/posts/131/</guid>
+      <description>介绍 在本教程中，我们将介绍如何使用 GitHub Actions 自动将 Obsidian 笔记同步到 GitHub 上的博客仓库中的特定文件夹。我们将使用 rsync 工具来同步文件，并利用 GitHub Actions 进行自动化处理。&#xA;前提条件 GitHub 账户：你需要一个 GitHub 账户，并拥有两个仓库：一个用于 Obsidian 笔记（wangyunzi/myob），一个用于博客（wangyunzi/wangyunzi.github.io）。 GitHub Personal Access Token (PAT)：你需要生成一个具有 repo 和 workflow 权限的 PAT。 GitHub Actions：你需要在两个仓库中设置 GitHub Actions 工作流。 步骤 （1）生成 Personal Access Token (PAT) 登录到 GitHub，进入 Settings。 选择 Developer settings &amp;gt; Personal access tokens。 点击 Generate new token。 输入名称，勾选 repo 和 workflow 权限。 生成 token 并复制备用。 （2）在博客仓库中设置 GitHub Actions 进入你的博客仓库（wangyunzi/wangyunzi.github.io）。 创建一个新的文件夹 .github/workflows。 在该文件夹中创建一个名为 Sync_Obsidian.</description>
+    </item>
+  </channel>
+</rss>

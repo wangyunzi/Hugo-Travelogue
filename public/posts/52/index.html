@@ -1,0 +1,823 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1314&amp;path=livereload" data-no-instant defer></script>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+  <title>白嫖党如何美化Windows桌面</title>
+  
+  <meta name="description" content="前段时间不知道怎么弄的，导致电脑崩坏黑屏了，只得重新安装新系统，这次没有找专业人员帮我安装那些乱七八糟的系统，有幸认识一位大佬（嗜血星空），有技术、有实力，远程教我安装系统，平时电脑有啥小毛病都是请教大佬，实在为此感到抱歉，这次大佬帮我安装的是windows11专业版，流畅多了，windows11更新后的界面确实比以前好看一些，当时只是匆匆安装了一些必备的软件还没来得及好好仔细查看，今天打开电脑心血来潮就想装扮一下电脑，虽然知道最后都是归于原生状态，但还是享受折腾的的过程。当初我还是蛮喜欢苹果电脑的UI的，但由于当时选电脑的时候多数人都劝我选择windows电脑放弃了苹果的恋想，但如果现在让我重新选择一次，我觉得我应该选择苹果电脑，扯不上那些什么乱七八糟的。 折腾了一番发现了几个美化桌面的网站和工具都挺好用的，最后还是尝试把桌面UI改造成苹果电脑的样式，结果就是加载东西太多电脑呼啦啦的响，估计明天就会还原哈哈。
+如下图，就是最终形态，个人觉得还是挺流畅且舒适的。
+桌面页面 启动台页面 偏好设置页面 桌面壁纸 折腾桌面美化的人多半都是在折腾桌面壁纸，能找到一款称心如意的壁纸不容易。静态桌面壁纸我建议可以上Pixabay网站去看看，上面的图片都是高清且免费的，对于白嫖党很友好。关于动态壁纸，曾经我也用过一段时间的Wallpaper Engine，说实话里面的创意工坊实在是功能强大，好看的动态壁纸实在是太太太太多了，但终究是第三方壁纸软件，占用内存大，每次启动都会耗费开机时间，不能原生态的适应windows，开机之后还是会显示原来的壁纸等一会儿在加载出来动态壁纸，实在不爽。这次我使用的是#Lively Wallpaper(开源视频桌面)，功能和Wallpaper Engine类似，可以使用自己的动态壁纸，虽然没有Wallpaper Engine那样强大的创意工坊支持，但是这个软件是完全免费的，占用内存方面也只有100M左右，可以在微软商店下载。需要的动态壁纸也可以在https://mylivewallpapers.com/和https://wallpaperwaifu.com/这两个网站下载。 仿MAC软件 仿MAC的DOCK栏目的软件有几个特别出名的，但是最中一一使用下来还是MyDockFinder最流畅，MyDockFinder在steam里需要花钱，但白嫖党的宗旨是什么：白嫖、白嫖还是Tm的白嫖。其实不是啦，这个软件如果真能让我觉得值得的话，我就算饿肚子也要支持作者的，主要是steam里面没钱了，好久没有充值steam都搞忘以前自己怎么充值的了。免费版的MyDockFinder在果核剥壳网站可以找到（每次自己白嫖软件都在这里找的，这也算是为他们打一次广告了），网站地址：https://www.ghxi.com/mydockfinder.html。
+隐藏任务栏 这个软件的dock栏回和windows自带原生任务栏冲突，需要一款软件把windows自带任务栏彻底隐藏，推荐 ## 原创Win7、Win10 显示/隐藏任务栏小工具-TaskBarHider V0.1.2.1##这个软件也算是无意间发现的，真好用。
+其间还发现了几个比较有意思的美化的网站和工具，到那时弄下来一个桌面华丽花哨，加上小破电脑真的带不动，果断放弃，能够有这样一个简单的仿生dock栏也就觉得很好看了，但还是想记录一下：
+translucentTB 微软商店（任务栏透明工具，但windows11好像不管用） rocketdock的插件 https://punklabs.com/ 没看懂这是干什么的 雨滴插件 地址：https://forum.rainmeter.net/ 果核剥壳地址：果核剥壳地址 Mytoolbox https://winmoes.com/tools/12948.html https://www.lanzoux.com/b00nb16if 这个网站真的强推，工具页面很好看而且可操作性强，美化方面也挺多的。 ">
+
+  
+  
+  <link rel="stylesheet" href="https://blog.wangyunzi.com/json/family=Merriweather.css">
+  
+  <link rel="stylesheet" href="https://blog.wangyunzi.com/json/family=Lato.css">
+  
+  <link rel="stylesheet" href="https://blog.wangyunzi.com/json/family=Source.css">
+  
+  <link rel="stylesheet" href="https://blog.wangyunzi.com/json/fontawesome6.6.min.css">
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material&#43;Icons">
+  
+
+  <link rel="stylesheet" href="/assets/css/vendors/slidebars.min.css">
+  <link rel="stylesheet" href="/assets/css/vendors/rrssb.css">
+  <link rel="stylesheet" href="/assets/css/base.css">
+  <link rel="stylesheet" href="/assets/css/layout.css">
+  <link rel="stylesheet" href="/assets/css/custom.css">
+  <link rel="stylesheet" href="/assets/css/loader.css">
+  <link rel="stylesheet" href="/assets/css/sidebar.css">
+  <link rel="stylesheet" href="/assets/css/syntax-highlighting.css">
+
+  <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="/favicon.ico" type="image/x-icon">
+
+  <link rel="canonical" href="http://localhost:1314/posts/52/">
+
+  <meta property="og:url" content="http://localhost:1314/posts/52/">
+  <meta property="og:site_name" content="长街短梦">
+  <meta property="og:title" content="白嫖党如何美化Windows桌面">
+  <meta property="og:description" content="前段时间不知道怎么弄的，导致电脑崩坏黑屏了，只得重新安装新系统，这次没有找专业人员帮我安装那些乱七八糟的系统，有幸认识一位大佬（嗜血星空），有技术、有实力，远程教我安装系统，平时电脑有啥小毛病都是请教大佬，实在为此感到抱歉，这次大佬帮我安装的是windows11专业版，流畅多了，windows11更新后的界面确实比以前好看一些，当时只是匆匆安装了一些必备的软件还没来得及好好仔细查看，今天打开电脑心血来潮就想装扮一下电脑，虽然知道最后都是归于原生状态，但还是享受折腾的的过程。当初我还是蛮喜欢苹果电脑的UI的，但由于当时选电脑的时候多数人都劝我选择windows电脑放弃了苹果的恋想，但如果现在让我重新选择一次，我觉得我应该选择苹果电脑，扯不上那些什么乱七八糟的。 折腾了一番发现了几个美化桌面的网站和工具都挺好用的，最后还是尝试把桌面UI改造成苹果电脑的样式，结果就是加载东西太多电脑呼啦啦的响，估计明天就会还原哈哈。
+如下图，就是最终形态，个人觉得还是挺流畅且舒适的。
+桌面页面 启动台页面 偏好设置页面 桌面壁纸 折腾桌面美化的人多半都是在折腾桌面壁纸，能找到一款称心如意的壁纸不容易。静态桌面壁纸我建议可以上Pixabay网站去看看，上面的图片都是高清且免费的，对于白嫖党很友好。关于动态壁纸，曾经我也用过一段时间的Wallpaper Engine，说实话里面的创意工坊实在是功能强大，好看的动态壁纸实在是太太太太多了，但终究是第三方壁纸软件，占用内存大，每次启动都会耗费开机时间，不能原生态的适应windows，开机之后还是会显示原来的壁纸等一会儿在加载出来动态壁纸，实在不爽。这次我使用的是#Lively Wallpaper(开源视频桌面)，功能和Wallpaper Engine类似，可以使用自己的动态壁纸，虽然没有Wallpaper Engine那样强大的创意工坊支持，但是这个软件是完全免费的，占用内存方面也只有100M左右，可以在微软商店下载。需要的动态壁纸也可以在https://mylivewallpapers.com/和https://wallpaperwaifu.com/这两个网站下载。 仿MAC软件 仿MAC的DOCK栏目的软件有几个特别出名的，但是最中一一使用下来还是MyDockFinder最流畅，MyDockFinder在steam里需要花钱，但白嫖党的宗旨是什么：白嫖、白嫖还是Tm的白嫖。其实不是啦，这个软件如果真能让我觉得值得的话，我就算饿肚子也要支持作者的，主要是steam里面没钱了，好久没有充值steam都搞忘以前自己怎么充值的了。免费版的MyDockFinder在果核剥壳网站可以找到（每次自己白嫖软件都在这里找的，这也算是为他们打一次广告了），网站地址：https://www.ghxi.com/mydockfinder.html。
+隐藏任务栏 这个软件的dock栏回和windows自带原生任务栏冲突，需要一款软件把windows自带任务栏彻底隐藏，推荐 ## 原创Win7、Win10 显示/隐藏任务栏小工具-TaskBarHider V0.1.2.1##这个软件也算是无意间发现的，真好用。
+其间还发现了几个比较有意思的美化的网站和工具，到那时弄下来一个桌面华丽花哨，加上小破电脑真的带不动，果断放弃，能够有这样一个简单的仿生dock栏也就觉得很好看了，但还是想记录一下：
+translucentTB 微软商店（任务栏透明工具，但windows11好像不管用） rocketdock的插件 https://punklabs.com/ 没看懂这是干什么的 雨滴插件 地址：https://forum.rainmeter.net/ 果核剥壳地址：果核剥壳地址 Mytoolbox https://winmoes.com/tools/12948.html https://www.lanzoux.com/b00nb16if 这个网站真的强推，工具页面很好看而且可操作性强，美化方面也挺多的。 ">
+  <meta property="og:locale" content="zh-cn">
+  <meta property="og:type" content="article">
+  <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2023-04-05T14:20:00+08:00">
+    <meta property="article:modified_time" content="2023-04-05T14:20:00+08:00">
+    <meta property="article:tag" content="Windows11">
+    <meta property="article:tag" content="美化">
+
+  <meta name="twitter:card" content="summary"><meta name="twitter:title" content="白嫖党如何美化Windows桌面">
+<meta name="twitter:description" content="前段时间不知道怎么弄的，导致电脑崩坏黑屏了，只得重新安装新系统，这次没有找专业人员帮我安装那些乱七八糟的系统，有幸认识一位大佬（嗜血星空），有技术、有实力，远程教我安装系统，平时电脑有啥小毛病都是请教大佬，实在为此感到抱歉，这次大佬帮我安装的是windows11专业版，流畅多了，windows11更新后的界面确实比以前好看一些，当时只是匆匆安装了一些必备的软件还没来得及好好仔细查看，今天打开电脑心血来潮就想装扮一下电脑，虽然知道最后都是归于原生状态，但还是享受折腾的的过程。当初我还是蛮喜欢苹果电脑的UI的，但由于当时选电脑的时候多数人都劝我选择windows电脑放弃了苹果的恋想，但如果现在让我重新选择一次，我觉得我应该选择苹果电脑，扯不上那些什么乱七八糟的。 折腾了一番发现了几个美化桌面的网站和工具都挺好用的，最后还是尝试把桌面UI改造成苹果电脑的样式，结果就是加载东西太多电脑呼啦啦的响，估计明天就会还原哈哈。
+如下图，就是最终形态，个人觉得还是挺流畅且舒适的。
+桌面页面 启动台页面 偏好设置页面 桌面壁纸 折腾桌面美化的人多半都是在折腾桌面壁纸，能找到一款称心如意的壁纸不容易。静态桌面壁纸我建议可以上Pixabay网站去看看，上面的图片都是高清且免费的，对于白嫖党很友好。关于动态壁纸，曾经我也用过一段时间的Wallpaper Engine，说实话里面的创意工坊实在是功能强大，好看的动态壁纸实在是太太太太多了，但终究是第三方壁纸软件，占用内存大，每次启动都会耗费开机时间，不能原生态的适应windows，开机之后还是会显示原来的壁纸等一会儿在加载出来动态壁纸，实在不爽。这次我使用的是#Lively Wallpaper(开源视频桌面)，功能和Wallpaper Engine类似，可以使用自己的动态壁纸，虽然没有Wallpaper Engine那样强大的创意工坊支持，但是这个软件是完全免费的，占用内存方面也只有100M左右，可以在微软商店下载。需要的动态壁纸也可以在https://mylivewallpapers.com/和https://wallpaperwaifu.com/这两个网站下载。 仿MAC软件 仿MAC的DOCK栏目的软件有几个特别出名的，但是最中一一使用下来还是MyDockFinder最流畅，MyDockFinder在steam里需要花钱，但白嫖党的宗旨是什么：白嫖、白嫖还是Tm的白嫖。其实不是啦，这个软件如果真能让我觉得值得的话，我就算饿肚子也要支持作者的，主要是steam里面没钱了，好久没有充值steam都搞忘以前自己怎么充值的了。免费版的MyDockFinder在果核剥壳网站可以找到（每次自己白嫖软件都在这里找的，这也算是为他们打一次广告了），网站地址：https://www.ghxi.com/mydockfinder.html。
+隐藏任务栏 这个软件的dock栏回和windows自带原生任务栏冲突，需要一款软件把windows自带任务栏彻底隐藏，推荐 ## 原创Win7、Win10 显示/隐藏任务栏小工具-TaskBarHider V0.1.2.1##这个软件也算是无意间发现的，真好用。
+其间还发现了几个比较有意思的美化的网站和工具，到那时弄下来一个桌面华丽花哨，加上小破电脑真的带不动，果断放弃，能够有这样一个简单的仿生dock栏也就觉得很好看了，但还是想记录一下：
+translucentTB 微软商店（任务栏透明工具，但windows11好像不管用） rocketdock的插件 https://punklabs.com/ 没看懂这是干什么的 雨滴插件 地址：https://forum.rainmeter.net/ 果核剥壳地址：果核剥壳地址 Mytoolbox https://winmoes.com/tools/12948.html https://www.lanzoux.com/b00nb16if 这个网站真的强推，工具页面很好看而且可操作性强，美化方面也挺多的。 ">
+
+</head>
+
+<body>
+  <div class="loader">
+  <svg version="1.1" id="loader-1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="32px" height="32px" viewBox="0 0 50 50" style="enable-background:new 0 0 50 50;" xml:space="preserve">
+    <filter id="dropshadow" height="130%">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="10"/>
+      <feOffset dx="0" dy="0" result="offsetblur"/>
+      <feMerge>
+        <feMergeNode/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <path d="M43.935,25.145c0-10.318-8.364-18.683-18.683-18.683c-10.318,0-18.683,8.365-18.683,18.683h4.068c0-8.071,6.543-14.615,14.615-14.615c8.072,0,14.615,6.543,14.615,14.615H43.935z">
+      <animateTransform attributeType="xml" attributeName="transform" type="rotate" from="0 25 25" to="360 25 25" dur="0.5s" repeatCount="indefinite"/>
+    </path>
+  </svg>
+</div>
+
+
+  <main id="sb-site">
+    <div class="container">
+      <div class="wrapper">
+        
+<div class="post">
+  
+  
+  
+    
+    <p class="post-reading-time">&#126; 1 min</p>
+  
+
+  <header class="post-header">
+    
+    <h1 class="post-title">白嫖党如何美化Windows桌面</h1>
+  </header>
+
+  <article class="post-content">
+    <p>前段时间不知道怎么弄的，导致电脑崩坏黑屏了，只得重新安装新系统，这次没有找专业人员帮我安装那些乱七八糟的系统，有幸认识一位大佬（<a href="https://sxxkearth.github.io/">嗜血星空</a>），有技术、有实力，远程教我安装系统，平时电脑有啥小毛病都是请教大佬，实在为此感到抱歉，这次大佬帮我安装的是windows11专业版，流畅多了，windows11更新后的界面确实比以前好看一些，当时只是匆匆安装了一些必备的软件还没来得及好好仔细查看，今天打开电脑心血来潮就想装扮一下电脑，虽然知道最后都是归于原生状态，但还是享受折腾的的过程。当初我还是蛮喜欢苹果电脑的UI的，<del>但由于当时选电脑的时候多数人都劝我选择windows电脑放弃了苹果的恋想，但如果现在让我重新选择一次，我觉得我应该选择苹果电脑，扯不上那些什么乱七八糟的。</del>
+折腾了一番发现了几个美化桌面的网站和工具都挺好用的，最后还是尝试把桌面UI改造成苹果电脑的样式，结果就是加载东西太多电脑呼啦啦的响，估计明天就会<strong>还原</strong>哈哈。</p>
+<p>如下图，就是最终形态，个人觉得还是挺流畅且舒适的。</p>
+<h6 id="桌面页面">桌面页面</h6>
+<p><img src="https://blog.wangyunzi.com/2023/04/05/1680677075.png" alt="屏幕截图 2023-04-05 141525.png" loading="lazy"></p>
+<h6 id="启动台页面">启动台页面</h6>
+<p><img src="https://blog.wangyunzi.com/2023/04/05/1680677136.png" alt="屏幕截图 2023-04-05 141646.png" loading="lazy"></p>
+<h6 id="偏好设置页面">偏好设置页面</h6>
+<p><img src="https://blog.wangyunzi.com/2023/04/05/1680677148.png" alt="屏幕截图 2023-04-05 141849.png" loading="lazy"></p>
+<h4 id="桌面壁纸">桌面壁纸</h4>
+<p>折腾桌面美化的人多半都是在折腾桌面壁纸，能找到一款称心如意的壁纸不容易。静态桌面壁纸我建议可以上<a href="https://pixabay.com/zh/">Pixabay</a>网站去看看，上面的图片都是高清且免费的，对于白嫖党很友好。关于动态壁纸，曾经我也用过一段时间的Wallpaper Engine，说实话里面的创意工坊实在是功能强大，好看的动态壁纸实在是<strong>太太太太</strong>多了，但终究是第三方壁纸软件，占用内存大，每次启动都会耗费开机时间，不能原生态的适应windows，开机之后还是会显示原来的壁纸等一会儿在加载出来动态壁纸，实在不爽。这次我使用的是<a href="https://www.rocksdanister.com/lively/">#Lively Wallpaper(开源视频桌面)</a>，功能和Wallpaper Engine类似，可以使用自己的动态壁纸，虽然没有Wallpaper Engine那样强大的创意工坊支持，但是这个软件是完全免费的，占用内存方面也只有100M左右，可以在微软商店下载。需要的动态壁纸也可以在<a href="https://mylivewallpapers.com/">https://mylivewallpapers.com/</a>和<a href="https://wallpaperwaifu.com/">https://wallpaperwaifu.com/</a>这两个网站下载。
+<img src="https://blog.wangyunzi.com/2023/04/05/1680677900.png" alt="image.png" loading="lazy"></p>
+<h4 id="仿mac软件">仿MAC软件</h4>
+<p>仿MAC的DOCK栏目的软件有几个特别出名的，但是最中一一使用下来还是MyDockFinder最流畅，MyDockFinder在steam里需要花钱，但白嫖党的宗旨是什么：白嫖、白嫖还是<sup>Tm</sup>的白嫖。其实不是啦，这个软件如果真能让我觉得值得的话，我就算饿肚子也要支持作者的，主要是steam里面没钱了，好久没有充值steam都搞忘以前自己怎么充值的了。免费版的MyDockFinder在果核剥壳网站可以找到（每次自己白嫖软件都在这里找的，这也算是为他们打一次广告了），网站地址：https://www.ghxi.com/mydockfinder.html。</p>
+<h6 id="隐藏任务栏">隐藏任务栏</h6>
+<p>这个软件的dock栏回和windows自带原生任务栏冲突，需要一款软件把windows自带任务栏彻底隐藏，推荐 ## <a href="https://zyhh.me/delphi/taskbarhider.html" title="[原创]Win7、Win10 显示/隐藏任务栏小工具-TaskBarHider V0.1.2.1">原创Win7、Win10 显示/隐藏任务栏小工具-TaskBarHider V0.1.2.1</a>##这个软件也算是无意间发现的，真好用。</p>
+<p>其间还发现了几个比较有意思的美化的网站和工具，到那时弄下来一个桌面华丽花哨，加上小破电脑真的带不动，果断放弃，能够有这样一个简单的仿生dock栏也就觉得很好看了，但还是想记录一下：</p>
+<h5 id="translucenttb">translucentTB</h5>
+<ul>
+<li>微软商店（任务栏透明工具，但windows11好像不管用）</li>
+</ul>
+<h5 id="rocketdock的插件">rocketdock的插件</h5>
+<ul>
+<li><a href="https://punklabs.com/">https://punklabs.com/</a></li>
+<li>没看懂这是干什么的</li>
+</ul>
+<h5 id="雨滴插件">雨滴插件</h5>
+<ul>
+<li>地址：<a href="https://forum.rainmeter.net/">https://forum.rainmeter.net/</a></li>
+<li>果核剥壳地址：<a href="https://www.ghxi.com/rainmeter.html">果核剥壳地址</a></li>
+</ul>
+<h5 id="mytoolbox">Mytoolbox</h5>
+<ul>
+<li><a href="https://winmoes.com/tools/12948.html">https://winmoes.com/tools/12948.html</a> </li>
+<li><a href="https://www.lanzoux.com/b00nb16if">https://www.lanzoux.com/b00nb16if</a></li>
+<li>这个网站真的强推，工具页面很好看而且可操作性强，美化方面也挺多的。</li>
+</ul>
+
+  </article>
+
+  <footer class="post-meta">
+    
+    <div class="meta">
+      <h3 class="meta-title">Date</h3>
+      <span class="meta-content">April 5, 2023</span>
+    </div>
+    
+
+    
+    
+    
+
+    
+    
+    
+      
+      <div class="meta">
+        <h3 class="meta-title">Categories</h3>
+        <span class="meta-content">
+      
+            生活&nbsp;
+          
+        </span>
+      </div>
+      
+    
+
+    
+    
+    
+      
+      <div class="meta">
+        <h3 class="meta-title">Tags</h3>
+        <span class="meta-content">
+      
+            Windows11&nbsp;美化&nbsp;
+          
+        </span>
+      </div>
+      
+    
+  </footer>
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <div class="post-share">
+    <ul class="rrssb-buttons tiny-format clearfix">
+      
+      <li class="rrssb-facebook">
+        <a href="https://www.facebook.com/sharer/sharer.php?u=http%253A%252F%252Flocalhost%253A1314%252Fposts%252F52%252F" title="Facebook" class="popup">
+          <span class="rrssb-icon">
+            <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="28px" height="28px" viewBox="0 0 28 28" enable-background="new 0 0 28 28" xml:space="preserve">
+              <path d="M27.825,4.783c0-2.427-2.182-4.608-4.608-4.608H4.783c-2.422,0-4.608,2.182-4.608,4.608v18.434
+              c0,2.427,2.181,4.608,4.608,4.608H14V17.379h-3.379v-4.608H14v-1.795c0-3.089,2.335-5.885,5.192-5.885h3.718v4.608h-3.726
+              c-0.408,0-0.884,0.492-0.884,1.236v1.836h4.609v4.608h-4.609v10.446h4.916c2.422,0,4.608-2.188,4.608-4.608V4.783z"/>
+            </svg>
+          </span>
+          <span class="rrssb-text">Post</span>
+        </a>
+      </li>
+      
+
+      
+      <li class="rrssb-twitter">
+        <a href="https://twitter.com/intent/tweet?url=http%253A%252F%252Flocalhost%253A1314%252Fposts%252F52%252F&amp;text=%25E7%2599%25BD%25E5%25AB%2596%25E5%2585%259A%25E5%25A6%2582%25E4%25BD%2595%25E7%25BE%258E%25E5%258C%2596Windows%25E6%25A1%258C%25E9%259D%25A2" title="Twitter" class="popup">
+          <span class="rrssb-icon">
+            <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="28px" height="28px" viewBox="0 0 28 28" enable-background="new 0 0 28 28" xml:space="preserve">
+              <path d="M24.253,8.756C24.689,17.08,18.297,24.182,9.97,24.62c-3.122,0.162-6.219-0.646-8.861-2.32
+              c2.703,0.179,5.376-0.648,7.508-2.321c-2.072-0.247-3.818-1.661-4.489-3.638c0.801,0.128,1.62,0.076,2.399-0.155
+              C4.045,15.72,2.215,13.6,2.115,11.077c0.688,0.275,1.426,0.407,2.168,0.386c-2.135-1.65-2.729-4.621-1.394-6.965
+              C5.575,7.816,9.54,9.84,13.803,10.071c-0.842-2.739,0.694-5.64,3.434-6.482c2.018-0.623,4.212,0.044,5.546,1.683
+              c1.186-0.213,2.318-0.662,3.329-1.317c-0.385,1.256-1.247,2.312-2.399,2.942c1.048-0.106,2.069-0.394,3.019-0.851
+              C26.275,7.229,25.39,8.196,24.253,8.756z"/>
+            </svg>
+          </span>
+          <span class="rrssb-text">Tweet</span>
+        </a>
+      </li>
+      
+
+      
+
+      
+
+      
+      <li class="rrssb-reddit">
+        <a href="https://www.reddit.com/submit?url=http%253A%252F%252Flocalhost%253A1314%252Fposts%252F52%252F&amp;title=%25E7%2599%25BD%25E5%25AB%2596%25E5%2585%259A%25E5%25A6%2582%25E4%25BD%2595%25E7%25BE%258E%25E5%258C%2596Windows%25E6%25A1%258C%25E9%259D%25A2" title="Reddit" class="popup">
+          <span class="rrssb-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px" width="28px" height="28px" viewBox="0 0 28 28" enable-background="new 0 0 28 28" xml:space="preserve"><g><path d="M11.794 15.316c0-1.029-0.835-1.895-1.866-1.895c-1.03 0-1.893 0.865-1.893 1.895s0.863 1.9 1.9 1.9 C10.958 17.2 11.8 16.3 11.8 15.316z"/><path d="M18.1 13.422c-1.029 0-1.895 0.864-1.895 1.895c0 1 0.9 1.9 1.9 1.865c1.031 0 1.869-0.836 1.869-1.865 C19.969 14.3 19.1 13.4 18.1 13.422z"/><path d="M17.527 19.791c-0.678 0.678-1.826 1.006-3.514 1.006c-0.004 0-0.009 0-0.014 0c-0.004 0-0.01 0-0.015 0 c-1.686 0-2.834-0.328-3.51-1.005c-0.264-0.265-0.693-0.265-0.958 0c-0.264 0.265-0.264 0.7 0 1 c0.943 0.9 2.4 1.4 4.5 1.402c0.005 0 0 0 0 0c0.005 0 0 0 0 0c2.066 0 3.527-0.459 4.47-1.402 c0.265-0.264 0.265-0.693 0.002-0.958C18.221 19.5 17.8 19.5 17.5 19.791z"/><path d="M27.707 13.267c0-1.785-1.453-3.237-3.236-3.237c-0.793 0-1.518 0.287-2.082 0.761c-2.039-1.295-4.646-2.069-7.438-2.219 l1.483-4.691l4.062 0.956c0.071 1.4 1.3 2.6 2.7 2.555c1.488 0 2.695-1.208 2.695-2.695C25.881 3.2 24.7 2 23.2 2 c-1.059 0-1.979 0.616-2.42 1.508l-4.633-1.091c-0.344-0.081-0.693 0.118-0.803 0.455l-1.793 5.7 C10.548 8.6 7.7 9.4 5.6 10.75C5.006 10.3 4.3 10 3.5 10.029c-1.785 0-3.237 1.452-3.237 3.2 c0 1.1 0.6 2.1 1.4 2.69c-0.04 0.272-0.061 0.551-0.061 0.831c0 2.3 1.3 4.4 3.7 5.9 c2.299 1.5 5.3 2.3 8.6 2.325c3.228 0 6.271-0.825 8.571-2.325c2.387-1.56 3.7-3.66 3.7-5.917 c0-0.26-0.016-0.514-0.051-0.768C27.088 15.5 27.7 14.4 27.7 13.267z M23.186 3.355c0.74 0 1.3 0.6 1.3 1.3 c0 0.738-0.6 1.34-1.34 1.34s-1.342-0.602-1.342-1.34C21.844 4 22.4 3.4 23.2 3.355z M1.648 13.3 c0-1.038 0.844-1.882 1.882-1.882c0.31 0 0.6 0.1 0.9 0.209c-1.049 0.868-1.813 1.861-2.26 2.9 C1.832 14.2 1.6 13.8 1.6 13.267z M21.773 21.57c-2.082 1.357-4.863 2.105-7.831 2.105c-2.967 0-5.747-0.748-7.828-2.105 c-1.991-1.301-3.088-3-3.088-4.782c0-1.784 1.097-3.484 3.088-4.784c2.081-1.358 4.861-2.106 7.828-2.106 c2.967 0 5.7 0.7 7.8 2.106c1.99 1.3 3.1 3 3.1 4.784C24.859 18.6 23.8 20.3 21.8 21.57z M25.787 14.6 c-0.432-1.084-1.191-2.095-2.244-2.977c0.273-0.156 0.59-0.245 0.928-0.245c1.035 0 1.9 0.8 1.9 1.9 C26.354 13.8 26.1 14.3 25.8 14.605z"/></g></svg>
+          </span>
+          <span class="rrssb-text">Submit</span>
+        </a>
+      </li>
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+      <li class="rrssb-email">
+        <a href="mailto:?subject=%25E7%2599%25BD%25E5%25AB%2596%25E5%2585%259A%25E5%25A6%2582%25E4%25BD%2595%25E7%25BE%258E%25E5%258C%2596Windows%25E6%25A1%258C%25E9%259D%25A2&amp;body=http%253A%252F%252Flocalhost%253A1314%252Fposts%252F52%252F" title="Email">
+          <span class="rrssb-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px" width="28px" height="28px" viewBox="0 0 28 28" enable-background="new 0 0 28 28" xml:space="preserve"><g><path d="M20.111 26.147c-2.336 1.051-4.361 1.401-7.125 1.401c-6.462 0-12.146-4.633-12.146-12.265 c0-7.94 5.762-14.833 14.561-14.833c6.853 0 11.8 4.7 11.8 11.252c0 5.684-3.194 9.265-7.399 9.3 c-1.829 0-3.153-0.934-3.347-2.997h-0.077c-1.208 1.986-2.96 2.997-5.023 2.997c-2.532 0-4.361-1.868-4.361-5.062 c0-4.749 3.504-9.071 9.111-9.071c1.713 0 3.7 0.4 4.6 0.973l-1.169 7.203c-0.388 2.298-0.116 3.3 1 3.4 c1.673 0 3.773-2.102 3.773-6.58c0-5.061-3.27-8.994-9.303-8.994c-5.957 0-11.175 4.673-11.175 12.1 c0 6.5 4.2 10.2 10 10.201c1.986 0 4.089-0.43 5.646-1.245L20.111 26.147z M16.646 10.1 c-0.311-0.078-0.701-0.155-1.207-0.155c-2.571 0-4.595 2.53-4.595 5.529c0 1.5 0.7 2.4 1.9 2.4 c1.441 0 2.959-1.828 3.311-4.087L16.646 10.068z"/></g></svg>
+          </span>
+          <span class="rrssb-text">Send</span>
+        </a>
+      </li>
+      
+    </ul>
+  </div>
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+  
+    
+    
+  
+  
+    
+    
+    
+    
+    
+    
+    
+      
+      
+      
+    
+  
+  
+    
+    
+    
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+<div id="tcomment"></div>
+
+<style>
+ 
+.twikoo {
+    overflow: visible !important;
+    font-family: "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+
+.tk-extras,
+.tk-row.actions .tk-action-icon.__markdown,
+.tk-preview,
+.tk-content p a.at,
+.tk-tag.tk-tag-green {
+    display: none !important;
+}
+
+ 
+.tk-content {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    margin-top: 0 !important;
+}
+
+.tk-content-expand {
+  max-height: none;
+}
+.tk-replies .tk-content {
+  font-size: .9em;
+  display: flex;
+  align-items: baseline;  
+  color: #292a2d !important;
+}
+
+.tk-content span:first-child {
+    display: inline-block;
+    margin-right: 1em;  
+}
+
+.tk-content p {
+    margin: 0;
+    text-align: left;
+    flex: 1 1 auto;
+}
+
+.tk-content p a.at {
+    margin-left: 0 !important;
+}
+
+.tk-nick-link {
+    color: #252627 !important;
+}
+
+.tk-ruser {
+    color: black;
+    text-decoration: none;  
+}
+
+.tk-replies {
+    display: flex;
+    flex-direction: column;
+}
+
+.tk-comment {
+    margin-top: 17px !important;
+}
+
+.tk-comments-container .tk-avatar {
+    margin-top: 10px;
+}
+
+ 
+.tk-avatar img {
+    width: 50px;  
+    height: 50px;  
+    border-radius: 0;  
+    border: 2px solid #ddd;  
+}
+
+.tk-expand {
+    border-radius: 0 0 5px 5px;
+    position: relative;
+    z-index: 99;
+    margin-top: -10px;
+    padding: 0 !important;
+    color: #292a2d !important;
+}
+
+.el-button.tk-preview {
+    border: none;
+}
+
+.el-input.is-active .el-input__inner,
+.el-input__inner:focus,
+.el-textarea__inner {
+    border-color: #ccc !important;
+}
+
+.el-button--primary.is-disabled,
+.el-button--primary.is-disabled:active,
+.el-button--primary.is-disabled:focus,
+.el-button--primary.is-disabled:hover {
+    color: #FFF !important;
+    background-color: #252627 !important;
+    border-color: #4a4b50 !important;
+}
+
+.tk-action-icon svg {
+    fill: #434a56 !important;
+}
+
+.tk-comments-title .tk-icon svg {
+    fill: #ccc !important;
+}
+
+.tk-action-count {
+    color: #434a56 !important;
+}
+
+.el-loading-mask {
+    background-color: #fff !important;
+}
+
+.dark .el-loading-mask {
+    background-color: #292a2d !important;
+}
+
+.dark .tk-expand {
+    background: linear-gradient(rgba(38,42,56,0), #3b3d42) !important;
+}
+
+.dark .el-button,
+.dark .el-input__inner,
+.dark .el-textarea__inner {
+    color: silver !important;
+    background-color: #252627 !important;
+    border-color: #4a4b50 !important;
+}
+
+.dark .tk-meta-input .el-input .el-input-group__prepend {
+    color: silver !important;
+    background-color: #4a4b50 !important;
+    border-color: #4a4b50 !important;
+}
+
+.dark .el-button--primary.is-disabled,
+.dark .el-button--primary.is-disabled:active,
+.dark .el-button--primary.is-disabled:focus,
+.dark .el-button--primary.is-disabled:hover {
+    color: #FFF !important;
+    background-color: #252627 !important;
+    border-color: #4a4b50 !important;
+}
+
+.dark .tk-action-icon svg {
+    fill: #ccc !important;
+}
+
+.dark .tk-comments-title .tk-icon svg {
+    fill: #4a4b50 !important;
+}
+
+.dark .tk-action-count {
+    color: #ccc !important;
+}
+
+.OwO .OwO-body {
+    z-index: 99;
+}
+
+.OwO .OwO-body .OwO-items-emoji .OwO-item {
+    font-size: 23px !important;
+}
+
+.OwO .OwO-body .OwO-items-image .OwO-item {
+    max-width: calc(20% - 10px) !important;
+}
+
+.dark .OwO-body {
+    color: silver !important;
+    background-color: #252627 !important;
+    border-color: #4a4b50 !important;
+}
+
+.dark .OwO .OwO-body .OwO-bar {
+    border-top: 1px solid #4a4b50 !important;
+}
+
+.dark .OwO .OwO-body .OwO-items .OwO-item,
+.dark .OwO .OwO-body .OwO-bar {
+    background: #4a4b50 !important;
+    color: #ccc !important;
+}
+
+.dark .OwO .OwO-body .OwO-bar .OwO-packages li:hover,
+.dark .OwO .OwO-body .OwO-items-image .OwO-item:hover,
+.dark .OwO .OwO-body .OwO-bar .OwO-packages .OwO-package-active {
+    background-color: #252627 !important;
+}
+
+</style>
+
+<script src="https://blog.wangyunzi.com/json/twikoo.all.min.js"></script>
+<script>
+twikoo.init({
+  envId: 'https:\/\/twikoo.wangyunzi.com\/', 
+  el: '#tcomment', 
+
+
+
+})
+</script>
+</br>
+
+  
+
+
+</div>
+
+      </div>
+      
+  
+  
+  
+  
+    
+    
+      
+    
+  
+  <div class="next-post">
+    <a href="/posts/53/" class="next-post-link"></a>
+    <img src="https://blog.wangyunzi.com/config/cover/woman.webp" class="next-post-thumb" alt="Next post thumbnail">
+    <div class="next-post-info">
+      <span class="next-story">Next Story</span>
+      <h3 class="next-post-title">《税痛源于民众的被剥夺感》读后感</h3>
+    </div>
+  </div>
+
+
+
+    </div>
+  </main>
+
+  <a href="#" class="sb-toggle-left">Menu
+  <span class="nav-icon"></span>
+</a>
+
+<div class="sb-slidebar sb-left sb-style-push">
+  <nav>
+    <a href="/"><h2 class="site-title">长街短梦</h2></a>
+    <ul class="sb-menu">
+      
+      
+        <li class="sb-close ">
+          <a href="/archive/">时间线</a>
+        </li>
+      
+        <li class="sb-close ">
+          <a href="/links/">链圈</a>
+        </li>
+      
+        <li class="sb-close ">
+          <a href="/friend/">友链</a>
+        </li>
+      
+        <li class="sb-close ">
+          <a href="/about/">关于</a>
+        </li>
+      
+    </ul>
+
+    <div class="site-info">
+      <p>
+        长街短梦 &dash; Copyright &copy; 2026
+      </p>
+      
+      <p class="site-footer-links">
+        <a href="/memos/">瞬间</a> · <a href="/album/">相册</a>
+      </p>
+      
+      <p>
+        Powered by Hugo
+      </p>
+      
+      
+      <p>
+        <a href="https://beian.miit.gov.cn/" target="_blank">浙ICP备2022025879号</a>&nbsp;
+      </p>
+      
+      
+    </div>
+  </nav>
+</div>
+
+  <script type="text/javascript" src="/assets/js/libs/jquery.min.js"></script>
+<script type="text/javascript" src="/assets/js/libs/slidebars.min.js"></script>
+<script type="text/javascript" src="/assets/js/libs/jquery.backstretch.min.js"></script>
+<script type="text/javascript" src="/assets/js/libs/jquery.scrollstop.js"></script>
+<script type="text/javascript" src="/assets/js/libs/rrssb.min.js"></script>
+<script type="text/javascript" src="/assets/js/functions.js"></script>
+
+
+
+
+
+
+
+<script src="https://blog.wangyunzi.com/json/lazysizes.min.js" async></script>
+
+<script type="text/javascript">
+  $(function($) {
+    $.slidebars();
+
+    var steps = [];
+    var images = [
+      
+      
+    ];
+
+    if (images.length > 0) {
+      $('.loader').addClass('loading');
+
+      steps = scrollSteps(images.length);
+
+      $.backstretch(images, {
+        fade: 1000
+      });
+
+      $.backstretch('pause');
+    }
+
+    $(document).on("backstretch.before", function (e, instance, index) {
+      $('.loader').addClass('loading');
+    });
+
+    $(document).on('scrollstop', function () {
+      if (steps.length > 0) {
+        var percentage = scrollPercentage();
+
+        for (var i = 0; i < steps.length; i++) {
+          if (percentage < steps[i]) {
+            if (i == $("body").data("backstretch").index) {
+              break;
+            }
+
+            $.backstretch('show', i);
+            break;
+          }
+        }
+      }
+    });
+
+    $(document).on("backstretch.after", function (e, instance, index) {
+      $('.loader').removeClass('loading');
+    });
+  });
+</script>
+
+
+
+
+
+
+  
+    
+    
+    
+    
+  
+
+
+
+
+<script src="https://blog.wangyunzi.com/json/medium-zoom.min.js"></script>
+
+<script type="text/javascript">
+  mediumZoom('img', {
+    margin:  24 
+  });
+</script>
+
+<style>
+  .medium-zoom-overlay {
+    background: transparent !important;
+  }
+  .medium-zoom-image {
+    z-index: 9999;
+  }
+</style>
+
+
+
+
+
+  
+  
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-RG3B8PERQE"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-RG3B8PERQE');
+</script>
+
+
+
+
+
+  
+  
+
+
+<script type="text/javascript" src="//js.users.51.la/21897449.js"></script>
+
+
+
+
+
+  
+  
+
+
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?78820c974c73efd2bb12a472c22119d7";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+
+
+
+  
+
+
+<script async src="https://cdn.splitbee.io/sb.js"></script>
+
+
+
+
+
+
+
+  
+    
+    
+    
+    
+  
+
+
+
+
+<script src="https://unpkg.com/vanilla-back-to-top@7.2.1/dist/vanilla-back-to-top.min.js"></script>
+<script>
+  addBackToTop({
+    diameter:  45 ,
+    backgroundColor: 'black',
+    textColor: '#FFFFF0'
+  })
+</script>
+
+
+
+
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    var links = document.querySelectorAll('article a');
+    links.forEach(function (link) {
+      link.setAttribute('target', '_blank');
+    });
+  });
+</script>
+
+
+</body>
+</html>

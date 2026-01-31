@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Twikoo on 长街短梦</title>
+    <link>http://localhost:1314/tags/twikoo/</link>
+    <description>Recent content in Twikoo on 长街短梦</description>
+    <generator>Hugo 0.125.1</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Sun, 11 Aug 2024 09:27:02 +0800</lastBuildDate>
+    <atom:link href="http://localhost:1314/tags/twikoo/feed.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>twikoo部署vercel收不到邮件通知</title>
+      <link>http://localhost:1314/posts/137/</link>
+      <pubDate>Sun, 11 Aug 2024 09:27:02 +0800</pubDate>
+      <guid>http://localhost:1314/posts/137/</guid>
+      <description>前几天就一直在选择合适的评论系统，换来换去最终归于twikoo，本来以前自己成功部署过twikoo但是因为手贱删除部署信息了，所以重新设置一遍，结果最后无论怎么样设置邮件通知功能都是只能收到测试成功的邮件，收不到其他邮件通知，甚是苦恼，想着换一个，但是又陷入纠结中。&#xA;最后都已经删除了twikoo的相关文件了，上网搜索了之后发现了一个最佳答案怀着激动的心有重新设置一遍，终于成功，感谢这位大佬发布的解惑。&#xA;解决方法：进入 Settings - Deployment Protection，设置 Vercel Authentication 为 Disabled，并 Save。&#xA;相关链接：&#xA;vercel部署twikoo后评论收不到通知邮件问题解决方法 配置完成，测试邮件收发正常，但是正常评论的时候即发不出去也收不到提醒 #625 System Environment Variables Overview ps：这个twikoo是不是有点网络问题，我最开始链接家里的移动WiFi登录不上，而且导入的评论什么的也没有了，换成自己手机热点一下就可以了，真真是怪哉！最终发现，额，如果是美国ip可能就连接不上而且看不到评论。</description>
+    </item>
+  </channel>
+</rss>

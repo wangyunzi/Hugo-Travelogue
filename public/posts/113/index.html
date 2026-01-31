@@ -1,0 +1,977 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1314&amp;path=livereload" data-no-instant defer></script>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+  <title>docker项目记录</title>
+  
+  <meta name="description" content="2024/4/17 问题再现 执行sudo docker compose up -d命令的时候出现这个报错：
+WARN[0000] /www/wwwroot/memos.wangyunzi.com/docker-compose.yml: `version` is obsolete 这个是说版本过期，因为最新版本的docker不支持版本这种（其实我也是因为一个报错才知道的，所以compose里面的代码第一样关于version可以注释掉的，等我找到这个GitHub网页在说）。
+2024/4/16 因为昨天关闭防火墙忘记重新打开了，所以今天的好多个docker安装项目都出现问题，评论通知收不到，freshrss导入不了文档，询问杜老师才知道“Docker是需要防火墙转发数据的”，所以记录一下自己的一个小失误。
+2024/4/15 最近因为买了服务器之后比较兴奋，把几个自己没有尝试的过的项目都安装了一遍，包括Alist、FreshRSS、Artalk、等，因为前面都是随意安装，比如docker一键安装之类的，所以导致文件夹部分比较混乱，加上自己不熟悉docker所以出现了很多bugs，比如因为没有提前关闭镜像导致升级新docker之后镜像一直删不掉，还有就是莫名奇妙删掉了好几个文档，统一docker安装方式，采用docker-compose方式，方便整理。因为这些项目都需要设置反代理，所以首先新建网站xxx.wangyunzi.com，这时候就会有一个网站目录，接下来所有的操作都会在这个网站目录下进行。
+docker升级步骤 直接参考这篇文章，更新docker到最新版本，前面随便找了一篇教程安装docker就开始乱弄，教程如下
+老的教程 直接脚本安装，安装命令如下：
+curl -fsSL https://get.docker.com | bash -s docker --mirror Aliyun 新教程 较旧的 Docker 版本称为 docker 或 docker-engine 。如果已安装这些程序，请卸载它们以及相关的依赖项。 sudo yum remove docker \ docker-client \ docker-client-latest \ docker-common \ docker-latest \ docker-latest-logrotate \ docker-logrotate \ docker-engine 按照这个教程吧：菜鸟教程 ##检查docker版本 docker version #安装一些必要的系统工具 yum -y install yum-utils device-mapper-persistent-data lvm2 #添加软件源信息 yum-config-manager --add-repo http://mirrors.">
+
+  
+  
+  <link rel="stylesheet" href="https://blog.wangyunzi.com/json/family=Merriweather.css">
+  
+  <link rel="stylesheet" href="https://blog.wangyunzi.com/json/family=Lato.css">
+  
+  <link rel="stylesheet" href="https://blog.wangyunzi.com/json/family=Source.css">
+  
+  <link rel="stylesheet" href="https://blog.wangyunzi.com/json/fontawesome6.6.min.css">
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material&#43;Icons">
+  
+
+  <link rel="stylesheet" href="/assets/css/vendors/slidebars.min.css">
+  <link rel="stylesheet" href="/assets/css/vendors/rrssb.css">
+  <link rel="stylesheet" href="/assets/css/base.css">
+  <link rel="stylesheet" href="/assets/css/layout.css">
+  <link rel="stylesheet" href="/assets/css/custom.css">
+  <link rel="stylesheet" href="/assets/css/loader.css">
+  <link rel="stylesheet" href="/assets/css/sidebar.css">
+  <link rel="stylesheet" href="/assets/css/syntax-highlighting.css">
+
+  <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="/favicon.ico" type="image/x-icon">
+
+  <link rel="canonical" href="http://localhost:1314/posts/113/">
+
+  <meta property="og:url" content="http://localhost:1314/posts/113/">
+  <meta property="og:site_name" content="长街短梦">
+  <meta property="og:title" content="docker项目记录">
+  <meta property="og:description" content="2024/4/17 问题再现 执行sudo docker compose up -d命令的时候出现这个报错：
+WARN[0000] /www/wwwroot/memos.wangyunzi.com/docker-compose.yml: `version` is obsolete 这个是说版本过期，因为最新版本的docker不支持版本这种（其实我也是因为一个报错才知道的，所以compose里面的代码第一样关于version可以注释掉的，等我找到这个GitHub网页在说）。
+2024/4/16 因为昨天关闭防火墙忘记重新打开了，所以今天的好多个docker安装项目都出现问题，评论通知收不到，freshrss导入不了文档，询问杜老师才知道“Docker是需要防火墙转发数据的”，所以记录一下自己的一个小失误。
+2024/4/15 最近因为买了服务器之后比较兴奋，把几个自己没有尝试的过的项目都安装了一遍，包括Alist、FreshRSS、Artalk、等，因为前面都是随意安装，比如docker一键安装之类的，所以导致文件夹部分比较混乱，加上自己不熟悉docker所以出现了很多bugs，比如因为没有提前关闭镜像导致升级新docker之后镜像一直删不掉，还有就是莫名奇妙删掉了好几个文档，统一docker安装方式，采用docker-compose方式，方便整理。因为这些项目都需要设置反代理，所以首先新建网站xxx.wangyunzi.com，这时候就会有一个网站目录，接下来所有的操作都会在这个网站目录下进行。
+docker升级步骤 直接参考这篇文章，更新docker到最新版本，前面随便找了一篇教程安装docker就开始乱弄，教程如下
+老的教程 直接脚本安装，安装命令如下：
+curl -fsSL https://get.docker.com | bash -s docker --mirror Aliyun 新教程 较旧的 Docker 版本称为 docker 或 docker-engine 。如果已安装这些程序，请卸载它们以及相关的依赖项。 sudo yum remove docker \ docker-client \ docker-client-latest \ docker-common \ docker-latest \ docker-latest-logrotate \ docker-logrotate \ docker-engine 按照这个教程吧：菜鸟教程 ##检查docker版本 docker version #安装一些必要的系统工具 yum -y install yum-utils device-mapper-persistent-data lvm2 #添加软件源信息 yum-config-manager --add-repo http://mirrors.">
+  <meta property="og:locale" content="zh-cn">
+  <meta property="og:type" content="article">
+  <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2024-04-15T16:10:00+08:00">
+    <meta property="article:modified_time" content="2024-04-15T16:10:00+08:00">
+    <meta property="article:tag" content="Docker">
+
+  <meta name="twitter:card" content="summary"><meta name="twitter:title" content="docker项目记录">
+<meta name="twitter:description" content="2024/4/17 问题再现 执行sudo docker compose up -d命令的时候出现这个报错：
+WARN[0000] /www/wwwroot/memos.wangyunzi.com/docker-compose.yml: `version` is obsolete 这个是说版本过期，因为最新版本的docker不支持版本这种（其实我也是因为一个报错才知道的，所以compose里面的代码第一样关于version可以注释掉的，等我找到这个GitHub网页在说）。
+2024/4/16 因为昨天关闭防火墙忘记重新打开了，所以今天的好多个docker安装项目都出现问题，评论通知收不到，freshrss导入不了文档，询问杜老师才知道“Docker是需要防火墙转发数据的”，所以记录一下自己的一个小失误。
+2024/4/15 最近因为买了服务器之后比较兴奋，把几个自己没有尝试的过的项目都安装了一遍，包括Alist、FreshRSS、Artalk、等，因为前面都是随意安装，比如docker一键安装之类的，所以导致文件夹部分比较混乱，加上自己不熟悉docker所以出现了很多bugs，比如因为没有提前关闭镜像导致升级新docker之后镜像一直删不掉，还有就是莫名奇妙删掉了好几个文档，统一docker安装方式，采用docker-compose方式，方便整理。因为这些项目都需要设置反代理，所以首先新建网站xxx.wangyunzi.com，这时候就会有一个网站目录，接下来所有的操作都会在这个网站目录下进行。
+docker升级步骤 直接参考这篇文章，更新docker到最新版本，前面随便找了一篇教程安装docker就开始乱弄，教程如下
+老的教程 直接脚本安装，安装命令如下：
+curl -fsSL https://get.docker.com | bash -s docker --mirror Aliyun 新教程 较旧的 Docker 版本称为 docker 或 docker-engine 。如果已安装这些程序，请卸载它们以及相关的依赖项。 sudo yum remove docker \ docker-client \ docker-client-latest \ docker-common \ docker-latest \ docker-latest-logrotate \ docker-logrotate \ docker-engine 按照这个教程吧：菜鸟教程 ##检查docker版本 docker version #安装一些必要的系统工具 yum -y install yum-utils device-mapper-persistent-data lvm2 #添加软件源信息 yum-config-manager --add-repo http://mirrors.">
+
+</head>
+
+<body>
+  <div class="loader">
+  <svg version="1.1" id="loader-1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="32px" height="32px" viewBox="0 0 50 50" style="enable-background:new 0 0 50 50;" xml:space="preserve">
+    <filter id="dropshadow" height="130%">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="10"/>
+      <feOffset dx="0" dy="0" result="offsetblur"/>
+      <feMerge>
+        <feMergeNode/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <path d="M43.935,25.145c0-10.318-8.364-18.683-18.683-18.683c-10.318,0-18.683,8.365-18.683,18.683h4.068c0-8.071,6.543-14.615,14.615-14.615c8.072,0,14.615,6.543,14.615,14.615H43.935z">
+      <animateTransform attributeType="xml" attributeName="transform" type="rotate" from="0 25 25" to="360 25 25" dur="0.5s" repeatCount="indefinite"/>
+    </path>
+  </svg>
+</div>
+
+
+  <main id="sb-site">
+    <div class="container">
+      <div class="wrapper">
+        
+<div class="post">
+  
+  
+  
+    
+    <p class="post-reading-time">&#126; 2 min</p>
+  
+
+  <header class="post-header">
+    
+    <h1 class="post-title">docker项目记录</h1>
+  </header>
+
+  <article class="post-content">
+    <h3 id="2024417-问题再现">2024/4/17 问题再现</h3>
+<p>  执行<code>sudo docker compose up -d</code>命令的时候出现这个报错：</p>
+<pre tabindex="0"><code>WARN[0000] /www/wwwroot/memos.wangyunzi.com/docker-compose.yml: `version` is obsolete 
+</code></pre><p>  这个是说版本过期，因为最新版本的docker不支持版本这种（其实我也是因为一个报错才知道的，所以compose里面的代码第一样关于version可以注释掉的，等我找到这个GitHub网页在说）。</p>
+<h3 id="2024416">2024/4/16</h3>
+<p>  因为昨天关闭防火墙忘记重新打开了，所以今天的好多个docker安装项目都出现问题，评论通知收不到，freshrss导入不了文档，询问杜老师才知道“Docker是需要防火墙转发数据的”，所以记录一下自己的一个小失误。</p>
+<h3 id="2024415">2024/4/15</h3>
+<p>  最近因为买了服务器之后比较兴奋，把几个自己没有尝试的过的项目都安装了一遍，包括Alist、FreshRSS、Artalk、等，因为前面都是随意安装，比如docker一键安装之类的，所以导致文件夹部分比较混乱，加上自己不熟悉docker所以出现了很多bugs，比如因为没有提前关闭镜像导致升级新docker之后镜像一直删不掉，还有就是莫名奇妙删掉了好几个文档，统一docker安装方式，采用docker-compose方式，方便整理。因为这些项目都需要设置反代理，所以首先新建网站xxx.wangyunzi.com，这时候就会有一个网站目录，接下来所有的操作都会在这个网站目录下进行。</p>
+<h4 id="docker升级步骤">docker升级步骤</h4>
+<p>  直接参考这篇文章，<a href="https://weiliang-ms.github.io/wl-awesome/2.%E5%AE%B9%E5%99%A8/%E8%BF%90%E8%A1%8C%E6%97%B6/docker/%E5%AE%89%E5%85%A8%E5%8A%A0%E5%9B%BA/%E4%B8%BB%E6%9C%BA%E5%AE%89%E5%85%A8%E9%85%8D%E7%BD%AE/03%E6%9B%B4%E6%96%B0Docker%E5%88%B0%E6%9C%80%E6%96%B0%E7%89%88%E6%9C%AC.html">更新docker到最新版本</a>，前面随便找了一篇教程安装docker就开始乱弄，教程如下</p>
+<h5 id="老的教程">老的教程</h5>
+<p>直接脚本安装，安装命令如下：</p>
+<pre tabindex="0"><code>curl -fsSL https://get.docker.com | bash -s docker --mirror Aliyun
+</code></pre><h5 id="新教程">新教程</h5>
+<ol>
+<li>较旧的 Docker 版本称为 docker 或 docker-engine 。如果已安装这些程序，请卸载它们以及相关的依赖项。</li>
+</ol>
+<pre tabindex="0"><code>sudo yum remove docker \
+                  docker-client \
+                  docker-client-latest \
+                  docker-common \
+                  docker-latest \
+                  docker-latest-logrotate \
+                  docker-logrotate \
+                  docker-engine
+</code></pre><ol start="2">
+<li>按照这个教程吧：<a href="https://www.runoob.com/docker/centos-docker-install.html">菜鸟教程</a></li>
+</ol>
+<pre tabindex="0"><code>##检查docker版本
+docker version  
+#安装一些必要的系统工具
+yum -y install yum-utils device-mapper-persistent-data lvm2
+#添加软件源信息
+yum-config-manager --add-repo http://mirrors.aliyun.com/docker-ce/linux/centos/docker-ce.repo
+#更新 yum 缓存
+yum makecache fast
+#安装docker-ce
+yum -y install docker-ce
+# 或更新
+yum -y update docker-ce
+</code></pre><h4 id="alist安装">Alist安装</h4>
+<ol>
+<li>新建<code>docker-compose.yml</code>文件，输入下面的代码：</li>
+</ol>
+<pre tabindex="0"><code>version: &#39;3.3&#39;
+services:
+    alist:
+        image: &#39;xhofe/alist:latest&#39;
+        container_name: alist
+        volumes:
+            - &#39;/etc/alist:/opt/alist/data&#39;
+        ports:
+            - &#39;5244:5244&#39;
+        environment:
+            - PUID=0
+            - PGID=0
+            - UMASK=022
+        restart: unless-stopped
+</code></pre><ol start="2">
+<li>接着打开终端，输入下面代码部署：</li>
+</ol>
+<pre tabindex="0"><code>sudo docker compose up -d
+</code></pre><ol start="3">
+<li>因为上面的那个代码alist路径不是保存到当前目录，所以我希望数据在我所熟悉的文件夹内，改之后${PWD}/alist发现报错，也不知道为什么${PWD}不是保存在当前路径，一直报错<code>WARN[0000] The &quot;PWD&quot; variable is not set. Defaulting to a blank string. </code>最后还是改成了下面的代码，根据这个<a href="https://stackoverflow.com/questions/41948232/docker-compose-wont-find-pwd-environment-variable">Docker compose won&rsquo;t find $PWD environment variable</a>找到了答案，话说真的好爱这个网站，什么问题都能在这上面找到答案：</li>
+</ol>
+<pre tabindex="0"><code># version: &#34;3.8&#34;
+
+services:
+
+  # Alist 的官方部署文档: https://alist-doc.nn.ci/en/docs/install/docker/
+  # docker run -d --restart=always -v /etc/alist:/opt/alist/data -p 5244:5244 --name=&#34;alist&#34; xhofe/alist:latest
+  alist:
+    image: xhofe/alist:latest
+    container_name: alist
+    ports:
+      - &#34;5244:5244&#34;
+    restart: always
+    volumes:
+      - &#34;.:/opt/alist/data&#34;
+</code></pre><h4 id="artalk安装">Artalk安装</h4>
+<ol>
+<li>新建<code>docker-compose.yml</code>文件，输入下面的代码：</li>
+</ol>
+<pre tabindex="0"><code>version: &#39;3.5&#39;
+services:
+  artalk:
+    container_name: artalk
+    image: artalk/artalk-go
+    restart: always
+    ports:
+      - 8080:23366
+    volumes:
+      - ./data:/data
+</code></pre><ol start="2">
+<li>执行命令创建容器：</li>
+</ol>
+<pre tabindex="0"><code>docker-compose up -d
+</code></pre><h4 id="freshrss安装">Freshrss安装</h4>
+<ol>
+<li>新建<code>docker-compose.yml</code>文件，输入下面的代码，记得更改自己的端口（我的是8282）：</li>
+</ol>
+<pre tabindex="0"><code>version: &#34;3&#34;
+
+services:
+  freshrss:
+    image: freshrss/freshrss:latest
+    container_name: freshrss
+    hostname: freshrss-app
+    restart: always
+    ports:
+      - &#39;8282:80&#39;
+    volumes:
+      - ./data:/var/www/FreshRSS/data
+      - ./extensions:/var/www/FreshRSS/extensions
+    environment:
+      CRON_MIN: &#39;*/20&#39; # 刷新频率
+      TZ: Asia/Shanghai
+</code></pre><ol start="2">
+<li>
+<p>按道理说第二步应该执行命令创建镜像，但是按照这篇教程———<a href="https://liuyude.com/archives/break-out-information-cocoon-embrace-content-freedom-deploy-freshrss-in-ten-minutes-with-pagoda-panel-docker-compose-open-new-chapter-in-autonomous.html">突破信息茧房，拥抱内容自由：使用宝塔面板docker-compose十分钟极速部署FreshRSS，开启自主阅读新篇章</a>，按照他的操作也可以的。但是应该也可以一步创建命令执行：<code>docker-compose up -d</code>;</p>
+</li>
+<li>
+<p>这过程中我找到一篇不错的教程——<a href="https://meta.appinn.net/t/topic/48598">shRSS如何持久化配置？</a>，这篇教程里的答案很有参考价值，做法就是创建文件后输入下面的代码：</p>
+</li>
+</ol>
+<pre tabindex="0"><code>version: &#34;2.4&#34;
+
+services:
+  freshrss-db:
+    image: postgres:15
+    container_name: freshrss-db
+    hostname: freshrss-db
+    restart: unless-stopped
+    logging:
+      options:
+        max-size: 10m
+    volumes:
+      - ./freshrss-db:/var/lib/postgresql/data
+    environment:
+      POSTGRES_DB: ${DB_BASE:-freshrss}
+      POSTGRES_USER: ${DB_USER:-freshrss}
+      POSTGRES_PASSWORD: ${DB_PASSWORD:-freshrss}
+    #command:
+      # Examples of PostgreSQL tuning.
+      # https://wiki.postgresql.org/wiki/Tuning_Your_PostgreSQL_Server
+      # When in doubt, skip and stick to default PostgreSQL settings.
+    #  - -c
+    #  - shared_buffers=1GB
+    #  - -c
+    #  - work_mem=32MB
+
+  freshrss-app:
+    image: freshrss/freshrss:latest
+    container_name: freshrss-app
+    hostname: freshrss-app
+    restart: unless-stopped
+    ports:
+      - &#34;8080:80&#34;
+    depends_on:
+      - freshrss-db
+    logging:
+      options:
+        max-size: 10m
+    volumes:
+      - ./data:/var/www/FreshRSS/data
+      - ./extensions:/var/www/FreshRSS/extensions
+    environment:
+      TZ: Asia/Shanghai
+      CRON_MIN: &#39;*/45&#39;
+    #  TRUSTED_PROXY: 172.16.0.1/12 192.168.0.1/16
+
+volumes:
+  freshrss-db:
+  data:
+  extensions:
+</code></pre><p>然后执行：<code>sudo docker compose up -d</code></p>
+<h4 id="memos安装">Memos安装</h4>
+<p>新建<code>docker-compose.yml</code>文件，然后输入以下代码：</p>
+<pre tabindex="0"><code>version: &#34;3&#34;
+services:
+  memos:
+    image: neosmemo/memos:latest
+    container_name: memeos
+    hostname: memeos
+    ports:
+      - &#34;5230:5230&#34;
+    volumes:
+      - ./memos/.memos/:/var/opt/memos
+    restart: always
+</code></pre>
+  </article>
+
+  <footer class="post-meta">
+    
+    <div class="meta">
+      <h3 class="meta-title">Date</h3>
+      <span class="meta-content">April 15, 2024</span>
+    </div>
+    
+
+    
+    
+    
+
+    
+    
+    
+      
+      <div class="meta">
+        <h3 class="meta-title">Categories</h3>
+        <span class="meta-content">
+      
+            博客&nbsp;
+          
+        </span>
+      </div>
+      
+    
+
+    
+    
+    
+      
+      <div class="meta">
+        <h3 class="meta-title">Tags</h3>
+        <span class="meta-content">
+      
+            Docker&nbsp;
+          
+        </span>
+      </div>
+      
+    
+  </footer>
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <div class="post-share">
+    <ul class="rrssb-buttons tiny-format clearfix">
+      
+      <li class="rrssb-facebook">
+        <a href="https://www.facebook.com/sharer/sharer.php?u=http%253A%252F%252Flocalhost%253A1314%252Fposts%252F113%252F" title="Facebook" class="popup">
+          <span class="rrssb-icon">
+            <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="28px" height="28px" viewBox="0 0 28 28" enable-background="new 0 0 28 28" xml:space="preserve">
+              <path d="M27.825,4.783c0-2.427-2.182-4.608-4.608-4.608H4.783c-2.422,0-4.608,2.182-4.608,4.608v18.434
+              c0,2.427,2.181,4.608,4.608,4.608H14V17.379h-3.379v-4.608H14v-1.795c0-3.089,2.335-5.885,5.192-5.885h3.718v4.608h-3.726
+              c-0.408,0-0.884,0.492-0.884,1.236v1.836h4.609v4.608h-4.609v10.446h4.916c2.422,0,4.608-2.188,4.608-4.608V4.783z"/>
+            </svg>
+          </span>
+          <span class="rrssb-text">Post</span>
+        </a>
+      </li>
+      
+
+      
+      <li class="rrssb-twitter">
+        <a href="https://twitter.com/intent/tweet?url=http%253A%252F%252Flocalhost%253A1314%252Fposts%252F113%252F&amp;text=docker%25E9%25A1%25B9%25E7%259B%25AE%25E8%25AE%25B0%25E5%25BD%2595" title="Twitter" class="popup">
+          <span class="rrssb-icon">
+            <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="28px" height="28px" viewBox="0 0 28 28" enable-background="new 0 0 28 28" xml:space="preserve">
+              <path d="M24.253,8.756C24.689,17.08,18.297,24.182,9.97,24.62c-3.122,0.162-6.219-0.646-8.861-2.32
+              c2.703,0.179,5.376-0.648,7.508-2.321c-2.072-0.247-3.818-1.661-4.489-3.638c0.801,0.128,1.62,0.076,2.399-0.155
+              C4.045,15.72,2.215,13.6,2.115,11.077c0.688,0.275,1.426,0.407,2.168,0.386c-2.135-1.65-2.729-4.621-1.394-6.965
+              C5.575,7.816,9.54,9.84,13.803,10.071c-0.842-2.739,0.694-5.64,3.434-6.482c2.018-0.623,4.212,0.044,5.546,1.683
+              c1.186-0.213,2.318-0.662,3.329-1.317c-0.385,1.256-1.247,2.312-2.399,2.942c1.048-0.106,2.069-0.394,3.019-0.851
+              C26.275,7.229,25.39,8.196,24.253,8.756z"/>
+            </svg>
+          </span>
+          <span class="rrssb-text">Tweet</span>
+        </a>
+      </li>
+      
+
+      
+
+      
+
+      
+      <li class="rrssb-reddit">
+        <a href="https://www.reddit.com/submit?url=http%253A%252F%252Flocalhost%253A1314%252Fposts%252F113%252F&amp;title=docker%25E9%25A1%25B9%25E7%259B%25AE%25E8%25AE%25B0%25E5%25BD%2595" title="Reddit" class="popup">
+          <span class="rrssb-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px" width="28px" height="28px" viewBox="0 0 28 28" enable-background="new 0 0 28 28" xml:space="preserve"><g><path d="M11.794 15.316c0-1.029-0.835-1.895-1.866-1.895c-1.03 0-1.893 0.865-1.893 1.895s0.863 1.9 1.9 1.9 C10.958 17.2 11.8 16.3 11.8 15.316z"/><path d="M18.1 13.422c-1.029 0-1.895 0.864-1.895 1.895c0 1 0.9 1.9 1.9 1.865c1.031 0 1.869-0.836 1.869-1.865 C19.969 14.3 19.1 13.4 18.1 13.422z"/><path d="M17.527 19.791c-0.678 0.678-1.826 1.006-3.514 1.006c-0.004 0-0.009 0-0.014 0c-0.004 0-0.01 0-0.015 0 c-1.686 0-2.834-0.328-3.51-1.005c-0.264-0.265-0.693-0.265-0.958 0c-0.264 0.265-0.264 0.7 0 1 c0.943 0.9 2.4 1.4 4.5 1.402c0.005 0 0 0 0 0c0.005 0 0 0 0 0c2.066 0 3.527-0.459 4.47-1.402 c0.265-0.264 0.265-0.693 0.002-0.958C18.221 19.5 17.8 19.5 17.5 19.791z"/><path d="M27.707 13.267c0-1.785-1.453-3.237-3.236-3.237c-0.793 0-1.518 0.287-2.082 0.761c-2.039-1.295-4.646-2.069-7.438-2.219 l1.483-4.691l4.062 0.956c0.071 1.4 1.3 2.6 2.7 2.555c1.488 0 2.695-1.208 2.695-2.695C25.881 3.2 24.7 2 23.2 2 c-1.059 0-1.979 0.616-2.42 1.508l-4.633-1.091c-0.344-0.081-0.693 0.118-0.803 0.455l-1.793 5.7 C10.548 8.6 7.7 9.4 5.6 10.75C5.006 10.3 4.3 10 3.5 10.029c-1.785 0-3.237 1.452-3.237 3.2 c0 1.1 0.6 2.1 1.4 2.69c-0.04 0.272-0.061 0.551-0.061 0.831c0 2.3 1.3 4.4 3.7 5.9 c2.299 1.5 5.3 2.3 8.6 2.325c3.228 0 6.271-0.825 8.571-2.325c2.387-1.56 3.7-3.66 3.7-5.917 c0-0.26-0.016-0.514-0.051-0.768C27.088 15.5 27.7 14.4 27.7 13.267z M23.186 3.355c0.74 0 1.3 0.6 1.3 1.3 c0 0.738-0.6 1.34-1.34 1.34s-1.342-0.602-1.342-1.34C21.844 4 22.4 3.4 23.2 3.355z M1.648 13.3 c0-1.038 0.844-1.882 1.882-1.882c0.31 0 0.6 0.1 0.9 0.209c-1.049 0.868-1.813 1.861-2.26 2.9 C1.832 14.2 1.6 13.8 1.6 13.267z M21.773 21.57c-2.082 1.357-4.863 2.105-7.831 2.105c-2.967 0-5.747-0.748-7.828-2.105 c-1.991-1.301-3.088-3-3.088-4.782c0-1.784 1.097-3.484 3.088-4.784c2.081-1.358 4.861-2.106 7.828-2.106 c2.967 0 5.7 0.7 7.8 2.106c1.99 1.3 3.1 3 3.1 4.784C24.859 18.6 23.8 20.3 21.8 21.57z M25.787 14.6 c-0.432-1.084-1.191-2.095-2.244-2.977c0.273-0.156 0.59-0.245 0.928-0.245c1.035 0 1.9 0.8 1.9 1.9 C26.354 13.8 26.1 14.3 25.8 14.605z"/></g></svg>
+          </span>
+          <span class="rrssb-text">Submit</span>
+        </a>
+      </li>
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+      <li class="rrssb-email">
+        <a href="mailto:?subject=docker%25E9%25A1%25B9%25E7%259B%25AE%25E8%25AE%25B0%25E5%25BD%2595&amp;body=http%253A%252F%252Flocalhost%253A1314%252Fposts%252F113%252F" title="Email">
+          <span class="rrssb-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px" width="28px" height="28px" viewBox="0 0 28 28" enable-background="new 0 0 28 28" xml:space="preserve"><g><path d="M20.111 26.147c-2.336 1.051-4.361 1.401-7.125 1.401c-6.462 0-12.146-4.633-12.146-12.265 c0-7.94 5.762-14.833 14.561-14.833c6.853 0 11.8 4.7 11.8 11.252c0 5.684-3.194 9.265-7.399 9.3 c-1.829 0-3.153-0.934-3.347-2.997h-0.077c-1.208 1.986-2.96 2.997-5.023 2.997c-2.532 0-4.361-1.868-4.361-5.062 c0-4.749 3.504-9.071 9.111-9.071c1.713 0 3.7 0.4 4.6 0.973l-1.169 7.203c-0.388 2.298-0.116 3.3 1 3.4 c1.673 0 3.773-2.102 3.773-6.58c0-5.061-3.27-8.994-9.303-8.994c-5.957 0-11.175 4.673-11.175 12.1 c0 6.5 4.2 10.2 10 10.201c1.986 0 4.089-0.43 5.646-1.245L20.111 26.147z M16.646 10.1 c-0.311-0.078-0.701-0.155-1.207-0.155c-2.571 0-4.595 2.53-4.595 5.529c0 1.5 0.7 2.4 1.9 2.4 c1.441 0 2.959-1.828 3.311-4.087L16.646 10.068z"/></g></svg>
+          </span>
+          <span class="rrssb-text">Send</span>
+        </a>
+      </li>
+      
+    </ul>
+  </div>
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+  
+    
+    
+  
+  
+    
+    
+    
+    
+    
+    
+    
+      
+      
+      
+    
+  
+  
+    
+    
+    
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+<div id="tcomment"></div>
+
+<style>
+ 
+.twikoo {
+    overflow: visible !important;
+    font-family: "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+
+.tk-extras,
+.tk-row.actions .tk-action-icon.__markdown,
+.tk-preview,
+.tk-content p a.at,
+.tk-tag.tk-tag-green {
+    display: none !important;
+}
+
+ 
+.tk-content {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    margin-top: 0 !important;
+}
+
+.tk-content-expand {
+  max-height: none;
+}
+.tk-replies .tk-content {
+  font-size: .9em;
+  display: flex;
+  align-items: baseline;  
+  color: #292a2d !important;
+}
+
+.tk-content span:first-child {
+    display: inline-block;
+    margin-right: 1em;  
+}
+
+.tk-content p {
+    margin: 0;
+    text-align: left;
+    flex: 1 1 auto;
+}
+
+.tk-content p a.at {
+    margin-left: 0 !important;
+}
+
+.tk-nick-link {
+    color: #252627 !important;
+}
+
+.tk-ruser {
+    color: black;
+    text-decoration: none;  
+}
+
+.tk-replies {
+    display: flex;
+    flex-direction: column;
+}
+
+.tk-comment {
+    margin-top: 17px !important;
+}
+
+.tk-comments-container .tk-avatar {
+    margin-top: 10px;
+}
+
+ 
+.tk-avatar img {
+    width: 50px;  
+    height: 50px;  
+    border-radius: 0;  
+    border: 2px solid #ddd;  
+}
+
+.tk-expand {
+    border-radius: 0 0 5px 5px;
+    position: relative;
+    z-index: 99;
+    margin-top: -10px;
+    padding: 0 !important;
+    color: #292a2d !important;
+}
+
+.el-button.tk-preview {
+    border: none;
+}
+
+.el-input.is-active .el-input__inner,
+.el-input__inner:focus,
+.el-textarea__inner {
+    border-color: #ccc !important;
+}
+
+.el-button--primary.is-disabled,
+.el-button--primary.is-disabled:active,
+.el-button--primary.is-disabled:focus,
+.el-button--primary.is-disabled:hover {
+    color: #FFF !important;
+    background-color: #252627 !important;
+    border-color: #4a4b50 !important;
+}
+
+.tk-action-icon svg {
+    fill: #434a56 !important;
+}
+
+.tk-comments-title .tk-icon svg {
+    fill: #ccc !important;
+}
+
+.tk-action-count {
+    color: #434a56 !important;
+}
+
+.el-loading-mask {
+    background-color: #fff !important;
+}
+
+.dark .el-loading-mask {
+    background-color: #292a2d !important;
+}
+
+.dark .tk-expand {
+    background: linear-gradient(rgba(38,42,56,0), #3b3d42) !important;
+}
+
+.dark .el-button,
+.dark .el-input__inner,
+.dark .el-textarea__inner {
+    color: silver !important;
+    background-color: #252627 !important;
+    border-color: #4a4b50 !important;
+}
+
+.dark .tk-meta-input .el-input .el-input-group__prepend {
+    color: silver !important;
+    background-color: #4a4b50 !important;
+    border-color: #4a4b50 !important;
+}
+
+.dark .el-button--primary.is-disabled,
+.dark .el-button--primary.is-disabled:active,
+.dark .el-button--primary.is-disabled:focus,
+.dark .el-button--primary.is-disabled:hover {
+    color: #FFF !important;
+    background-color: #252627 !important;
+    border-color: #4a4b50 !important;
+}
+
+.dark .tk-action-icon svg {
+    fill: #ccc !important;
+}
+
+.dark .tk-comments-title .tk-icon svg {
+    fill: #4a4b50 !important;
+}
+
+.dark .tk-action-count {
+    color: #ccc !important;
+}
+
+.OwO .OwO-body {
+    z-index: 99;
+}
+
+.OwO .OwO-body .OwO-items-emoji .OwO-item {
+    font-size: 23px !important;
+}
+
+.OwO .OwO-body .OwO-items-image .OwO-item {
+    max-width: calc(20% - 10px) !important;
+}
+
+.dark .OwO-body {
+    color: silver !important;
+    background-color: #252627 !important;
+    border-color: #4a4b50 !important;
+}
+
+.dark .OwO .OwO-body .OwO-bar {
+    border-top: 1px solid #4a4b50 !important;
+}
+
+.dark .OwO .OwO-body .OwO-items .OwO-item,
+.dark .OwO .OwO-body .OwO-bar {
+    background: #4a4b50 !important;
+    color: #ccc !important;
+}
+
+.dark .OwO .OwO-body .OwO-bar .OwO-packages li:hover,
+.dark .OwO .OwO-body .OwO-items-image .OwO-item:hover,
+.dark .OwO .OwO-body .OwO-bar .OwO-packages .OwO-package-active {
+    background-color: #252627 !important;
+}
+
+</style>
+
+<script src="https://blog.wangyunzi.com/json/twikoo.all.min.js"></script>
+<script>
+twikoo.init({
+  envId: 'https:\/\/twikoo.wangyunzi.com\/', 
+  el: '#tcomment', 
+
+
+
+})
+</script>
+</br>
+
+  
+
+
+</div>
+
+      </div>
+      
+  
+  
+  
+  
+    
+    
+      
+    
+  
+  <div class="next-post">
+    <a href="/posts/114/" class="next-post-link"></a>
+    <img src="https://blog.wangyunzi.com/config/cover/woman.webp" class="next-post-thumb" alt="Next post thumbnail">
+    <div class="next-post-info">
+      <span class="next-story">Next Story</span>
+      <h3 class="next-post-title">我们一起开始RSS的生活吧！</h3>
+    </div>
+  </div>
+
+
+
+    </div>
+  </main>
+
+  <a href="#" class="sb-toggle-left">Menu
+  <span class="nav-icon"></span>
+</a>
+
+<div class="sb-slidebar sb-left sb-style-push">
+  <nav>
+    <a href="/"><h2 class="site-title">长街短梦</h2></a>
+    <ul class="sb-menu">
+      
+      
+        <li class="sb-close ">
+          <a href="/archive/">时间线</a>
+        </li>
+      
+        <li class="sb-close ">
+          <a href="/links/">链圈</a>
+        </li>
+      
+        <li class="sb-close ">
+          <a href="/friend/">友链</a>
+        </li>
+      
+        <li class="sb-close ">
+          <a href="/about/">关于</a>
+        </li>
+      
+    </ul>
+
+    <div class="site-info">
+      <p>
+        长街短梦 &dash; Copyright &copy; 2026
+      </p>
+      
+      <p class="site-footer-links">
+        <a href="/memos/">瞬间</a> · <a href="/album/">相册</a>
+      </p>
+      
+      <p>
+        Powered by Hugo
+      </p>
+      
+      
+      <p>
+        <a href="https://beian.miit.gov.cn/" target="_blank">浙ICP备2022025879号</a>&nbsp;
+      </p>
+      
+      
+    </div>
+  </nav>
+</div>
+
+  <script type="text/javascript" src="/assets/js/libs/jquery.min.js"></script>
+<script type="text/javascript" src="/assets/js/libs/slidebars.min.js"></script>
+<script type="text/javascript" src="/assets/js/libs/jquery.backstretch.min.js"></script>
+<script type="text/javascript" src="/assets/js/libs/jquery.scrollstop.js"></script>
+<script type="text/javascript" src="/assets/js/libs/rrssb.min.js"></script>
+<script type="text/javascript" src="/assets/js/functions.js"></script>
+
+
+
+
+
+
+
+<script src="https://blog.wangyunzi.com/json/lazysizes.min.js" async></script>
+
+<script type="text/javascript">
+  $(function($) {
+    $.slidebars();
+
+    var steps = [];
+    var images = [
+      
+      
+    ];
+
+    if (images.length > 0) {
+      $('.loader').addClass('loading');
+
+      steps = scrollSteps(images.length);
+
+      $.backstretch(images, {
+        fade: 1000
+      });
+
+      $.backstretch('pause');
+    }
+
+    $(document).on("backstretch.before", function (e, instance, index) {
+      $('.loader').addClass('loading');
+    });
+
+    $(document).on('scrollstop', function () {
+      if (steps.length > 0) {
+        var percentage = scrollPercentage();
+
+        for (var i = 0; i < steps.length; i++) {
+          if (percentage < steps[i]) {
+            if (i == $("body").data("backstretch").index) {
+              break;
+            }
+
+            $.backstretch('show', i);
+            break;
+          }
+        }
+      }
+    });
+
+    $(document).on("backstretch.after", function (e, instance, index) {
+      $('.loader').removeClass('loading');
+    });
+  });
+</script>
+
+
+
+
+
+
+  
+    
+    
+    
+    
+  
+
+
+
+
+<script src="https://blog.wangyunzi.com/json/medium-zoom.min.js"></script>
+
+<script type="text/javascript">
+  mediumZoom('img', {
+    margin:  24 
+  });
+</script>
+
+<style>
+  .medium-zoom-overlay {
+    background: transparent !important;
+  }
+  .medium-zoom-image {
+    z-index: 9999;
+  }
+</style>
+
+
+
+
+
+  
+  
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-RG3B8PERQE"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-RG3B8PERQE');
+</script>
+
+
+
+
+
+  
+  
+
+
+<script type="text/javascript" src="//js.users.51.la/21897449.js"></script>
+
+
+
+
+
+  
+  
+
+
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?78820c974c73efd2bb12a472c22119d7";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+
+
+
+  
+
+
+<script async src="https://cdn.splitbee.io/sb.js"></script>
+
+
+
+
+
+
+
+  
+    
+    
+    
+    
+  
+
+
+
+
+<script src="https://unpkg.com/vanilla-back-to-top@7.2.1/dist/vanilla-back-to-top.min.js"></script>
+<script>
+  addBackToTop({
+    diameter:  45 ,
+    backgroundColor: 'black',
+    textColor: '#FFFFF0'
+  })
+</script>
+
+
+
+
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    var links = document.querySelectorAll('article a');
+    links.forEach(function (link) {
+      link.setAttribute('target', '_blank');
+    });
+  });
+</script>
+
+
+</body>
+</html>
