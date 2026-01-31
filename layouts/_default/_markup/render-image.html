@@ -1,0 +1,13 @@
+{{- $src := .Destination -}}
+{{- $alt := .Text | default "" -}}
+{{- $title := .Title -}}
+{{- if eq .Page.Section "album" -}}
+<figure class="album-item">
+  <img src="{{ $src | safeURL }}" alt="{{ $alt }}"{{ with $title }} title="{{ . }}"{{ end }} loading="lazy">
+  {{- with $title -}}
+  <figcaption>{{ . }}</figcaption>
+  {{- end -}}
+</figure>
+{{- else -}}
+<img src="{{ $src | safeURL }}" alt="{{ $alt }}"{{ with $title }} title="{{ . }}"{{ end }} loading="lazy">
+{{- end -}}

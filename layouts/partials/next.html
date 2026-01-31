@@ -1,0 +1,21 @@
+{{ with .Next }}
+  {{ $thumb := "" }}
+  {{ $bg := .Params.backgrounds }}
+  {{ if $bg }}
+    {{ if reflect.IsSlice $bg }}
+      {{ $thumb = index $bg 0 }}
+    {{ else }}
+      {{ $thumb = $bg }}
+    {{ end }}
+  {{ else }}
+    {{ $thumb = index (shuffle $.Site.Params.default_thumbnails) 0 }}
+  {{ end }}
+  <div class="next-post">
+    <a href="{{ .RelPermalink }}" class="next-post-link"></a>
+    <img src="{{ $thumb }}" class="next-post-thumb" alt="Next post thumbnail">
+    <div class="next-post-info">
+      <span class="next-story">Next Story</span>
+      <h3 class="next-post-title">{{ .Title }}</h3>
+    </div>
+  </div>
+{{ end }}

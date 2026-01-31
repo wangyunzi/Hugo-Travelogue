@@ -1,0 +1,36 @@
+name: ScheduledRssCrawler
+
+on:
+  schedule:
+    - cron: '0 0 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Go
+        uses: actions/setup-go@v5
+        with:
+          go-version: '1.22.5'
+
+      - name: Build rss fetcher
+        run: go build -o rss-fetcher
+        working-directory: ./GrabLatestRSS
+
+      - name: Run rss fetcher
+        run: ./rss-fetcher
+        working-directory: ./GrabLatestRSS
+
+      - name: Commit & push
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: 'Update RSS data'
+          file_pattern: 'data/rss_data.json logs/error.log'

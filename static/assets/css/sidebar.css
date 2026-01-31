@@ -1,0 +1,139 @@
+/*
+   Variables
+   ========================================================================== */
+/*
+   Mixins
+   ========================================================================== */
+/* ==========================================================================
+   SIDEBAR
+   ========================================================================== */
+   .sb-toggle-left {
+    height: 54px;
+    left: 30px;
+    position: fixed;
+    text-indent: 100%;
+    top: 30px;
+    white-space: nowrap;
+    width: 54px;
+    z-index: 1;
+  }
+  
+  @media screen and (max-width: 800px) {
+    .sb-toggle-left {
+      position: absolute;
+    }
+  }
+  
+  .sb-toggle-left .nav-icon {
+    background: #fdfdfd;
+    box-shadow: 0 0 8px 0 #111;
+    height: 2px;
+    left: 50%;
+    position: absolute;
+    top: 50%;
+    width: 28px;
+    transform: translateX(-50%) translateY(-50%);
+  }
+  
+  .sb-toggle-left .nav-icon:after, .sb-toggle-left .nav-icon::before {
+    background: #fdfdfd;
+    box-shadow: inherit;
+    content: '';
+    height: 100%;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 100%;
+  }
+  
+  .sb-toggle-left .nav-icon::before {
+    transform: translateY(-8px);
+  }
+  
+  .sb-toggle-left .nav-icon:after {
+    transform: translateY(8px);
+  }
+  
+  .sb-slidebar {
+    background: #111;
+    color: #eee;
+    letter-spacing: 1px;
+    z-index: 2;
+  }
+  
+  .sb-slidebar .site-title {
+    font-size: 26px;
+    letter-spacing: 2px;
+    margin: 0;
+    padding: 60px 20px;
+  }
+  
+  .sb-slidebar .site-info {
+    bottom: 0;
+    font-family: "Lato", sans-serif;
+    font-size: 12px;
+    line-height: 2;
+    padding: 15px 0;
+    position: relative;
+    text-align: center;
+    width: 100%;
+  }
+  
+  .sb-slidebar .site-info p {
+    margin: 0;
+  }
+  
+  .sb-slidebar .sb-menu {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .sb-slidebar .sb-menu .active a {
+    background-color: rgba(238, 238, 238, 0.04);
+  }
+  
+  .sb-slidebar .sb-menu > li {
+    border-top: 1px solid rgba(238, 238, 238, 0.05);
+    margin: 0;
+    padding: 0;
+  }
+  
+  .sb-slidebar .sb-menu > li:last-child {
+    border-bottom: 1px solid rgba(238, 238, 238, 0.05);
+  }
+  
+  .sb-slidebar .sb-menu > li a {
+    color: #eee;
+    font-family: "Lato", sans-serif;
+    display: block;
+    padding: 30px 20px;
+  }
+  
+  .sb-slidebar .sb-menu > li a:hover {
+    background-color: #eee;
+    color: #111;
+    text-decoration: none;
+  }
+  
+  /* Mobile adjustments */
+  @media screen and (max-width: 800px) {
+    .sb-slidebar {
+      height: 100vh; /* 使侧边栏占满视口高度 */
+      overflow-y: auto; /* 启用垂直滚动 */
+    }
+  
+    .sb-slidebar .site-title {
+      font-size: 20px;
+      padding: 40px 15px;
+    }
+  
+    .sb-slidebar .sb-menu > li a {
+      padding: 20px 15px; /* 减小内边距 */
+    }
+  
+    .sb-slidebar .site-info {
+      padding: 10px;
+      position: relative; /* 避免绝对定位影响 */
+    }
+  }

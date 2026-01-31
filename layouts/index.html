@@ -1,0 +1,72 @@
+{{ define "main" }}
+<div class="home">
+  {{ $siteAgeStart := .Site.Params.site_age.start | default "2022-05-10T17:38:00+08:00" }}
+  <ul class="post-list">
+    {{ $paginator := .Paginate (where .Site.RegularPages "Section" "posts") }}
+    {{ range $paginator.Pages }}
+    <li>
+      <a href="{{ .RelPermalink }}" class="post-list-link">
+        <div class="post-list-info">
+          <h2 class="post-list-title">{{ .Title }}</h2>
+          <span class="post-list-meta">{{ .Date.Format "January 2, 2006" }}</span>
+        </div>
+      </a>
+
+      {{ $thumb := "" }}
+      {{ $bg := .Params.backgrounds }}
+      {{ if $bg }}
+        {{ if reflect.IsSlice $bg }}
+          {{ $thumb = index $bg 0 }}
+        {{ else }}
+          {{ $thumb = $bg }}
+        {{ end }}
+      {{ else }}
+        {{ $thumb = index (shuffle $.Site.Params.default_thumbnails) 0 }}
+      {{ end }}
+      <img src="{{ $thumb }}" class="post-list-thumb" alt="{{ .Title }}" />
+    </li>
+    {{ end }}
+  </ul>
+
+  <p class="rss-subscribe">subscribe <a href="{{ "feed.xml" | relURL }}">via RSS</a></p>
+
+  <div align="center">
+    <p>
+      <span id="timeDate">载入时间...</span>
+    </p>
+  </div>
+  <script>
+    function createtime() {
+      var now = new Date();
+      var grt = new Date({{ $siteAgeStart | jsonify }});
+      if (isNaN(grt.getTime())) {
+        grt = new Date("2022-05-10T17:38:00+08:00");
+      }
+      var diff = now - grt;
+      days = diff / 1000 / 60 / 60 / 24;
+      dnum = Math.floor(days);
+      hours = diff / 1000 / 60 / 60 - (24 * dnum);
+      hnum = Math.floor(hours);
+      if (String(hnum).length == 1) { hnum = "0" + hnum; }
+      minutes = diff / 1000 / 60 - (24 * 60 * dnum) - (60 * hnum);
+      mnum = Math.floor(minutes);
+      if (String(mnum).length == 1) { mnum = "0" + mnum; }
+      seconds = diff / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum);
+      snum = Math.round(seconds);
+      if (String(snum).length == 1) { snum = "0" + snum; }
+      years = now.getFullYear() - grt.getFullYear();
+      months = now.getMonth() - grt.getMonth();
+      if (now.getDate() < grt.getDate()) { months -= 1; }
+      if (months < 0) { years -= 1; months += 12; }
+      if (years < 0) { years = 0; }
+      document.getElementById("timeDate").innerHTML = "小破站在风雨中飘摇了" + years + " 年 " + months + " 个月 ";
+      
+    }
+    setInterval("createtime()", 250);
+  </script>
+</div>
+{{ end }}
+
+{{ define "after-main" }}
+  {{ partial "pagination.html" (dict "paginator" .Paginator "context" .) }}
+{{ end }}

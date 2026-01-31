@@ -1,0 +1,14 @@
+# RRSSB
+facebook: true
+twitter: true
+googleplus: false
+linkedin: false
+reddit: true
+hackernews: false
+pinterest: false
+tumblr: false
+pocket: false
+email: true
+
+# Disqus
+disqus_shortname: 'wang-yun-zi'

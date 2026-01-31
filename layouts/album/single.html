@@ -1,0 +1,58 @@
+{{ define "main" }}
+<div class="post">
+  <header class="post-header">
+    <h1 class="post-title">{{ .Title }}</h1>
+  </header>
+
+  <article class="post-content">
+    <style>
+      .album-masonry {
+        column-count: 4;
+        column-gap: 0;
+        padding-top: 0;
+      }
+
+      .album-masonry .album-item {
+        break-inside: avoid;
+        margin: 0;
+        padding: 0;
+      }
+
+      .album-masonry .album-item img {
+        display: block;
+        width: 100% !important;
+        max-width: 100% !important;
+        height: auto;
+        margin: 0 !important;
+        break-inside: avoid;
+      }
+
+      .album-masonry p {
+        margin: 0;
+        display: contents;
+      }
+
+      @media (max-width: 1200px) {
+        .album-masonry {
+          column-count: 3;
+        }
+      }
+
+      @media (max-width: 900px) {
+        .album-masonry {
+          column-count: 2;
+        }
+      }
+
+      @media (max-width: 600px) {
+        .album-masonry {
+          column-count: 1;
+        }
+      }
+    </style>
+    <div class="album-masonry">
+      {{ .Content }}
+    </div>
+  </article>
+</div>
+{{ end }}

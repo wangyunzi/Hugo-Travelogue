@@ -1,0 +1,24 @@
+{{ $p := .paginator }}
+{{ if and $p (gt $p.TotalPages 1) }}
+  <div class="pagination">
+    {{ if $p.HasPrev }}
+      <a class="prev" href="{{ $p.Prev.URL }}" aria-label="上一页">
+        <i class="fas fa-chevron-left"></i>
+      </a>
+    {{ else }}
+      <span class="disabled prev" aria-hidden="true">
+        <i class="fas fa-minus"></i>
+      </span>
+    {{ end }}
+
+    {{ if $p.HasNext }}
+      <a class="next" href="{{ $p.Next.URL }}" aria-label="下一页">
+        <i class="fas fa-chevron-right"></i>
+      </a>
+    {{ else }}
+      <span class="next disabled" aria-hidden="true">
+        <i class="fas fa-minus"></i>
+      </span>
+    {{ end }}
+  </div>
+{{ end }}

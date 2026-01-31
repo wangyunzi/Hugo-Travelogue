@@ -1,0 +1,81 @@
+name: Sync_Obsidian
+
+on:
+  workflow_dispatch:
+    inputs:
+      ref:
+        description: 'Branch to deploy'
+        required: true
+        default: 'master'
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    concurrency:
+      group: 'sync-obsidian'
+      cancel-in-progress: true
+
+    steps:
+    - name: Checkout Obsidian repository
+      uses: actions/checkout@v3
+      with:
+        repository: wangyunzi/myob
+        path: myob
+        token: ${{ secrets.OBSIDIAN_REPO_TOKEN }}
+
+    - name: Checkout blog repository
+      uses: actions/checkout@v3
+      with:
+        repository: wangyunzi/wangyunzi.github.io
+        path: wangyunzi.github.io
+        token: ${{ secrets.BLOG_REPO_TOKEN }}
+
+    - name: Sync _pages folder
+      run: |
+        rsync -av --delete myob/日记本/blog/pages/ wangyunzi.github.io/_pages/
+        cd wangyunzi.github.io
+        find _pages -name "*.md" -exec sed -i -E '
+          s/date: ([0-9]{4}-[0-9]{2}-[0-9]{2})T([0-9]{2}:[0-9]{2}:[0-9]{2})([+-][0-9]{2}:[0-9]{2}|)/date: \1 \2 +0800/
+          s/date: ([0-9]{4}-[0-9]{2}-[0-9]{2})T([0-9]{2}:[0-9]{2}:[0-9]{2})[+-][0-9]{2}:[0-9]{2}/date: \1 \2 +0800/
+          s/date: ([0-9]{4}-[0-9]{2}-[0-9]{2}) ([0-9]{2}:[0-9]{2}:[0-9]{2})/date: \1 \2 +0800/
+        ' {} \;
+        git config user.name "GitHub Actions"
+        git config user.email "actions@github.com"
+        git add _pages
+        git commit -m "Sync _pages from Obsidian repository" || echo "No changes in _pages"
+        cd -
+
+    - name: Sync _album folder
+      run: |
+        rsync -av --delete myob/日记本/blog/album/ wangyunzi.github.io/_album/
+        cd wangyunzi.github.io
+        find _album -name "*.md" -exec sed -i -E '
+          s/date: ([0-9]{4}-[0-9]{2}-[0-9]{2})T([0-9]{2}:[0-9]{2}:[0-9]{2})([+-][0-9]{2}:[0-9]{2}|)/date: \1 \2 +0800/
+          s/date: ([0-9]{4}-[0-9]{2}-[0-9]{2})T([0-9]{2}:[0-9]{2}:[0-9]{2})[+-][0-9]{2}:[0-9]{2}/date: \1 \2 +0800/
+          s/date: ([0-9]{4}-[0-9]{2}-[0-9]{2}) ([0-9]{2}:[0-9]{2}:[0-9]{2})/date: \1 \2 +0800/
+        ' {} \;
+        git config user.name "GitHub Actions"
+        git config user.email "actions@github.com"
+        git add _album
+        git commit -m "Sync _album from Obsidian repository" || echo "No changes in _album"
+        cd -
+
+    - name: Sync _posts folder
+      run: |
+        rsync -av --delete myob/日记本/blog/posts/ wangyunzi.github.io/_posts/
+        cd wangyunzi.github.io
+        find _posts -name "*.md" -exec sed -i -E '
+          s/date: ([0-9]{4}-[0-9]{2}-[0-9]{2})T([0-9]{2}:[0-9]{2}:[0-9]{2})([+-][0-9]{2}:[0-9]{2}|)/date: \1 \2 +0800/
+          s/date: ([0-9]{4}-[0-9]{2}-[0-9]{2})T([0-9]{2}:[0-9]{2}:[0-9]{2})[+-][0-9]{2}:[0-9]{2}/date: \1 \2 +0800/
+          s/date: ([0-9]{4}-[0-9]{2}-[0-9]{2}) ([0-9]{2}:[0-9]{2}:[0-9]{2})/date: \1 \2 +0800/
+        ' {} \;
+        git config user.name "GitHub Actions"
+        git config user.email "actions@github.com"
+        git add _posts
+        git commit -m "Sync _posts from Obsidian repository" || echo "No changes in _posts"
+        cd -
+
+    - name: Push changes
+      run: |
+        cd wangyunzi.github.io
+        git push

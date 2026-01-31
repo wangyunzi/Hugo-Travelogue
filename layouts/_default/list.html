@@ -1,0 +1,21 @@
+{{ define "main" }}
+<div class="home">
+  <ul class="post-list">
+    {{ $paginator := .Paginate .Pages }}
+    {{ range $paginator.Pages }}
+    <li>
+      <a href="{{ .RelPermalink }}" class="post-list-link">
+        <div class="post-list-info">
+          <h2 class="post-list-title">{{ .Title }}</h2>
+          <span class="post-list-meta">{{ .Date.Format "January 2, 2006" }}</span>
+        </div>
+      </a>
+    </li>
+    {{ end }}
+  </ul>
+</div>
+{{ end }}
+
+{{ define "after-main" }}
+  {{ partial "pagination.html" (dict "paginator" .Paginator "context" .) }}
+{{ end }}

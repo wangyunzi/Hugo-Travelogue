@@ -1,0 +1,265 @@
+<div class="search">
+  <input type="text" class="search-input" id="lunrsearch" placeholder="Search..." />
+  <i class="material-icons search-icon search-start">search</i>
+  <i class="material-icons search-icon search-clear">clear</i>
+  <div class="search-results" id="lunrsearchresults">
+    <ul></ul>
+  </div>
+</div>
+
+
+<style>
+  /* 搜索框容器样式 */
+  .search {
+    position: relative;
+    max-width: 500px; /* 限制最大宽度 */
+    margin: 20px auto; /* 居中 */
+  }
+  
+  /* 搜索框样式 */
+  .search .search-input {
+    width: 100%;
+    padding: 10px 50px 10px 15px; /* 右侧留出空间给搜索图标 */
+    border: 2px solid #B8B8B8;
+    border-radius: 20px;
+    box-sizing: border-box;
+    font-size: 16px;
+    color: #4D4D4D;
+    background-color: #F0F0F0;
+    outline: none;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .search .search-input:focus {
+    border-color: #8C8C8C;
+    box-shadow: 0 0 5px rgba(140, 140, 140, 0.5);
+  }
+  
+  /* 搜索图标样式 */
+  .search .search-icon {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #A3A3A3;
+  }
+  
+  .search .search-start {
+    right: 15px; /* 搜索图标距离右侧的距离 */
+  }
+  
+  .search .search-clear {
+    right: 50px; /* 清空图标距离右侧的距离，确保不与搜索图标重合 */
+    display: none;
+    color: #A3A3A3;
+  }
+  
+  /* 搜索结果样式 */
+  .search .search-results {
+    display: none; /* 默认隐藏 */
+    z-index: 1000;
+    position: absolute;
+    top: 100%; /* 紧贴搜索框下方 */
+    left: 0;
+    width: 100%; /* 与搜索框宽度一致 */
+    max-height: 400px;
+    overflow-y: auto;
+    border-radius: 5px;
+    background: #EDEDED;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+    box-sizing: border-box;
+  }
+  
+  .search .search-results.active {
+    display: block; /* 仅在有内容时显示 */
+  }
+  
+  .search .search-results ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+  }
+  
+  .search .search-results .result-item {
+    background: #D4D4D4;
+    color: #4D4D4D;
+    margin-bottom: 8px;
+    padding: 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+  }
+  
+  .search .search-results .result-item:hover {
+    background-color: #C4C4C4;
+    color: #8C8C8C;
+    transform: translateY(-2px);
+  }
+  
+  .search .search-results .result-item mark {
+    background-color: #C19A6B;
+    color: #FFF;
+    padding: 0;
+  }
+  
+  .search .search-results .result-item b {
+    font-weight: 600;
+  }
+  </style>
+  
+
+<script>
+// 获取搜索框、搜索按钮、清空搜索、结果输出对应的元素
+var searchBtn = document.querySelector('.search-start');
+var searchClear = document.querySelector('.search-clear');
+var searchInput = document.querySelector('.search-input');
+var searchResults = document.querySelector('.search-results');
+
+// 申明保存文章的标题、链接、内容的数组变量
+var searchValue = '',
+    arrItems = [],
+    arrContents = [],
+    arrLinks = [],
+    arrTitles = [],
+    arrResults = [],
+    indexItem = [],
+    itemLength = 0;
+var tmpDiv = document.createElement('div');
+tmpDiv.className = 'result-item';
+
+// ajax 的兼容写法
+var xhr = new XMLHttpRequest() || new ActiveXObject('Microsoft.XMLHTTP');
+xhr.onreadystatechange = function () {
+    if (xhr.readyState == 4 && xhr.status == 200) {
+        xml = xhr.responseXML;
+        arrItems = xml.getElementsByTagName('item');
+        itemLength = arrItems.length;
+        
+        // 遍历并保存所有文章对应的标题、链接、内容到对应的数组中
+        // 同时过滤掉 HTML 标签
+        for (i = 0; i < itemLength; i++) {
+            arrContents[i] = arrItems[i].getElementsByTagName('description')[0].
+                childNodes[0].nodeValue.replace(/<.*?>/g, '');
+            arrLinks[i] = arrItems[i].getElementsByTagName('link')[0].
+                childNodes[0].nodeValue.replace(/<.*?>/g, '');
+            arrTitles[i] = arrItems[i].getElementsByTagName('title')[0].
+                childNodes[0].nodeValue.replace(/<.*?>/g, '');
+        }
+    }
+}
+
+// 开始获取根目录下 feed.xml 文件内的数据
+xhr.open('get', '/feed.xml', true);
+xhr.send();
+
+// 搜索图标点击函数
+searchBtn.onclick = function() {
+    if (searchInput.value !== '') {
+        searchConfirm();
+    }
+};
+
+// 清空按钮点击函数
+searchClear.onclick = function(){
+    searchInput.value = '';
+    searchResults.innerHTML = ''; // 清空结果
+    searchResults.classList.remove('active');
+    searchClear.style.display = 'none';
+}
+
+// 输入框内容变化后就开始匹配
+searchInput.oninput = function () {
+    if (searchInput.value === '') {
+        searchClear.style.display = 'none';
+        searchResults.classList.remove('active');
+    } else {
+        searchClear.style.display = 'block';
+        searchConfirm();
+    }
+}
+
+// 输入框获取焦点时显示结果
+searchInput.onfocus = function () {
+    if (searchInput.value !== '' && searchResults.innerHTML !== '') {
+        searchResults.classList.add('active');
+    }
+}
+
+function searchConfirm() {
+    if (searchInput.value.trim() === '') {
+        searchResults.classList.remove('active');
+        searchClear.style.display = 'none';
+    } else {
+        searchInit();
+        searchValue = searchInput.value;
+        // 在标题、内容中查找
+        searchMatching(arrTitles, arrContents, searchValue);
+    }
+}
+
+// 每次搜索完成后的初始化
+function searchInit() {
+    arrResults = [];
+    indexItem = [];
+    searchResults.innerHTML = '';
+    searchResults.classList.remove('active');
+    searchClear.style.display = 'block';
+}
+
+function searchMatching(arr1, arr2, input) {
+    // 忽略输入大小写
+    input = new RegExp(input, 'i');
+    // 在所有文章标题、内容中匹配查询值
+    for (i = 0; i < itemLength; i++) {
+        if (arr1[i].search(input) !== -1 || arr2[i].search(input) !== -1) {
+            // 优先搜索标题
+            if (arr1[i].search(input) !== -1) {
+                var arr = arr1;
+            } else {
+                var arr = arr2;
+            }
+            indexItem.push(i);  // 保存匹配值的索引
+            var indexContent = arr[i].search(input);
+            // 将匹配到内容的地方进行黄色标记，并包括周围一定数量的文本
+            arrResults.push(arr[i].slice(indexContent - 10, indexContent) +
+                '<mark>' + arr[i].slice(indexContent, indexContent + input.toString().length - 3) + '</mark>' +
+                arr[i].slice(indexContent + input.toString().length - 3, indexContent + input.toString().length - 3 + 10));
+        }
+    }
+
+    // 输出总共匹配到的数目
+    var totalDiv = tmpDiv.cloneNode(true);
+    totalDiv.innerHTML = '总匹配：<b>' + indexItem.length + '</b> 项';
+    searchResults.appendChild(totalDiv);
+
+    // 未匹配到内容的情况
+    if (indexItem.length == 0) {
+        var itemDiv = tmpDiv.cloneNode(true);
+        itemDiv.innerText = '未匹配到内容...';
+        searchResults.appendChild(itemDiv);
+    }
+
+    // 将所有匹配内容进行组合
+    for (i = 0; i < arrResults.length; i++) {
+        var itemDiv = tmpDiv.cloneNode(true);
+        itemDiv.innerHTML = '<b>《' + arrTitles[indexItem[i]] +
+            '》</b><hr />' + arrResults[i];
+        itemDiv.setAttribute('onclick', 'changeHref(arrLinks[indexItem[' + i + ']])');
+        searchResults.appendChild(itemDiv);
+    }
+
+    // 如果有结果，将 searchResults 设置为可见
+    if (indexItem.length > 0) {
+        searchResults.classList.add('active');
+    } else {
+        searchResults.classList.remove('active');
+    }
+}
+
+function changeHref(href) {
+    // 在当前页面点开链接的情况
+    location.href = href;
+}
+
+
+</script>

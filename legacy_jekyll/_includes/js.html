@@ -1,0 +1,134 @@
+<script type="text/javascript" src="{{ "/assets/js/libs/jquery.min.js" | prepend: site.baseurl }}"></script>
+<script type="text/javascript" src="{{ "/assets/js/libs/slidebars.min.js" | prepend: site.baseurl }}"></script>
+<script type="text/javascript" src="{{ "/assets/js/libs/jquery.backstretch.min.js" | prepend: site.baseurl }}"></script>
+<script type="text/javascript" src="{{ "/assets/js/libs/jquery.scrollstop.js" | prepend: site.baseurl }}"></script>
+<script type="text/javascript" src="{{ "/assets/js/libs/rrssb.min.js" | prepend: site.baseurl }}"></script>
+<script type="text/javascript" src="{{ "/assets/js/functions.js" | prepend: site.baseurl }}"></script>
+<!-- 懒加载脚本 -->
+<script src="https://blog.wangyunzi.com/json/lazysizes.min.js" async></script>
+
+
+<script type="text/javascript">
+    $(function($) {
+        $.slidebars();
+
+        var steps = [];
+        var images = [
+            {% for image in page.backgrounds %}'{{ image }}',{% endfor %}
+        ];
+
+        if (images.length > 0) {
+            $('.loader').addClass('loading');
+
+            steps = scrollSteps(images.length);
+
+            $.backstretch(images, {
+                fade: 1000
+            });
+
+            $.backstretch('pause');
+        }
+
+        $(document).on("backstretch.before", function (e, instance, index) {
+            $('.loader').addClass('loading');
+        });
+
+        $(document).on('scrollstop', function () {
+            if (steps.length > 0) {
+                var percentage = scrollPercentage();
+
+                for (var i = 0; i < steps.length; i++) {
+                    if (percentage < steps[i]) {
+                        if (i == $("body").data("backstretch").index) {
+                            break;
+                        }
+
+                        $.backstretch('show', i);
+                        break;
+                    }
+                }
+            }
+        });
+
+        $(document).on("backstretch.after", function (e, instance, index) {
+            $('.loader').removeClass('loading');
+        });
+    });
+</script>
+
+
+<!-- Medium Zoom CSS -->
+<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/medium-zoom/1.0.8/medium-zoom.min.css" /> -->
+
+<!-- Medium Zoom JS -->
+<script src="https://blog.wangyunzi.com/json/medium-zoom.min.js"></script>
+
+<script type="text/javascript">
+
+    // Initialize medium-zoom
+    mediumZoom('img', {
+        margin: 24
+    });
+</script>
+
+<style>
+    .medium-zoom-overlay {
+        background: transparent !important; /* 背景完全透明 */
+    }
+    .medium-zoom-image {
+        z-index: 9999;
+    }
+
+</style>
+
+<!-- 数据统计脚本包括google、51、百度 -->
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-RG3B8PERQE"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-RG3B8PERQE');
+</script>
+
+<script type="text/javascript" src="//js.users.51.la/21897449.js"></script>
+
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?78820c974c73efd2bb12a472c22119d7";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+<!-- Add Splitbee To Your Website -->
+<script async src="https://cdn.splitbee.io/sb.js"></script>
+
+<!-- _layouts/base.html 添加置顶功能 -->
+<script src="https://unpkg.com/vanilla-back-to-top@7.2.1/dist/vanilla-back-to-top.min.js"></script>
+    <script>addBackToTop({
+        diameter: 45,
+        backgroundColor: 'black',
+        textColor: '#FFFFF0',
+    })</script>
+
+<!-- 添加pangu功能 -->
+<!-- <script src="{{ '/assets/js/pangu.min.js' | relative_url }}"></script>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    pangu.spacingPage();
+  });
+</script> -->
+
+<!-- 添加 JavaScript 脚本来让所有文章内容中的链接默认在新标签中打开 -->
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+  var links = document.querySelectorAll('article a');
+  links.forEach(function (link) {
+    link.setAttribute('target', '_blank');
+  });
+});
+</script>

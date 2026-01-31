@@ -1,0 +1,176 @@
+{% if page.comments %}
+
+<div id="comments" data-url="https://pocketbase.wangyunzi.com/api/comment"></div>
+<script type="module" crossorigin src="https://pocketbase.wangyunzi.com/comment.js"></script>
+<style>
+/* 评论表单样式 */
+.comment-form {
+    margin-top: 1em;
+    border: 1px solid #ddd; /* 灰色边框 */
+    padding: 1em; /* 增加内边距 */
+    background-color: #f9f9f9; /* 更浅的背景色 */
+    display: flex;
+    flex-direction: column;
+    gap: 0.5em;
+    border-radius: 8px; /* 添加圆角 */
+}
+
+.comment-form label {
+    display: block;
+    font-size: 90%;
+    color: #555; /* 深灰色 */
+}
+
+/* 修改邮箱和网址的布局 */
+.comment-form .email-url-group {
+    display: flex;
+    gap: 1em; /* 调整间距 */
+}
+
+.comment-form .email-url-group input {
+    flex: 1;
+}
+
+.comment-form input,
+.comment-form textarea {
+    width: 100%;
+    padding: 0.75em; /* 增加内边距 */
+    border: 1px solid #ddd; /* 灰色边框 */
+    background-color: #fff; /* 白色背景 */
+    color: #333; /* 深灰色文字 */
+    font-size: 90%;
+    border-radius: 4px; /* 圆角边框 */
+    box-sizing: border-box; /* 确保内边距和边框不影响宽度 */
+}
+
+.comment-form textarea {
+    min-height: 5em; /* 设置最小高度 */
+    resize: vertical; /* 允许垂直调整 */
+}
+
+.comment-form .form-buttons {
+    display: flex;
+    justify-content: flex-end; /* 右对齐按钮 */
+    gap: 0.5em;
+}
+
+.comment-form button {
+    border: 1px solid #ddd; /* 灰色边框 */
+    background-color: #f0f0f0; /* 浅灰色背景 */
+    color: #333; /* 深灰色文字 */
+    font-size: 90%;
+    cursor: pointer;
+    padding: 0.5em 1em; /* 增加内边距 */
+    border-radius: 4px; /* 圆角边框 */
+    transition: background-color 0.3s, border-color 0.3s; /* 平滑过渡 */
+}
+
+.comment-form button:hover {
+    border-color: #54bab9; /* 悬停时边框颜色 */
+    background-color: #e0e0e0; /* 悬停时背景颜色 */
+}
+
+.comment-form button:active {
+    border-style: dashed;
+}
+
+.comment-preview {
+    width: 100%;
+    min-height: 2em;
+    padding: 0.5em; /* 增加内边距 */
+    border: 1px dashed #ddd; /* 灰色虚线边框 */
+    background-color: #f9f9f9; /* 更浅的背景色 */
+    color: #333; /* 深灰色文字 */
+    border-radius: 4px; /* 圆角边框 */
+    box-sizing: border-box; /* 确保内边距和边框不影响宽度 */
+}
+
+/* 评论组样式 */
+.comment-group {
+    margin-top: 2em;
+    padding-right: 1.5rem; /* 增加右边距以避免遮挡 */
+    position: relative;
+}
+
+.comment-group article {
+    display: flex;
+    margin: 1em 0;
+    padding: 1em; /* 增加内边距 */
+    border-top: 1px solid #ddd; /* 灰色边框 */
+    background-color: #fff; /* 白色背景 */
+    border-radius: 8px; /* 圆角边框 */
+    box-shadow: none; /* 去掉阴影 */
+    box-sizing: border-box; /* 确保内边距和边框不影响宽度 */
+    overflow: hidden; /* 确保内容不会超出 */
+    position: relative;
+}
+
+/* 增加评论框右边距 */
+.comment-wrapper {
+    position: relative;
+    width: 100%;
+    overflow: hidden; /* 确保内容不会超出 */
+}
+
+.comment-avatar {
+    flex-shrink: 0; /* 防止头像缩小 */
+    margin-right: 1em; /* 增加间距 */
+}
+
+.comment-avatar img {
+    width: 50px; /* 增大头像 */
+    height: 50px; /* 增大头像 */
+    border-radius: 4px; /* 方形头像 */
+    border: 2px solid #ddd; /* 添加边框 */
+}
+
+.comment-wrapper {
+    flex: 1; /* 使评论内容占据剩余空间 */
+}
+
+.comment-wrapper > header {
+    font-size: 90%;
+    color: #555; /* 深灰色 */
+}
+
+.comment-wrapper > header .comment-date {
+    color: #888; /* 浅灰色日期 */
+}
+
+.comment-wrapper > main {
+    margin-top: 1em;
+    overflow-wrap: break-word; /* 自动换行 */
+    color: #333; /* 深灰色文字 */
+    line-height: 1.6; /* 增加行距 */
+}
+
+.comment-wrapper img {
+    max-width: 100%;
+    border-radius: 4px; /* 圆角边框 */
+    box-sizing: border-box; /* 确保内边距和边框不影响宽度 */
+}
+
+.reply-btn {
+    position: relative; /* 改为相对定位 */
+    margin-top: 0.5em; /* 在评论内容下方 */
+    background: none; /* 去掉背景 */
+    color: #0056b3; /* 蓝色文字 */
+    border: none; /* 去掉边框 */
+    cursor: pointer;
+    font-size: 0.85em; /* 调整字体大小 */
+    font-weight: bold; /* 加粗字体 */
+}
+
+.reply-btn:hover {
+    color: #0056b3; /* 悬停时更深的蓝色 */
+}
+
+.replies {
+    margin-left: calc(5% + 1rem);
+    padding-right: 1rem; /* 增加右边距以避免遮挡 */
+}
+
+</style>
+
+
+{% endif %}

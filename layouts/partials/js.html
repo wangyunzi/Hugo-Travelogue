@@ -1,0 +1,192 @@
+<script type="text/javascript" src="{{ "assets/js/libs/jquery.min.js" | relURL }}"></script>
+<script type="text/javascript" src="{{ "assets/js/libs/slidebars.min.js" | relURL }}"></script>
+<script type="text/javascript" src="{{ "assets/js/libs/jquery.backstretch.min.js" | relURL }}"></script>
+<script type="text/javascript" src="{{ "assets/js/libs/jquery.scrollstop.js" | relURL }}"></script>
+<script type="text/javascript" src="{{ "assets/js/libs/rrssb.min.js" | relURL }}"></script>
+<script type="text/javascript" src="{{ "assets/js/functions.js" | relURL }}"></script>
+
+{{ $assetScripts := .Site.Params.assets.scripts }}
+{{ $ui := .Site.Params.ui }}
+{{ $analytics := .Site.Params.analytics }}
+
+{{ $lazysizes := "https://blog.wangyunzi.com/json/lazysizes.min.js" }}
+{{ if and $assetScripts (isset $assetScripts "lazysizes") }}{{ $lazysizes = $assetScripts.lazysizes }}{{ end }}
+{{ if $lazysizes }}<script src="{{ $lazysizes }}" async></script>{{ end }}
+
+<script type="text/javascript">
+  $(function($) {
+    $.slidebars();
+
+    var steps = [];
+    var images = [
+      {{ $bgs := .Params.backgrounds }}
+      {{ if $bgs }}
+        {{ if reflect.IsSlice $bgs }}
+          {{ range $bgs }}'{{ . }}',{{ end }}
+        {{ else }}
+          '{{ $bgs }}',
+        {{ end }}
+      {{ end }}
+    ];
+
+    if (images.length > 0) {
+      $('.loader').addClass('loading');
+
+      steps = scrollSteps(images.length);
+
+      $.backstretch(images, {
+        fade: 1000
+      });
+
+      $.backstretch('pause');
+    }
+
+    $(document).on("backstretch.before", function (e, instance, index) {
+      $('.loader').addClass('loading');
+    });
+
+    $(document).on('scrollstop', function () {
+      if (steps.length > 0) {
+        var percentage = scrollPercentage();
+
+        for (var i = 0; i < steps.length; i++) {
+          if (percentage < steps[i]) {
+            if (i == $("body").data("backstretch").index) {
+              break;
+            }
+
+            $.backstretch('show', i);
+            break;
+          }
+        }
+      }
+    });
+
+    $(document).on("backstretch.after", function (e, instance, index) {
+      $('.loader').removeClass('loading');
+    });
+  });
+</script>
+
+{{ $zoomEnabled := true }}
+{{ $zoomMargin := 24 }}
+{{ $zoomOverlay := "transparent" }}
+{{ $zoomZ := 9999 }}
+{{ if $ui }}
+  {{ with $ui.medium_zoom }}
+    {{ if isset . "enable" }}{{ $zoomEnabled = .enable }}{{ end }}
+    {{ if isset . "margin" }}{{ $zoomMargin = .margin }}{{ end }}
+    {{ if isset . "overlay" }}{{ $zoomOverlay = .overlay }}{{ end }}
+    {{ if isset . "z_index" }}{{ $zoomZ = .z_index }}{{ end }}
+  {{ end }}
+{{ end }}
+{{ $mediumZoom := "https://blog.wangyunzi.com/json/medium-zoom.min.js" }}
+{{ if and $assetScripts (isset $assetScripts "medium_zoom") }}{{ $mediumZoom = $assetScripts.medium_zoom }}{{ end }}
+{{ if and $zoomEnabled $mediumZoom }}
+<script src="{{ $mediumZoom }}"></script>
+
+<script type="text/javascript">
+  mediumZoom('img', {
+    margin: {{ $zoomMargin }}
+  });
+</script>
+
+<style>
+  .medium-zoom-overlay {
+    background: {{ $zoomOverlay }} !important;
+  }
+  .medium-zoom-image {
+    z-index: {{ $zoomZ }};
+  }
+</style>
+{{ end }}
+
+{{ $gaEnabled := false }}
+{{ $gaID := "" }}
+{{ with $analytics.google }}
+  {{ if isset . "enable" }}{{ $gaEnabled = .enable }}{{ end }}
+  {{ if isset . "id" }}{{ $gaID = .id }}{{ end }}
+{{ end }}
+{{ if and $gaEnabled $gaID }}
+<script async src="https://www.googletagmanager.com/gtag/js?id={{ $gaID }}"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', '{{ $gaID }}');
+</script>
+{{ end }}
+
+{{ $laEnabled := false }}
+{{ $laID := "" }}
+{{ with $analytics.la }}
+  {{ if isset . "enable" }}{{ $laEnabled = .enable }}{{ end }}
+  {{ if isset . "id" }}{{ $laID = .id }}{{ end }}
+{{ end }}
+{{ if and $laEnabled $laID }}
+<script type="text/javascript" src="//js.users.51.la/{{ $laID }}.js"></script>
+{{ end }}
+
+{{ $baiduEnabled := false }}
+{{ $baiduID := "" }}
+{{ with $analytics.baidu }}
+  {{ if isset . "enable" }}{{ $baiduEnabled = .enable }}{{ end }}
+  {{ if isset . "id" }}{{ $baiduID = .id }}{{ end }}
+{{ end }}
+{{ if and $baiduEnabled $baiduID }}
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?{{ $baiduID }}";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+{{ end }}
+
+{{ $splitbeeEnabled := false }}
+{{ with $analytics.splitbee }}
+  {{ if isset . "enable" }}{{ $splitbeeEnabled = .enable }}{{ end }}
+{{ end }}
+{{ if $splitbeeEnabled }}
+<script async src="https://cdn.splitbee.io/sb.js"></script>
+{{ end }}
+
+{{ $backEnabled := true }}
+{{ $backDiameter := 45 }}
+{{ $backBg := "black" }}
+{{ $backText := "#FFFFF0" }}
+{{ if $ui }}
+  {{ with $ui.back_to_top }}
+    {{ if isset . "enable" }}{{ $backEnabled = .enable }}{{ end }}
+    {{ if isset . "diameter" }}{{ $backDiameter = .diameter }}{{ end }}
+    {{ if isset . "background_color" }}{{ $backBg = .background_color }}{{ end }}
+    {{ if isset . "text_color" }}{{ $backText = .text_color }}{{ end }}
+  {{ end }}
+{{ end }}
+{{ $backToTop := "https://unpkg.com/vanilla-back-to-top@7.2.1/dist/vanilla-back-to-top.min.js" }}
+{{ if and $assetScripts (isset $assetScripts "back_to_top") }}{{ $backToTop = $assetScripts.back_to_top }}{{ end }}
+{{ if and $backEnabled $backToTop }}
+<script src="{{ $backToTop }}"></script>
+<script>
+  addBackToTop({
+    diameter: {{ $backDiameter }},
+    backgroundColor: '{{ $backBg }}',
+    textColor: '{{ $backText }}'
+  })
+</script>
+{{ end }}
+
+{{ $newTab := true }}
+{{ if $ui }}{{ if isset $ui "external_links_new_tab" }}{{ $newTab = $ui.external_links_new_tab }}{{ end }}{{ end }}
+{{ if $newTab }}
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    var links = document.querySelectorAll('article a');
+    links.forEach(function (link) {
+      link.setAttribute('target', '_blank');
+    });
+  });
+</script>
+{{ end }}

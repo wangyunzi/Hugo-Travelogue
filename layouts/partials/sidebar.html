@@ -1,0 +1,38 @@
+<a href="#" class="sb-toggle-left">Menu
+  <span class="nav-icon"></span>
+</a>
+
+<div class="sb-slidebar sb-left sb-style-push">
+  <nav>
+    <a href="{{ "/" | relURL }}"><h2 class="site-title">{{ .Site.Title }}</h2></a>
+    <ul class="sb-menu">
+      {{ $current := .RelPermalink }}
+      {{ range .Site.Menus.main }}
+        <li class="sb-close {{ if eq $current .URL }}active{{ end }}">
+          <a href="{{ .URL }}">{{ .Name }}</a>
+        </li>
+      {{ end }}
+    </ul>
+
+    <div class="site-info">
+      <p>
+        {{ .Site.Title }} &dash; Copyright &copy; {{ now.Format "2006" }}
+      </p>
+      {{ with .Site.Params.footer_links }}
+      <p class="site-footer-links">
+        {{ range $index, $link := . }}{{ if $index }} · {{ end }}<a href="{{ $link.url }}">{{ $link.name }}</a>{{ end }}
+      </p>
+      {{ end }}
+      <p>
+        Powered by Hugo
+      </p>
+      {{ with .Site.Params.icp }}
+      {{ if .enable }}
+      <p>
+        <a href="{{ .url }}" target="_blank">{{ .text }}</a>&nbsp;
+      </p>
+      {{ end }}
+      {{ end }}
+    </div>
+  </nav>
+</div>

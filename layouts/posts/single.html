@@ -1,0 +1,90 @@
+{{ define "main" }}
+<div class="post">
+  {{ $readingTime := .Site.Params.defaults.reading_time }}
+  {{ if isset .Params "reading_time" }}{{ $readingTime = .Params.reading_time }}{{ end }}
+  {{ if $readingTime }}
+    {{ $minutes := div (add .WordCount 179) 180 }}
+    <p class="post-reading-time">&#126; {{ if lt $minutes 1 }}1{{ else }}{{ $minutes }}{{ end }} min</p>
+  {{ end }}
+
+  <header class="post-header">
+    {{ with .Params.thumb }}
+      <img src="{{ . }}" alt="{{ $.Title }}" class="post-thumb" />
+    {{ end }}
+    <h1 class="post-title">{{ .Title }}</h1>
+  </header>
+
+  <article class="post-content">
+    {{ .Content }}
+  </article>
+
+  <footer class="post-meta">
+    {{ if .Date }}
+    <div class="meta">
+      <h3 class="meta-title">Date</h3>
+      <span class="meta-content">{{ .Date.Format "January 2, 2006" }}</span>
+    </div>
+    {{ end }}
+
+    {{ $showAuthor := .Site.Params.defaults.show_author }}
+    {{ if isset .Params "show_author" }}{{ $showAuthor = .Params.show_author }}{{ end }}
+    {{ if $showAuthor }}
+      {{ $author := .Site.Params.author }}
+      {{ if isset .Params "author" }}{{ $author = .Params.author }}{{ end }}
+      {{ if $author }}
+      <div class="meta">
+        <h3 class="meta-title">Author</h3>
+        <span class="meta-content">
+      {{ if reflect.IsSlice $author }}
+            {{ range $author }}{{ . }}&nbsp;{{ end }}
+          {{ else }}
+            {{ $author }}
+          {{ end }}
+        </span>
+      </div>
+      {{ end }}
+    {{ end }}
+
+    {{ $showCategories := .Site.Params.defaults.show_categories }}
+    {{ if isset .Params "show_categories" }}{{ $showCategories = .Params.show_categories }}{{ end }}
+    {{ if $showCategories }}
+      {{ with .Params.categories }}
+      <div class="meta">
+        <h3 class="meta-title">Categories</h3>
+        <span class="meta-content">
+      {{ if reflect.IsSlice . }}
+            {{ range . }}{{ . | title }}&nbsp;{{ end }}
+          {{ else }}
+            {{ . | title }}
+          {{ end }}
+        </span>
+      </div>
+      {{ end }}
+    {{ end }}
+
+    {{ $showTags := .Site.Params.defaults.show_tags }}
+    {{ if isset .Params "show_tags" }}{{ $showTags = .Params.show_tags }}{{ end }}
+    {{ if $showTags }}
+      {{ with .Params.tags }}
+      <div class="meta">
+        <h3 class="meta-title">Tags</h3>
+        <span class="meta-content">
+      {{ if reflect.IsSlice . }}
+            {{ range . }}{{ . | title }}&nbsp;{{ end }}
+          {{ else }}
+            {{ . | title }}
+          {{ end }}
+        </span>
+      </div>
+      {{ end }}
+    {{ end }}
+  </footer>
+
+  {{ partial "share.html" . }}
+  {{ partial "comments.html" . }}
+</div>
+{{ end }}
+
+{{ define "after-main" }}
+  {{ partial "next.html" . }}
+{{ end }}

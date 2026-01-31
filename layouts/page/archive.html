@@ -1,0 +1,21 @@
+{{ define "main" }}
+<div class="post">
+  <header class="post-header">
+    <h1 class="post-title">{{ .Title }}</h1>
+  </header>
+
+  <article class="post-content">
+    {{ partial "search-lunr.html" . }}
+    {{ range (.Site.RegularPages.ByDate.Reverse.GroupByDate "2006") }}
+      <h3 class="post-archive-year">{{ .Key }}</h3>
+      <ul class="post-archive">
+        {{ range .Pages }}
+          <li>
+            <a href="{{ .RelPermalink }}" class="post-archive-link">{{ .Title }}</a>
+          </li>
+        {{ end }}
+      </ul>
+    {{ end }}
+  </article>
+</div>
+{{ end }}

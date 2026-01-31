@@ -1,0 +1,101 @@
+# Site settings
+name: 长街短梦
+description: "此行山高路远，我只剩口袋玫瑰一片。"
+
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "https://wangyunzi.com" # the base hostname & protocol for your site
+# theme: travelogue
+timezone: "Asia/Shanghai"
+
+markdown: kramdown
+# More › http://kramdown.gettalong.org/quickref.html
+# Options › http://kramdown.gettalong.org/options.html
+kramdown:
+  input: GFM
+  # https://github.com/jekyll/jekyll/pull/4090
+  syntax_highlighter: rouge
+  
+compress_html:
+  blanklines: false  #其会默认把所有的换行都压缩成一行。因为毕竟大部分 html 语法都不依赖换行。
+highlight:
+  theme: "coy"  # 或你喜欢的其他主题
+  renderer: "html"
+
+
+relative_permalinks: false
+permalink: /posts/:slug/
+
+pagination: true
+paginate: 7
+paginate_path: page/:num/
+
+author:
+    name: "王云子"
+    email: "xueq695@gmail.com"
+    uri: "https://wangyunzi.com"
+
+defaults:
+    - scope:
+          path: "_posts"
+          type: "posts"
+      values:
+          layout: "post"
+          sitemap: true
+          hidden: false
+          reading_time: true
+          # Meta
+          show_tags: true
+          show_categories: true
+          # Social
+          share_buttons: true
+          disqus: false
+          twikoo: true
+          comments: false
+    - scope:
+          path: "_album"
+          type: "album"
+      values:
+          layout: "page"
+          sitemap: false
+          hidden: false
+
+collections:
+  album:
+    output: true
+    permalink: /album/:path/
+
+include:
+  - _pages
+  - _album
+
+# ...
+notion:
+  # disables the sync at build stage
+  # makes `jekyll prefetch` command available
+  fetch_mode: true
+  databases:
+    # your database id
+    # https://www.notion.so/{workspace_name}/{database_id}?v={view_id}
+    - id: e1b7bfbf854449a981d752e374ad8f31
+      filter: { "property": "ptype", "select": { "equals": "post" } }
+      # sorts: [{ "timestamp": "created_time", "direction": "ascending" }]
+
+plugins:
+    # - jekyll-feed
+    - jekyll-paginate
+    - jekyll-sitemap
+    - jekyll-fetch-notion
+    - jekyll-seo-tag
+
+
+
+default_thumbnails:
+  - https://blog.wangyunzi.com/config/cover/church-1280.webp
+  - https://blog.wangyunzi.com/config/cover/door.webp
+  - https://blog.wangyunzi.com/config/cover/flowers.webp
+  - https://blog.wangyunzi.com/config/cover/green-parrot.webp
+  - https://blog.wangyunzi.com/config/cover/sailboat.webp
+  - https://blog.wangyunzi.com/config/cover/sea-1280.webp
+  - https://blog.wangyunzi.com/config/cover/sea.webp
+  - https://blog.wangyunzi.com/config/cover/shih-tzu-1280.webp
+  - https://blog.wangyunzi.com/config/cover/woman.webp

@@ -1,0 +1,233 @@
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+hr,
+dl,
+dd,
+ol,
+ul,
+figure {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: #7D8866;
+  color: #111;
+  font-family: "Merriweather", serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.5;
+  -webkit-text-size-adjust: 100%;
+  margin-bottom: 1em; /* 确保段落之间有空行 */
+  letter-spacing: .03em;
+  /* font: 400 14px/1.6 -apple-system, "Noto Sans", "Helvetica Neue", Helvetica, "Nimbus Sans L", Arial, "Liberation Sans", "PingFang SC", "Hiragino Sans GB", "Noto Sans CJK SC", "Source Han Sans SC", "Source Han Sans CN", "Microsoft YaHei", "Wenquanyi Micro Hei", "WenQuanYi Zen Hei", "ST Heiti", SimHei, "WenQuanYi Zen Hei Sharp", sans-serif; */
+  -webkit-font-smoothing: antialiased;
+}
+
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+ul,
+ol,
+dl,
+figure {
+  margin-bottom: 30px;
+}
+
+/* 分割线 */
+hr {
+  display: block;
+  margin: 0.5em auto;
+  width: max-content;
+  text-align: center;
+  border: none;
+  font-size: 24px;
+  letter-spacing: 10px; /* 调整点之间的距离 */
+  line-height: 1; /* 控制点的垂直居中 */
+}
+
+hr::before {
+  content: '···'; /* 用三个点替换原本的水平线 */
+}
+
+/**
+ * Images
+ */
+ img {
+  display: block;
+  height: auto;
+  margin: 0 auto;
+  max-width: 100%;
+  vertical-align: middle;
+  width: auto;
+}
+
+/**
+ * Figures
+ */
+figure>img {
+  display: block;
+}
+
+figcaption {
+  font-size: 14px;
+}
+
+ul,
+ol {
+  margin-left: 30px; /* 调整左边距 */
+}
+
+li>ul,
+li>ol {
+  margin-bottom: 0; /* 保持底边距 */
+}
+
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 400;
+}
+
+a {
+  color: #e74c3c;
+  text-decoration: none;
+  -webkit-transition: all 200ms linear;
+  -moz-transition: all 200ms linear;
+  -ms-transition: all 200ms linear;
+  -o-transition: all 200ms linear;
+  transition: all 200ms linear;
+}
+
+a:visited {
+  color: #bf2718;
+}
+
+a:hover {
+  color: #828282;
+}
+
+
+
+/**
+* Blockquotes
+*/
+blockquote {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  margin: 2.5em 0;
+  padding: 0 0 0 50px;
+  font-style: italic;
+  color: #555555;
+  border-left: none;
+  position: relative; 
+  
+  p {
+    white-space: pre-line;
+  }
+  
+  &::before {
+    content: '“';
+    display: block;
+    font-family: times, sans-serif;
+    font-style: normal;
+    font-size: 48px;
+    color: #444444;
+    font-weight: bold;
+    line-height: 30px;
+    margin-left: 0px;
+    position: absolute;
+    top: 0;
+    left: 0; 
+  }
+}
+
+pre,
+code {
+  background-color: #eef;
+  font-family: "Source Code Pro", monospace;
+  font-size: 15px;
+}
+
+code {
+  padding: 4px;
+}
+
+pre {
+  margin-left: -60px;
+  margin-right: -60px;
+  overflow-x: scroll;
+  padding: 20px 60px;
+  /* 代码块自动换行 */
+  /* white-space: pre-wrap;
+  word-wrap: break-word; */
+}
+
+pre>code {
+  border: 0;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.wrapper {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: calc(700px - (60px * 2));
+  max-width: -webkit-calc(700px - (60px * 2));
+}
+
+@media screen and (max-width: 800px) {
+  .wrapper {
+    max-width: calc(700px - (60px));
+    max-width: -webkit-calc(700px - (60px));
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+}
+
+.wrapper:after {
+  clear: both;
+  content: "";
+  display: table;
+}
+
+.icon>svg {
+  display: inline-block;
+  height: 16px;
+  vertical-align: middle;
+  width: 16px;
+}
+
+.icon>svg path {
+  fill: #828282;
+}
+
+iframe[src*="bilibili.com"] {
+  width: 100%; /* Set iframe to full width */
+  max-width: 800px; /* Optional: Limit the max width */
+  height: 450px; /* Set a fixed height for the iframe */
+  border: none; /* Remove the border */
+  margin: 20px 0; /* Add some margin around the iframe */
+  display: block; /* Ensure the iframe is displayed as a block element */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: Add a subtle shadow */
+  border-radius: 8px; /* Optional: Add rounded corners */
+}

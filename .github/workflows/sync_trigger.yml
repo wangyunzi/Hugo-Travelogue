@@ -1,0 +1,22 @@
+name: Trigger Sync Obsidian
+
+on:
+  repository_dispatch:
+    types: [sync_from_obsidian]
+
+jobs:
+  trigger:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Trigger Sync Obsidian workflow
+      uses: actions/github-script@v6
+      with:
+        github-token: ${{ secrets.Trigger_TOKEN }}
+        script: |
+          await github.rest.actions.createWorkflowDispatch({
+            owner: 'wangyunzi',
+            repo: 'wangyunzi.github.io',
+            workflow_id: 'Sync_Obsidian.yml', // 确保这是你的工作流文件名
+            ref: 'master' // 确保这是你的目标分支
+          });
