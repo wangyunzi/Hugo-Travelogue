@@ -76,7 +76,13 @@
     </style>
     <ul class="album-list">
       {{ range .Pages.ByDate.Reverse }}
-        {{ $cover := .Params.cover | default (index (shuffle $.Site.Params.default_thumbnails) 0) }}
+        {{ $cover := .Params.cover }}
+        {{ if not $cover }}
+          {{ $thumbs := $.Site.Params.default_thumbnails }}
+          {{ if and $thumbs (gt (len $thumbs) 0) }}
+            {{ $cover = index $thumbs (mod (now.Unix) (len $thumbs)) }}
+          {{ end }}
+        {{ end }}
         <li>
           <a href="{{ .RelPermalink }}">
             <img src="{{ $cover }}" alt="{{ .Title }}" loading="lazy">

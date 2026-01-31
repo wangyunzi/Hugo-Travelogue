@@ -21,7 +21,10 @@
           {{ $thumb = $bg }}
         {{ end }}
       {{ else }}
-        {{ $thumb = index (shuffle $.Site.Params.default_thumbnails) 0 }}
+        {{ $thumbs := $.Site.Params.default_thumbnails }}
+        {{ if and $thumbs (gt (len $thumbs) 0) }}
+          {{ $thumb = index $thumbs (mod (now.Unix) (len $thumbs)) }}
+        {{ end }}
       {{ end }}
       <img src="{{ $thumb }}" class="post-list-thumb" alt="{{ .Title }}" />
     </li>
