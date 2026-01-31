@@ -21,8 +21,8 @@
           {{ $thumb = $bg }}
         {{ end }}
       {{ else }}
-        {{ $thumbs := $.Site.Params.default_thumbnails }}
-        {{ if and $thumbs (gt (len $thumbs) 0) }}
+        {{ $thumbs := $.Site.Params.default_thumbnails | default (slice) }}
+        {{ if gt (len $thumbs) 0 }}
           {{ $thumb = index $thumbs (mod (now.Unix) (len $thumbs)) }}
         {{ end }}
       {{ end }}

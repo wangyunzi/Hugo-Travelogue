@@ -78,8 +78,8 @@
       {{ range .Pages.ByDate.Reverse }}
         {{ $cover := .Params.cover }}
         {{ if not $cover }}
-          {{ $thumbs := $.Site.Params.default_thumbnails }}
-          {{ if and $thumbs (gt (len $thumbs) 0) }}
+          {{ $thumbs := $.Site.Params.default_thumbnails | default (slice) }}
+          {{ if gt (len $thumbs) 0 }}
             {{ $cover = index $thumbs (mod (now.Unix) (len $thumbs)) }}
           {{ end }}
         {{ end }}
